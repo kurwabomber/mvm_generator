@@ -1,4 +1,7 @@
+use std::{fs::{File, self}, io::Read};
+
 use clap::Parser;
+use serde::{Deserialize, Serialize};
 
 #[derive(Parser)]
 struct Args {
@@ -16,7 +19,21 @@ struct Args {
     config: String
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
-    println!("Hello, world!");
+    //lord have mercy on memory
+    {
+        let map_config = fs::read_to_string("./config/maps.json")?;
+        let map: serde_json::Value = serde_json::from_str(&map_config)?;
+        let map_info = map.get(&args.map).unwrap();
+        
+    }
+    {
+        let weapon_config = fs::read_to_string("./config/weapons.json")?;
+    }
+    {
+        let mission_config = fs::read_to_string("./config/".to_string() + &args.config)?;
+    }
+
+    Ok(())
 }

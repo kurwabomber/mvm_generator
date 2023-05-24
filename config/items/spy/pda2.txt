@@ -1,0 +1,4 @@
+tf_weapon_invis
+The Dead Ringer
+The Cloak and Dagger
+The Quackenbirdt

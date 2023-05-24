@@ -1,0 +1,9 @@
+tf_weapon_shotgun_pyro
+The Flare Gun
+The Detonator
+The Reserve Shooter
+The Manmelter
+The Scorch Shot
+Festive Flare Gun
+Festive Shotgun
+Panic Attack
