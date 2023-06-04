@@ -1,8 +1,9 @@
 use std::fs;
 use clap::Parser;
-use serde_json::Value;
 mod mission;
+mod weapon;
 use crate::mission::Mission;
+use crate::weapon::Weapon;
 
 #[derive(Parser)]
 struct Args {
@@ -49,7 +50,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     {
-        let weapon_config = fs::read_to_string("./config/weapons.json")?;
+        let bot_config = fs::read_to_string("./config/bots.json")?;
+
     }
     {
         let mission_config = fs::read_to_string("./config/".to_string() + &args.config)?;

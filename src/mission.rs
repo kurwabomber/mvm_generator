@@ -28,7 +28,7 @@ impl Default for Mission{
             max_tank_speed: 500.0,
             engineers_enabled: false,
             wave_amount: 6,
-            money_per_wave: "100+50*wave".to_string(),
+            money_per_wave: "100*wave".to_string(),
             bot_giant_chance: 0.1,
             bot_boss_waves: 3,
             bot_superboss_waves: 5,

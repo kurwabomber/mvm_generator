@@ -1,8 +1,0 @@
-tf_weapon_flamethrower
-The Backburner
-The Degreaser
-The Phlogistinator
-The Rainblower
-The Nostromo Napalmer
-Festive Flamethrower
-Festive Backburner
