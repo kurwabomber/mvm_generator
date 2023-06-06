@@ -1,9 +1,9 @@
 use std::fs;
 use clap::Parser;
 mod mission;
-mod weapon;
+mod bot;
 use crate::mission::Mission;
-use crate::weapon::Weapon;
+use crate::bot::Bot;
 
 #[derive(Parser)]
 struct Args {
@@ -20,40 +20,50 @@ struct Args {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
     let mut mission:Mission = Mission { ..Default::default() };
+    let mut bots: Vec<Bot> = vec![];
     //lord have mercy on memory
     {
         let map_config = fs::read_to_string("./config/maps.json")?;
         let map: serde_json::Value = serde_json::from_str(&map_config)?;
-        let map_info = map.get(&args.map).unwrap().clone();
+        let map_info = &map[&args.map];
 
-        //does anyone know a better way to do this...
-        if let Some(path_length) = map_info.get("bot_path_length") {
-            mission.bot_path_length = path_length.as_f64().unwrap();
-        }
-        if let Some(spawn_bot_areas) = map_info.get("spawnbots") {
-            mission.spawn_bot_areas = spawn_bot_areas.as_array().unwrap().iter().map(|x| x.as_str().unwrap().to_owned()).collect();
-        }
-        if let Some(spawn_giants_areas) = map_info.get("spawngiants") {
-            mission.spawn_giants_areas = spawn_giants_areas.as_array().unwrap().iter().map(|x| x.as_str().unwrap().to_owned()).collect();
-        }
-        if let Some(spawn_boss_areas) = map_info.get("spawnbosses") {
-            mission.spawn_boss_areas = spawn_boss_areas.as_array().unwrap().iter().map(|x| x.as_str().unwrap().to_owned()).collect();
-        }
-        if let Some(spawn_tank_areas) = map_info.get("spawntanks") {
-            mission.spawn_tank_areas = spawn_tank_areas.as_array().unwrap().iter().map(|x| x.as_str().unwrap().to_owned()).collect();
-        }
-        if let Some(max_tank_speed) = map_info.get("max_tank_speed") {
-            mission.max_tank_speed = max_tank_speed.as_f64().unwrap();
-        }
-        if let Some(engineers_enabled) = map_info.get("engies") {
-            mission.engineers_enabled = engineers_enabled.as_bool().unwrap();
-        }
+        mission.bot_path_length = match map_info["bot_path_length"].as_f64(){None => 1200.0, Some(value) => value};
+        mission.spawn_bot_areas = match map_info["spawnbots"].as_array(){
+            None => vec!["spawnbot".to_string()],
+            Some(value) => value.iter().map(|x| x.as_str().unwrap().to_owned()).collect()
+        };
+
+        mission.spawn_giants_areas = match map_info["spawngiants"].as_array(){
+            None => vec!["spawnbot".to_string()],
+            Some(value) => value.iter().map(|x| x.as_str().unwrap().to_owned()).collect()
+        };
+
+        mission.spawn_boss_areas = match map_info["spawnbosses"].as_array(){
+            None => vec!["spawnbot".to_string()],
+            Some(value) => value.iter().map(|x| x.as_str().unwrap().to_owned()).collect()
+        };
+
+        mission.spawn_tank_areas = match map_info["spawntanks"].as_array(){
+            None => vec!["spawnbot".to_string()],
+            Some(value) => value.iter().map(|x| x.as_str().unwrap().to_owned()).collect()
+        };
+
+        mission.max_tank_speed = match map_info["max_tank_speed"].as_f64(){None => 300.0, Some(value) => value};
+        mission.engineers_enabled = match map_info["engies"].as_bool(){None => false, Some(value) => value};
     }
     {
         let bot_config = fs::read_to_string("./config/bots.json")?;
+        let bot_info_string: serde_json::Value = serde_json::from_str(&bot_config)?;
+        let bot_infos = &bot_info_string.as_object().unwrap();
+        for value in *bot_infos{
+            let mut new_bot: Bot = Bot { ..Default::default() };
+            println!("---{}---\n{}",value.0,value.1);
+            new_bot.name = value.0.to_string();
 
+            new_bot.is_boss = match value.1["is_boss"].as_bool(){None => false, Some(value) => value};
+        }
     }
-    {
+    /*{
         let mission_config = fs::read_to_string("./config/".to_string() + &args.config)?;
         let mission_info: serde_json::Value = serde_json::from_str(&mission_config)?;
 
@@ -81,7 +91,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if let Some(bot_speed_multiplier) = mission_info.get("bot_speed_multiplier") {
             mission.bot_speed_multiplier = bot_speed_multiplier.as_str().unwrap().to_owned();
         }
-    }
+    }*/
 
     Ok(())
 }
