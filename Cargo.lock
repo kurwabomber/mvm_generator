@@ -187,7 +187,7 @@ checksum = "ece97ea872ece730aed82664c424eb4c8291e1ff2480247ccf7409044bc6479f"
 
 [[package]]
 name = "mvm_generator"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "clap",
  "serde",

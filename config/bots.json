@@ -15,7 +15,7 @@
 		"auto_jump_max"	: 0,
 		"weight" : 1,
 		"rarity" : 1,
-		"attributes" : [ {"damage bonus":"1.0+0.3*wave"} ]
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
 	},
 	"Blunt Launcher" :
 	{
@@ -35,8 +35,8 @@
 		"auto_jump_max"	: 0,
 		"weight" : 1,
 		"rarity" : 5,
-		"attributes" : [ {"damage bonus":"1.0+0.3*wave"}, {"fire rate bonus":"0.2 * 0.9^wave"}, {"faster reload rate":"0.1 * 0.9^wave"},
-		{"clip size bonus":"2.0 * 1.2^wave"}, {"projectile spread angle penalty":"4.0"}, {"move speed penalty":"0.5"}, {"override footstep sound set":"3"}
-		, {"dmg taken increased":"0.95^wave"} ]
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"], ["fire rate bonus","0.2 * 0.9^wave"], ["faster reload rate","0.1 * 0.9^wave"],
+		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.5"], ["override footstep sound set","3"]
+		, ["dmg taken increased","0.95^wave"] ]
 	}
 }
