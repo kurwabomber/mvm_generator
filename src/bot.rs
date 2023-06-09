@@ -1,4 +1,4 @@
-pub struct Bot{
+pub struct Bot {
     /* General Map Info */
     pub name: String,
     pub class: String,
@@ -15,13 +15,13 @@ pub struct Bot{
     pub auto_jump_max: i64,
     pub weight: f64,
     pub rarity: i64,
-    pub attributes: Vec<[String;2]>,
+    pub attributes: Vec<[String; 2]>,
     pub is_boss: bool,
     pub is_giant: bool,
 }
-impl Default for Bot{
+impl Default for Bot {
     fn default() -> Self {
-        Bot { 
+        Bot {
             name: "Scout".to_string(),
             class: "scout".to_string(),
             weapons: vec![],

@@ -1,4 +1,4 @@
-pub struct Mission{
+pub struct Mission {
     /* General Map Info */
     pub bot_path_length: f64,
     pub spawn_bot_areas: Vec<String>,
@@ -9,17 +9,17 @@ pub struct Mission{
     pub engineers_enabled: bool,
     /* Mission Specific Info */
     pub wave_amount: i64,
-    pub money_per_wave: String, //Evaluated
-    pub bot_giant_chance: f64, //0.0 -> 1.0 chance
-    pub bot_boss_waves: i64, //Every x waves has a boss.
-    pub bot_superboss_waves: i64, //Every x waves has a superboss.
-    pub bot_damage_outgoing: String, //Evaluated
-    pub bot_damage_incoming: String, //Evaluated
+    pub money_per_wave: String,       //Evaluated
+    pub bot_giant_chance: f64,        //0.0 -> 1.0 chance
+    pub bot_boss_waves: i64,          //Every x waves has a boss.
+    pub bot_superboss_waves: i64,     //Every x waves has a superboss.
+    pub bot_damage_outgoing: String,  //Evaluated
+    pub bot_damage_incoming: String,  //Evaluated
     pub bot_speed_multiplier: String, //Evaluated
 }
-impl Default for Mission{
+impl Default for Mission {
     fn default() -> Self {
-        Mission { 
+        Mission {
             bot_path_length: 0.5,
             spawn_bot_areas: vec!["spawnbot".to_string()],
             spawn_giants_areas: vec!["spawnbot".to_string()],
