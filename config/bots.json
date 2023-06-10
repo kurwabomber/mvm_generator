@@ -2,17 +2,105 @@
 	"Basic Scout" :
 	{
 		"class" : "scout",
-		"weapons" : ["tf_weapon_scattergun", "tf_weapon_pistol", "tf_weapon_bat"],
+		"weapons" : ["tf_weapon_scattergun"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
-		"bot_attributes" : [""],
 		"health" : "125+20*wave",
 		"scale"	: 1.0,
 		"max_vision_range" : 1200,
 		"class_icon" : "scout",
 		"auto_jump_min" : 0,
 		"auto_jump_max"	: 0,
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["tf_weapon_rocketlauncher"],
+		"difficulty" : 3,
+		"behavior" : "Mobber",
+		"weapon_restriction" : "PrimaryOnly",
+		"health" : "200+35*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Pyro" :
+	{
+		"class" : "pyro",
+		"weapons" : ["tf_weapon_flamethrower"],
+		"difficulty" : 3,
+		"behavior" : "Mobber",
+		"weapon_restriction" : "PrimaryOnly",
+		"health" : "175+30*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Demoman" :
+	{
+		"class" : "demoman",
+		"weapons" : ["tf_weapon_grenadelauncher"],
+		"difficulty" : 3,
+		"behavior" : "Mobber",
+		"weapon_restriction" : "PrimaryOnly",
+		"health" : "175+30*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Heavy" :
+	{
+		"class" : "heavy",
+		"weapons" : ["tf_weapon_minigun"],
+		"difficulty" : 3,
+		"behavior" : "Mobber",
+		"weapon_restriction" : "PrimaryOnly",
+		"health" : "300+50*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Engineer" :
+	{
+		"class" : "engineer",
+		"weapons" : ["tf_weapon_shotgun_primary", "tf_weapon_pistol", "tf_weapon_wrench"],
+		"difficulty" : 3,
+		"health" : "300+20*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Medic" :
+	{
+		"class" : "medic",
+		"weapons" : ["Crusader's Crossbow", "tf_weapon_medigun", "tf_weapon_bonesaw"],
+		"difficulty" : 3,
+		"health" : "150+20*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Sniper" :
+	{
+		"class" : "sniper",
+		"weapons" : ["tf_weapon_sniperrifle"],
+		"weapon_restriction" : "PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "125+20*wave",
+		"weight" : 1,
+		"rarity" : 1,
+		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
+	},
+	"Basic Spy" :
+	{
+		"class" : "spy",
+		"weapons" : ["tf_weapon_revolver", "tf_weapon_knife"],
+		"difficulty" : 3,
+		"health" : "125+20*wave",
 		"weight" : 1,
 		"rarity" : 1,
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]

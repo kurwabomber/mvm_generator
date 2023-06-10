@@ -18,7 +18,7 @@ struct Args {
     config: String,
 }
 //Hierarchy: Mission -> Waves -> Wavespawns -> Bots
-//Test: cargo run -- -m mvm_decoy -n lol -s 10000 -c test
+//Test: cargo run -- -m mvm_decoy -n lol -s 10000 -c normal_if.json
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
     let mut mission: Mission = Mission {
@@ -102,9 +102,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 None => 1,
                 Some(val) => val,
             };
-            new_bot.weapon_restriction = match value.1["difficulty"].as_i64() {
-                None => 1,
-                Some(val) => val,
+            new_bot.weapon_restriction = match value.1["weapon_restriction"].as_str() {
+                None => "".to_string(),
+                Some(val) => val.to_string(),
+            };
+            new_bot.behavior = match value.1["behavior"].as_str() {
+                None => "".to_string(),
+                Some(val) => val.to_string(),
             };
             new_bot.bot_attributes = match value.1["bot_attributes"].as_array() {
                 None => vec![],
@@ -175,7 +179,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     {
         let now = Instant::now();
-        let mission_config = fs::read_to_string("./config/".to_string() + &args.config)?;
+        let mission_config = fs::read_to_string("./config/missions/".to_string() + &args.config)?;
         let mission_info: serde_json::Value = serde_json::from_str(&mission_config)?;
 
         if let Some(wave_amount) = mission_info.get("wave_amount") {
