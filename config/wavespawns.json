@@ -1,0 +1,7 @@
+{
+	"Sploodge Squad" :
+	{
+		"squads": ["Basic Scout", "Basic Soldier", "Basic Pyro"],
+		"tags": ["normal"]
+	}
+}

@@ -133,6 +133,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "evalexpr"
+version = "11.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec3b4e80fd8edee77d6fc35d59862d5765dae7512a95f49fd7bf03847c85b26a"
+
+[[package]]
 name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -190,6 +196,7 @@ name = "mvm_generator"
 version = "1.0.0"
 dependencies = [
  "clap",
+ "evalexpr",
  "serde",
  "serde_json",
 ]

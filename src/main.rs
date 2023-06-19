@@ -78,8 +78,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => 1.0,
                     Some(val) => val,
                 },
-                max_vision_range: match value.1["scale"].as_i64() {
-                    None => 1200,
+                max_vision_range: match value.1["max_vision_range"].as_i64() {
+                    None => 0,
                     Some(val) => val,
                 },
                 auto_jump_min: match value.1["auto_jump_min"].as_i64() {
@@ -140,7 +140,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         println!("took {:?} to parse bot config", now.elapsed());
     }
+    {
+        let now = Instant::now();
 
+        let bot_config = fs::read_to_string("./config/wavespawns.json")?;
+        let squad_info_string: serde_json::Value = serde_json::from_str(&bot_config)?;
+        let squad_infos = &squad_info_string.as_object().unwrap();
+        for value in *squad_infos {
+            let wavespawn: Wavespawn = Wavespawn {
+                squads: match value.1["squads"].as_array() {
+                    None => vec![],
+                    Some(val) => val.iter().map(|x| bots.iter().find(|y| *y.name == x.as_str().unwrap().to_owned()).unwrap() ).cloned().collect(),
+                },
+                tags: match value.1["tags"].as_array() {
+                    None => vec![],
+                    Some(val) => val.iter().map(|x| x.as_str().unwrap().to_owned()).collect(),
+                },
+            };
+            wavespawns.push(wavespawn);
+        }
+        println!("took {:?} to parse wavespawn config", now.elapsed());
+    }
 
 
     Ok(())
