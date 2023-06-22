@@ -2,6 +2,22 @@
 	"Sploodge Squad" :
 	{
 		"squads": ["Basic Scout", "Basic Soldier", "Basic Pyro"],
-		"tags": ["normal"]
+		"tags": ["normal"],
+		"weight": 10,
+		"rarity": 1
+	},
+	"Sploodge Squad #2" :
+	{
+		"squads": ["Basic Heavy","Basic Medic"],
+		"tags": ["normal"],
+		"weight": 7,
+		"rarity": 1
+	},
+	"Gangrene" :
+	{
+		"squads": ["Blunt Launcher","Basic Medic"],
+		"tags": ["normal","boss"],
+		"weight": 1,
+		"rarity": 3
 	}
 }

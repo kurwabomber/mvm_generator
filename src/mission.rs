@@ -19,6 +19,7 @@ pub struct Mission {
     pub bot_damage_incoming: String,  //Evaluated
     pub bot_speed_multiplier: String, //Evaluated
     pub wavespawn_tags: Vec<String>,
+    pub wavespawn_amount: i64,
 }
 impl Mission{
     pub fn parse_map_config(&mut self, selected_map: &String) {
@@ -132,6 +133,7 @@ impl Default for Mission {
             bot_damage_incoming: "1.0".to_string(),
             bot_speed_multiplier: "1.0".to_string(),
             wavespawn_tags: vec!["normal".to_string()],
+            wavespawn_amount: 6,
         }
     }
 }

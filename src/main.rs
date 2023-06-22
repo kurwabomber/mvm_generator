@@ -1,6 +1,7 @@
 use clap::Parser;
 use std::fs;
 use std::time::Instant;
+use rand::seq::SliceRandom;
 mod bot;
 mod mission;
 mod wavespawn;
@@ -174,8 +175,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         println!("took {:?} to parse wavespawn config", now.elapsed());
     }
-
-
+    //Wave Generation Process
+    for i in 1..mission.wave_amount+1{
+        println!("Wave {}", i);
+        for squad_num in 1..mission.wavespawn_amount+1{
+            println!("Generating Squad #{}", squad_num);
+            let chosen_wavespawn = wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+            for chosen_bot in &chosen_wavespawn.squads{
+                println!("Contains {}", chosen_bot.name);
+            }
+        }
+    }
 
     Ok(())
 }
