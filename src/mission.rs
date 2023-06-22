@@ -11,6 +11,7 @@ pub struct Mission {
     pub engineers_enabled: bool,
     /* Mission Specific Info */
     pub wave_amount: i64,
+    pub starting_money: i64,
     pub money_per_wave: String,       //Evaluated
     pub bot_giant_chance: f64,        //0.0 -> 1.0 chance
     pub bot_boss_waves: i64,          //Every x waves has a boss.
@@ -20,6 +21,7 @@ pub struct Mission {
     pub bot_speed_multiplier: String, //Evaluated
     pub wavespawn_tags: Vec<String>,
     pub wavespawn_amount: i64,
+    pub mission_name: String,
 }
 impl Mission{
     pub fn parse_map_config(&mut self, selected_map: &String) {
@@ -82,6 +84,9 @@ impl Mission{
         if let Some(wave_amount) = mission_info.get("wave_amount") {
             self.wave_amount = wave_amount.as_i64().unwrap();
         }
+        if let Some(starting_money) = mission_info.get("starting_money") {
+            self.starting_money = starting_money.as_i64().unwrap();
+        }
         if let Some(money_per_wave) = mission_info.get("money_per_wave") {
             self.money_per_wave = money_per_wave.as_str().unwrap().to_owned();
         }
@@ -110,6 +115,9 @@ impl Mission{
                 .map(|x| x.as_str().unwrap().to_owned())
                 .collect(),
         };
+        if let Some(mission_name) = mission_info.get("mission_name") {
+            self.mission_name = mission_name.as_str().unwrap().to_owned();
+        }
         println!("took {:?} to parse mission config", now.elapsed());
     }
 
@@ -125,6 +133,7 @@ impl Default for Mission {
             max_tank_speed: 500.0,
             engineers_enabled: false,
             wave_amount: 6,
+            starting_money: 400,
             money_per_wave: "100*wave".to_string(),
             bot_giant_chance: 0.1,
             bot_boss_waves: 3,
@@ -134,6 +143,7 @@ impl Default for Mission {
             bot_speed_multiplier: "1.0".to_string(),
             wavespawn_tags: vec!["normal".to_string()],
             wavespawn_amount: 6,
+            mission_name: "".to_string(),
         }
     }
 }

@@ -1,10 +1,12 @@
 {
     "wave_amount": 6,
+    "starting_money": 400,
     "money_per_wave": "200+150*wave",
     "bot_giant_chance": 0.1,
     "bot_boss_waves": 3,
     "bot_superboss_waves": 6,
     "bot_damage_outgoing": "1.0+0.1*wave",
     "bot_damage_incoming": "1.0 * 0.95^wave",
-    "bot_speed_multiplier": "1.2"
+    "bot_speed_multiplier": "1.2",
+    "mission_name": "if_normal"
 }
