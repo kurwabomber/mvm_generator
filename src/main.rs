@@ -1,4 +1,5 @@
 use clap::Parser;
+use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context, eval_int_with_context_mut};
 use std::fs::{self, File};
 use std::io::Write;
 use std::time::Instant;
@@ -24,6 +25,8 @@ struct Args {
 //Hierarchy: Mission -> Waves -> Wavespawns -> Bots
 //Test: cargo run -- -m mvm_decoy -n lol -s 10000 -c normal_if.json
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let beginning = Instant::now();
+    
     let args = Args::parse();
     let mut mission: Mission = Mission {
         ..Default::default()
@@ -187,22 +190,59 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     pop_file.push_str(&format!("\tStartingCurrency\t{}\n", mission.starting_money));
     pop_file.push_str("\tCanBotsAttackWhileInSpawnRoom\tNo\n");
     pop_file.push_str("\tFixedRespawnWaveTime\tYes\n");
+
+    let mut context = HashMapContext::new();
     for i in 1..mission.wave_amount+1{
-        println!("Wave {}", i);
+        eval_empty_with_context_mut(&format!("wave = {}",i), &mut context).unwrap();
+
+        let money_for_wave: i64 = eval_int_with_context_mut(&mission.money_per_wave, &mut context).unwrap();
+
+        //stupid wave boilerplate shit
         pop_file.push_str("\tWave\n\t{\n");
         pop_file.push_str("\t\tWaitWhenDone\t65\n");
         pop_file.push_str("\t\tCheckpoint\tYes\n");
-        pop_file.push_str("\t\tStartWaveOutput{\n\t\t\tTarget	wave_start_relay\n\t\t\tAction	Trigger\n\t\t}\n");
-        for squad_num in 1..mission.wavespawn_amount+1{
-            println!("Generating Squad #{}", squad_num);
+        pop_file.push_str("\t\tStartWaveOutput{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        pop_file.push_str("\t\tDoneOutput{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        
+        //Wavespawn + Currency Weight
+        let mut finalized_spawns: Vec<&Wavespawn> = vec![];
+        let mut total_weight: i64 = 0;
+        for _squad_num in 1..mission.wavespawn_amount+1{
             let chosen_wavespawn = wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
             for chosen_bot in &chosen_wavespawn.squads{
-                println!("Contains {}", chosen_bot.name);
+                total_weight += chosen_bot.currency_weight;
             }
+            finalized_spawns.push(chosen_wavespawn);
+        }
+
+        let mut bot_id: i64 = 0;
+        let mut last_bot: i64 = 0;
+        for wavespawn in finalized_spawns{
+            for bot in &wavespawn.squads{
+                bot_id += 1;
+                pop_file.push_str("\t\tWaveSpawn{\n");
+                pop_file.push_str(&format!("\t\t\tName\tw{}_b{}\n", i, bot_id));
+                if last_bot != 0 {
+                    pop_file.push_str(&format!("\t\t\tWaitForAllDead\tw{}_b{}\n", i, last_bot));
+                }
+
+                pop_file.push_str(&format!("\t\t\tTotalCount\t{}\n", bot.count));
+                pop_file.push_str(&format!("\t\t\tMaxActive\t{}\n", bot.max_active));
+                pop_file.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
+                pop_file.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
+                pop_file.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
+                pop_file.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));//For now, we just default to spawnbot, logic will come later.
+                pop_file.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
+
+                pop_file.push_str("\t\t}\n");
+            }
+            last_bot = bot_id;
         }
         pop_file.push_str("\t}\n");
     }
-    pop_file.push_str("}\n");
+    pop_file.push_str("}");
     output_file.write_all(pop_file.as_bytes())?;
+
+    println!("Finished in {:?}", beginning.elapsed());
     Ok(())
 }

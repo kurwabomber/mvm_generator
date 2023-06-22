@@ -104,6 +104,7 @@
 		"spawn_per_timer" : 1,
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 0,
+		"currency_weight": 7,
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"], ["fire rate bonus","0.2 * 0.9^wave"], ["faster reload rate","0.1 * 0.9^wave"],
 		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.5"], ["override footstep sound set","3"]
 		, ["dmg taken increased","0.95^wave"] ]

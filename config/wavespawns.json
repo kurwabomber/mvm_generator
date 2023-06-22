@@ -17,7 +17,7 @@
 	{
 		"squads": ["Blunt Launcher","Basic Medic"],
 		"tags": ["normal","boss"],
-		"weight": 1,
+		"weight": 2,
 		"rarity": 3
 	}
 }

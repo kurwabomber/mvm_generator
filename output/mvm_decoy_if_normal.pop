@@ -15,14 +15,182 @@ population
 			Target	wave_start_relay
 			Action	Trigger
 		}
-	}
-	Wave
-	{
-		WaitWhenDone	65
-		Checkpoint	Yes
-		StartWaveOutput{
-			Target	wave_start_relay
+		DoneOutput{
+			Target	wave_finished_relay
 			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w1_b1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b4
+			WaitForAllDead	w1_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b5
+			WaitForAllDead	w1_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b6
+			WaitForAllDead	w1_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b7
+			WaitForAllDead	w1_b6
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TotalCurrency	111
+		}
+		WaveSpawn{
+			Name	w1_b8
+			WaitForAllDead	w1_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b9
+			WaitForAllDead	w1_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b10
+			WaitForAllDead	w1_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b11
+			WaitForAllDead	w1_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b12
+			WaitForAllDead	w1_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b13
+			WaitForAllDead	w1_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b14
+			WaitForAllDead	w1_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b15
+			WaitForAllDead	w1_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
+		}
+		WaveSpawn{
+			Name	w1_b16
+			WaitForAllDead	w1_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	16
 		}
 	}
 	Wave
@@ -33,14 +201,193 @@ population
 			Target	wave_start_relay
 			Action	Trigger
 		}
-	}
-	Wave
-	{
-		WaitWhenDone	65
-		Checkpoint	Yes
-		StartWaveOutput{
-			Target	wave_start_relay
+		DoneOutput{
+			Target	wave_finished_relay
 			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w2_b1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b4
+			WaitForAllDead	w2_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b5
+			WaitForAllDead	w2_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b6
+			WaitForAllDead	w2_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b7
+			WaitForAllDead	w2_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b8
+			WaitForAllDead	w2_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b9
+			WaitForAllDead	w2_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b10
+			WaitForAllDead	w2_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b11
+			WaitForAllDead	w2_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b12
+			WaitForAllDead	w2_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b13
+			WaitForAllDead	w2_b12
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b14
+			WaitForAllDead	w2_b12
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b15
+			WaitForAllDead	w2_b12
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b16
+			WaitForAllDead	w2_b15
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
+		}
+		WaveSpawn{
+			Name	w2_b17
+			WaitForAllDead	w2_b15
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	29
 		}
 	}
 	Wave
@@ -51,6 +398,162 @@ population
 			Target	wave_start_relay
 			Action	Trigger
 		}
+		DoneOutput{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w3_b1
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TotalCurrency	227
+		}
+		WaveSpawn{
+			Name	w3_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b3
+			WaitForAllDead	w3_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b4
+			WaitForAllDead	w3_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b5
+			WaitForAllDead	w3_b4
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b6
+			WaitForAllDead	w3_b4
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b7
+			WaitForAllDead	w3_b4
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b8
+			WaitForAllDead	w3_b7
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b9
+			WaitForAllDead	w3_b7
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b10
+			WaitForAllDead	w3_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b11
+			WaitForAllDead	w3_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b12
+			WaitForAllDead	w3_b9
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b13
+			WaitForAllDead	w3_b12
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
+		WaveSpawn{
+			Name	w3_b14
+			WaitForAllDead	w3_b12
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	32
+		}
 	}
 	Wave
 	{
@@ -59,6 +562,566 @@ population
 		StartWaveOutput{
 			Target	wave_start_relay
 			Action	Trigger
+		}
+		DoneOutput{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w4_b1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b4
+			WaitForAllDead	w4_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b5
+			WaitForAllDead	w4_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b6
+			WaitForAllDead	w4_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b7
+			WaitForAllDead	w4_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b8
+			WaitForAllDead	w4_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b9
+			WaitForAllDead	w4_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b10
+			WaitForAllDead	w4_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b11
+			WaitForAllDead	w4_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b12
+			WaitForAllDead	w4_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b13
+			WaitForAllDead	w4_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b14
+			WaitForAllDead	w4_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b15
+			WaitForAllDead	w4_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+		WaveSpawn{
+			Name	w4_b16
+			WaitForAllDead	w4_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	50
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w5_b1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b4
+			WaitForAllDead	w5_b3
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TotalCurrency	238
+		}
+		WaveSpawn{
+			Name	w5_b5
+			WaitForAllDead	w5_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b6
+			WaitForAllDead	w5_b5
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b7
+			WaitForAllDead	w5_b5
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b8
+			WaitForAllDead	w5_b5
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b9
+			WaitForAllDead	w5_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b10
+			WaitForAllDead	w5_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b11
+			WaitForAllDead	w5_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b12
+			WaitForAllDead	w5_b11
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			TotalCurrency	238
+		}
+		WaveSpawn{
+			Name	w5_b13
+			WaitForAllDead	w5_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b14
+			WaitForAllDead	w5_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b15
+			WaitForAllDead	w5_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+		WaveSpawn{
+			Name	w5_b16
+			WaitForAllDead	w5_b13
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	34
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn{
+			Name	w6_b1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b2
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b4
+			WaitForAllDead	w6_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b5
+			WaitForAllDead	w6_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b6
+			WaitForAllDead	w6_b3
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b7
+			WaitForAllDead	w6_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b8
+			WaitForAllDead	w6_b6
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b9
+			WaitForAllDead	w6_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b10
+			WaitForAllDead	w6_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b11
+			WaitForAllDead	w6_b8
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b12
+			WaitForAllDead	w6_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b13
+			WaitForAllDead	w6_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b14
+			WaitForAllDead	w6_b11
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b15
+			WaitForAllDead	w6_b14
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b16
+			WaitForAllDead	w6_b14
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
+		}
+		WaveSpawn{
+			Name	w6_b17
+			WaitForAllDead	w6_b14
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TotalCurrency	65
 		}
 	}
 }
