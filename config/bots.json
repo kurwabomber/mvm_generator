@@ -2,7 +2,6 @@
 	"Basic Scout" :
 	{
 		"class" : "scout",
-		"weapons" : ["tf_weapon_scattergun"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
@@ -21,7 +20,6 @@
 	"Basic Soldier" :
 	{
 		"class" : "soldier",
-		"weapons" : ["tf_weapon_rocketlauncher"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
@@ -31,7 +29,6 @@
 	"Basic Pyro" :
 	{
 		"class" : "pyro",
-		"weapons" : ["tf_weapon_flamethrower"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
@@ -41,7 +38,6 @@
 	"Basic Demoman" :
 	{
 		"class" : "demoman",
-		"weapons" : ["tf_weapon_grenadelauncher"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
@@ -51,7 +47,6 @@
 	"Basic Heavy" :
 	{
 		"class" : "heavy",
-		"weapons" : ["tf_weapon_minigun"],
 		"difficulty" : 3,
 		"behavior" : "Mobber",
 		"weapon_restriction" : "PrimaryOnly",
@@ -61,7 +56,6 @@
 	"Basic Engineer" :
 	{
 		"class" : "engineer",
-		"weapons" : ["tf_weapon_shotgun_primary", "tf_weapon_pistol", "tf_weapon_wrench"],
 		"difficulty" : 3,
 		"health" : "300+20*wave",
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
@@ -69,7 +63,7 @@
 	"Basic Medic" :
 	{
 		"class" : "medic",
-		"weapons" : ["Crusader's Crossbow", "tf_weapon_medigun", "tf_weapon_bonesaw"],
+		"weapons" : ["Crusader's Crossbow"],
 		"difficulty" : 3,
 		"health" : "150+20*wave",
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
@@ -86,7 +80,6 @@
 	"Basic Spy" :
 	{
 		"class" : "spy",
-		"weapons" : ["tf_weapon_revolver", "tf_weapon_knife"],
 		"difficulty" : 3,
 		"health" : "125+20*wave",
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]

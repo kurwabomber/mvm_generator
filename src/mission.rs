@@ -18,6 +18,7 @@ pub struct Mission {
     pub bot_damage_outgoing: String,  //Evaluated
     pub bot_damage_incoming: String,  //Evaluated
     pub bot_speed_multiplier: String, //Evaluated
+    pub wavespawn_tags: Vec<String>,
 }
 impl Mission{
     pub fn parse_map_config(&mut self, selected_map: &String) {
@@ -101,6 +102,13 @@ impl Mission{
         if let Some(bot_speed_multiplier) = mission_info.get("bot_speed_multiplier") {
             self.bot_speed_multiplier = bot_speed_multiplier.as_str().unwrap().to_owned();
         }
+        self.wavespawn_tags = match mission_info["allowed_tags"].as_array() {
+            None => vec!["normal".to_string()],
+            Some(value) => value
+                .iter()
+                .map(|x| x.as_str().unwrap().to_owned())
+                .collect(),
+        };
         println!("took {:?} to parse mission config", now.elapsed());
     }
 
@@ -123,6 +131,7 @@ impl Default for Mission {
             bot_damage_outgoing: "1.0".to_string(),
             bot_damage_incoming: "1.0".to_string(),
             bot_speed_multiplier: "1.0".to_string(),
+            wavespawn_tags: vec!["normal".to_string()],
         }
     }
 }

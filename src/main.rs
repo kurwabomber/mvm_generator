@@ -156,11 +156,25 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => vec![],
                     Some(val) => val.iter().map(|x| x.as_str().unwrap().to_owned()).collect(),
                 },
+                weight: match value.1["weight"].as_i64() {
+                    None => 1,
+                    Some(val) => val,
+                },
+                rarity: match value.1["rarity"].as_i64() {
+                    None => 1,
+                    Some(val) => val,
+                },
             };
-            wavespawns.push(wavespawn);
+            for tag in &mission.wavespawn_tags{
+                if wavespawn.tags.contains(tag){
+                    wavespawns.push(wavespawn);
+                    break;
+                }
+            }
         }
         println!("took {:?} to parse wavespawn config", now.elapsed());
     }
+
 
 
     Ok(())
