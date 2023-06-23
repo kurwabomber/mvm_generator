@@ -118,6 +118,9 @@ impl Mission{
         if let Some(mission_name) = mission_info.get("mission_name") {
             self.mission_name = mission_name.as_str().unwrap().to_owned();
         }
+        if let Some(wavespawn_amount) = mission_info.get("wavespawn_amount"){
+            self.wavespawn_amount = wavespawn_amount.as_i64().unwrap();
+        }
         println!("took {:?} to parse mission config", now.elapsed());
     }
 

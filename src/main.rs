@@ -1,5 +1,5 @@
 use clap::Parser;
-use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context, eval_int_with_context_mut};
+use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context_mut, eval_with_context_mut, Value::Int, Value::Float};
 use std::fs::{self, File};
 use std::io::Write;
 use std::time::Instant;
@@ -45,7 +45,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let bot_info_string: serde_json::Value = serde_json::from_str(&bot_config)?;
         let bot_infos = &bot_info_string.as_object().unwrap();
         for value in *bot_infos {
-            let new_bot: Bot = Bot {
+            let mut new_bot: Bot = Bot {
                 name: value.0.to_string(),
                 class: match value.1["class"].as_str() {
                     None => "scout".to_string(),
@@ -141,6 +141,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         .collect(),
                 }
             };
+            if new_bot.class_icon.is_empty(){
+                new_bot.class_icon = new_bot.class.to_string();
+            }
             bots.push(new_bot);
         }
         println!("took {:?} to parse bot config", now.elapsed());
@@ -234,6 +237,56 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 pop_file.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));//For now, we just default to spawnbot, logic will come later.
                 pop_file.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
 
+                pop_file.push_str("\t\t\tSquad{\n\t\t\t\tTFBot{\n");
+                pop_file.push_str(&format!("\t\t\t\t\tClassIcon\t{}\n",bot.class_icon));
+
+                let eval_health = eval_int_with_context_mut(&bot.health, &mut context).unwrap();
+                pop_file.push_str(&format!("\t\t\t\t\tHealth\t{}\n",eval_health));
+                pop_file.push_str(&format!("\t\t\t\t\tName\t{}\n",bot.name));
+                pop_file.push_str(&format!("\t\t\t\t\tClass\t{}\n",bot.class));
+                let difficulty = match bot.difficulty {
+                    2 => "Normal",
+                    3 => "Hard",
+                    4 => "Expert",
+                    _ => "Easy"
+                };
+                pop_file.push_str(&format!("\t\t\t\t\tSkill\t{}\n",difficulty));
+                if !bot.weapon_restriction.is_empty(){
+                    pop_file.push_str(&format!("\t\t\t\t\tWeaponRestrictions\t{}\n", bot.weapon_restriction));
+                }
+                for bot_attribute in &bot.bot_attributes{
+                    pop_file.push_str(&format!("\t\t\t\t\tAttributes\t{}\n", bot_attribute));
+                }
+                if !bot.behavior.is_empty(){
+                    pop_file.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
+                }
+                if bot.auto_jump_min != 0{
+                    pop_file.push_str(&format!("\t\t\t\t\tAutoJumpMin\t{}\n", bot.auto_jump_min));
+                }
+                if bot.auto_jump_max != 0{
+                    pop_file.push_str(&format!("\t\t\t\t\tAutoJumpMax\t{}\n", bot.auto_jump_max));
+                }
+                if bot.max_vision_range != 0{
+                    pop_file.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
+                }
+                for item in &bot.weapons{
+                    pop_file.push_str(&format!("\t\t\t\t\tItem\t{}\n", item));
+                }
+                if !bot.attributes.is_empty(){
+                    pop_file.push_str("\t\t\t\t\tCharacterAttributes{\n");
+                    for attribute in &bot.attributes{
+                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
+                            Float(val) => val,
+                            Int(val) => val as f64,
+                            _ => panic!("Error while parsing {}", attribute[1])
+                        };
+                        pop_file.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                    }
+                    pop_file.push_str("\t\t\t\t\t}\n");
+                }
+
+                pop_file.push_str("\t\t\t\t}\n");
+                pop_file.push_str("\t\t\t}\n");
                 pop_file.push_str("\t\t}\n");
             }
             last_bot = bot_id;

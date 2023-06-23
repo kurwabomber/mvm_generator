@@ -36,7 +36,7 @@ impl Default for Bot {
             bot_attributes: vec![],
             health: "125".to_string(),
             scale: 1.0,
-            max_vision_range: 1200,
+            max_vision_range: 0,
             class_icon: "scout".to_string(),
             auto_jump_min: 0,
             auto_jump_max: 0,
