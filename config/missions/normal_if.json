@@ -8,5 +8,5 @@
     "bot_superboss_waves": 6,
     "attributes": [ ["dmg taken increased","0.9^(wave-1)"],  ["damage penalty","1.2^(wave-1)"] ],
     "mission_name": "if_normal",
-    "allowed_tags": "normal,uber"
+    "allowed_tags": ["normal","uber"]
 }
