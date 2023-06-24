@@ -75,6 +75,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => vec![],
                     Some(val) => val.iter().map(|x| x.as_str().unwrap().to_owned()).collect(),
                 },
+                tags: match value.1["tags"].as_array() {
+                    None => vec![],
+                    Some(val) => val.iter().map(|x| x.as_str().unwrap().to_owned()).collect(),
+                },
                 health: match value.1["health"].as_str() {
                     None => "".to_string(),
                     Some(val) => val.to_string(),
@@ -272,9 +276,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 for item in &bot.weapons{
                     pop_file.push_str(&format!("\t\t\t\t\tItem\t{}\n", item));
                 }
-                if !bot.attributes.is_empty(){
+                for tag in &bot.tags{
+                    pop_file.push_str(&format!("\t\t\t\t\tTag\t{}\n", tag));
+                }
+
+                if !bot.attributes.is_empty() || !mission.global_attributes.is_empty(){
                     pop_file.push_str("\t\t\t\t\tCharacterAttributes{\n");
+                    //bot specific attributes
                     for attribute in &bot.attributes{
+                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
+                            Float(val) => val,
+                            Int(val) => val as f64,
+                            _ => panic!("Error while parsing {}", attribute[1])
+                        };
+                        pop_file.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                    }
+                    //mission global attributes
+                    for attribute in &mission.global_attributes{
                         let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
                             Float(val) => val,
                             Int(val) => val as f64,
@@ -284,6 +302,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     }
                     pop_file.push_str("\t\t\t\t\t}\n");
                 }
+
 
                 pop_file.push_str("\t\t\t\t}\n");
                 pop_file.push_str("\t\t\t}\n");

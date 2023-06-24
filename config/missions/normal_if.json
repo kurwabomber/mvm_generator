@@ -1,13 +1,12 @@
 {
-    "wave_amount": 500,
-    "wavespawn_amount": 100,
+    "wave_amount": 30,
+    "wavespawn_amount": 25,
     "starting_money": 400,
     "money_per_wave": "200+150*wave",
     "bot_giant_chance": 0.1,
     "bot_boss_waves": 3,
     "bot_superboss_waves": 6,
-    "bot_damage_outgoing": "1.0+0.1*wave",
-    "bot_damage_incoming": "1.0 * 0.95^wave",
-    "bot_speed_multiplier": "1.2",
-    "mission_name": "if_normal"
+    "attributes": [ ["dmg taken increased","0.9^(wave-1)"],  ["damage penalty","1.2^(wave-1)"] ],
+    "mission_name": "if_normal",
+    "allowed_tags": "normal,uber"
 }

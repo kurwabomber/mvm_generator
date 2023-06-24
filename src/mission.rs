@@ -16,9 +16,7 @@ pub struct Mission {
     pub bot_giant_chance: f64,        //0.0 -> 1.0 chance
     pub bot_boss_waves: i64,          //Every x waves has a boss.
     pub bot_superboss_waves: i64,     //Every x waves has a superboss.
-    pub bot_damage_outgoing: String,  //Evaluated
-    pub bot_damage_incoming: String,  //Evaluated
-    pub bot_speed_multiplier: String, //Evaluated
+    pub global_attributes: Vec<[String; 2]>,
     pub wavespawn_tags: Vec<String>,
     pub wavespawn_amount: i64,
     pub mission_name: String,
@@ -99,15 +97,19 @@ impl Mission{
         if let Some(bot_superboss_waves) = mission_info.get("bot_superboss_waves") {
             self.bot_superboss_waves = bot_superboss_waves.as_i64().unwrap();
         }
-        if let Some(bot_damage_outgoing) = mission_info.get("bot_damage_outgoing") {
-            self.bot_damage_outgoing = bot_damage_outgoing.as_str().unwrap().to_owned();
-        }
-        if let Some(bot_damage_incoming) = mission_info.get("bot_damage_incoming") {
-            self.bot_damage_incoming = bot_damage_incoming.as_str().unwrap().to_owned();
-        }
-        if let Some(bot_speed_multiplier) = mission_info.get("bot_speed_multiplier") {
-            self.bot_speed_multiplier = bot_speed_multiplier.as_str().unwrap().to_owned();
-        }
+        self.global_attributes = match mission_info["attributes"].as_array() {
+            None => vec![],
+            Some(val) => val
+                .iter()
+                .map(|x| match x.as_array() {
+                    Some(inner) => [
+                        inner[0].as_str().unwrap().to_owned(),
+                        inner[1].as_str().unwrap().to_owned(),
+                    ],
+                    None => panic!("WTF! - Failed to parse global attributes for this mission."),
+                })
+                .collect(),
+        };
         self.wavespawn_tags = match mission_info["allowed_tags"].as_array() {
             None => vec!["normal".to_string()],
             Some(value) => value
@@ -141,9 +143,7 @@ impl Default for Mission {
             bot_giant_chance: 0.1,
             bot_boss_waves: 3,
             bot_superboss_waves: 5,
-            bot_damage_outgoing: "1.0".to_string(),
-            bot_damage_incoming: "1.0".to_string(),
-            bot_speed_multiplier: "1.0".to_string(),
+            global_attributes: vec![],
             wavespawn_tags: vec!["normal".to_string()],
             wavespawn_amount: 6,
             mission_name: "".to_string(),
