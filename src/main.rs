@@ -4,6 +4,7 @@ use std::fs::{self, File};
 use std::io::Write;
 use std::time::Instant;
 use rand::seq::SliceRandom;
+use rayon::prelude::*;
 mod bot;
 mod mission;
 mod wavespawn;
@@ -198,18 +199,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     pop_file.push_str("\tCanBotsAttackWhileInSpawnRoom\tNo\n");
     pop_file.push_str("\tFixedRespawnWaveTime\tYes\n");
 
-    let mut context = HashMapContext::new();
-    for i in 1..mission.wave_amount+1{
+    let generation: String = (1..mission.wave_amount+1).into_par_iter().map(|i| {
+        let mut wave_portion: String = String::new();
+        let mut context = HashMapContext::new();
         eval_empty_with_context_mut(&format!("wave = {}",i), &mut context).unwrap();
 
         let money_for_wave: i64 = eval_int_with_context_mut(&mission.money_per_wave, &mut context).unwrap();
 
         //stupid wave boilerplate shit
-        pop_file.push_str("\tWave\n\t{\n");
-        pop_file.push_str("\t\tWaitWhenDone\t65\n");
-        pop_file.push_str("\t\tCheckpoint\tYes\n");
-        pop_file.push_str("\t\tStartWaveOutput{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
-        pop_file.push_str("\t\tDoneOutput{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        wave_portion.push_str("\tWave\n\t{\n");
+        wave_portion.push_str("\t\tWaitWhenDone\t65\n");
+        wave_portion.push_str("\t\tCheckpoint\tYes\n");
+        wave_portion.push_str("\t\tStartWaveOutput{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        wave_portion.push_str("\t\tDoneOutput{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
         
         //Wavespawn + Currency Weight
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];
@@ -227,61 +229,61 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         for wavespawn in finalized_spawns{
             for bot in &wavespawn.squads{
                 bot_id += 1;
-                pop_file.push_str("\t\tWaveSpawn{\n");
-                pop_file.push_str(&format!("\t\t\tName\tw{}_b{}\n", i, bot_id));
+                wave_portion.push_str("\t\tWaveSpawn{\n");
+                wave_portion.push_str(&format!("\t\t\tName\tw{}_b{}\n", i, bot_id));
                 if last_bot != 0 {
-                    pop_file.push_str(&format!("\t\t\tWaitForAllDead\tw{}_b{}\n", i, last_bot));
+                    wave_portion.push_str(&format!("\t\t\tWaitForAllDead\tw{}_b{}\n", i, last_bot));
                 }
 
-                pop_file.push_str(&format!("\t\t\tTotalCount\t{}\n", bot.count));
-                pop_file.push_str(&format!("\t\t\tMaxActive\t{}\n", bot.max_active));
-                pop_file.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
-                pop_file.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
-                pop_file.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
-                pop_file.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));//For now, we just default to spawnbot, logic will come later.
-                pop_file.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
+                wave_portion.push_str(&format!("\t\t\tTotalCount\t{}\n", bot.count));
+                wave_portion.push_str(&format!("\t\t\tMaxActive\t{}\n", bot.max_active));
+                wave_portion.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
+                wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
+                wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
+                wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));//For now, we just default to spawnbot, logic will come later.
+                wave_portion.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
 
-                pop_file.push_str("\t\t\tSquad{\n\t\t\t\tTFBot{\n");
-                pop_file.push_str(&format!("\t\t\t\t\tClassIcon\t{}\n",bot.class_icon));
+                wave_portion.push_str("\t\t\tSquad{\n\t\t\t\tTFBot{\n");
+                wave_portion.push_str(&format!("\t\t\t\t\tClassIcon\t{}\n",bot.class_icon));
 
                 let eval_health = eval_int_with_context_mut(&bot.health, &mut context).unwrap();
-                pop_file.push_str(&format!("\t\t\t\t\tHealth\t{}\n",eval_health));
-                pop_file.push_str(&format!("\t\t\t\t\tName\t{}\n",bot.name));
-                pop_file.push_str(&format!("\t\t\t\t\tClass\t{}\n",bot.class));
+                wave_portion.push_str(&format!("\t\t\t\t\tHealth\t{}\n",eval_health));
+                wave_portion.push_str(&format!("\t\t\t\t\tName\t{}\n",bot.name));
+                wave_portion.push_str(&format!("\t\t\t\t\tClass\t{}\n",bot.class));
                 let difficulty = match bot.difficulty {
                     2 => "Normal",
                     3 => "Hard",
                     4 => "Expert",
                     _ => "Easy"
                 };
-                pop_file.push_str(&format!("\t\t\t\t\tSkill\t{}\n",difficulty));
+                wave_portion.push_str(&format!("\t\t\t\t\tSkill\t{}\n",difficulty));
                 if !bot.weapon_restriction.is_empty(){
-                    pop_file.push_str(&format!("\t\t\t\t\tWeaponRestrictions\t{}\n", bot.weapon_restriction));
+                    wave_portion.push_str(&format!("\t\t\t\t\tWeaponRestrictions\t{}\n", bot.weapon_restriction));
                 }
                 for bot_attribute in &bot.bot_attributes{
-                    pop_file.push_str(&format!("\t\t\t\t\tAttributes\t{}\n", bot_attribute));
+                    wave_portion.push_str(&format!("\t\t\t\t\tAttributes\t{}\n", bot_attribute));
                 }
                 if !bot.behavior.is_empty(){
-                    pop_file.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
+                    wave_portion.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
                 }
                 if bot.auto_jump_min != 0{
-                    pop_file.push_str(&format!("\t\t\t\t\tAutoJumpMin\t{}\n", bot.auto_jump_min));
+                    wave_portion.push_str(&format!("\t\t\t\t\tAutoJumpMin\t{}\n", bot.auto_jump_min));
                 }
                 if bot.auto_jump_max != 0{
-                    pop_file.push_str(&format!("\t\t\t\t\tAutoJumpMax\t{}\n", bot.auto_jump_max));
+                    wave_portion.push_str(&format!("\t\t\t\t\tAutoJumpMax\t{}\n", bot.auto_jump_max));
                 }
                 if bot.max_vision_range != 0{
-                    pop_file.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
+                    wave_portion.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
                 }
                 for item in &bot.weapons{
-                    pop_file.push_str(&format!("\t\t\t\t\tItem\t{}\n", item));
+                    wave_portion.push_str(&format!("\t\t\t\t\tItem\t{}\n", item));
                 }
                 for tag in &bot.tags{
-                    pop_file.push_str(&format!("\t\t\t\t\tTag\t{}\n", tag));
+                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t{}\n", tag));
                 }
 
                 if !bot.attributes.is_empty() || !mission.global_attributes.is_empty(){
-                    pop_file.push_str("\t\t\t\t\tCharacterAttributes{\n");
+                    wave_portion.push_str("\t\t\t\t\tCharacterAttributes{\n");
                     //bot specific attributes
                     for attribute in &bot.attributes{
                         let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
@@ -289,7 +291,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             Int(val) => val as f64,
                             _ => panic!("Error while parsing {}", attribute[1])
                         };
-                        pop_file.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
                     }
                     //mission global attributes
                     for attribute in &mission.global_attributes{
@@ -298,20 +300,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             Int(val) => val as f64,
                             _ => panic!("Error while parsing {}", attribute[1])
                         };
-                        pop_file.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
                     }
-                    pop_file.push_str("\t\t\t\t\t}\n");
+                    wave_portion.push_str("\t\t\t\t\t}\n");
                 }
 
 
-                pop_file.push_str("\t\t\t\t}\n");
-                pop_file.push_str("\t\t\t}\n");
-                pop_file.push_str("\t\t}\n");
+                wave_portion.push_str("\t\t\t\t}\n");
+                wave_portion.push_str("\t\t\t}\n");
+                wave_portion.push_str("\t\t}\n");
             }
             last_bot = bot_id;
         }
-        pop_file.push_str("\t}\n");
-    }
+        wave_portion.push_str("\t}\n");
+        wave_portion
+    }).collect();
+    
+    pop_file.push_str(&generation);
     pop_file.push_str("}");
     output_file.write_all(pop_file.as_bytes())?;
 

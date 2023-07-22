@@ -1,6 +1,6 @@
 {
     "wave_amount": 30,
-    "wavespawn_amount": 25,
+    "wavespawn_amount": 50,
     "starting_money": 400,
     "money_per_wave": "200+150*wave",
     "bot_giant_chance": 0.1,
