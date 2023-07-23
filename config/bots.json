@@ -108,5 +108,55 @@
 		"attributes" : [ ["damage bonus","1.0+0.3*wave"], ["fire rate bonus","0.2 * 0.9^wave"], ["faster reload rate","0.1 * 0.9^wave"],
 		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.5"], ["override footstep sound set","3"]
 		, ["dmg taken increased","0.95^wave"] ]
+	},
+	"Sergeant Crits" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Direct Hit", "The Battalion's Backup", "The Disciplinary Action"],
+		"difficulty" : 3,
+		"behavior" : "None",
+		"weapon_restriction" : "PrimaryOnly",
+		"bot_attributes" : ["AlwaysCrits", "MiniBoss", "UseBossHealthBar"],
+		"tags" : ["bot_giant", "bot_gatebot"],
+		"health" : "60000+10000*wave",
+		"is_boss" : true,
+		"scale"	: 1.7,
+		"class_icon" : "soldier_seargant_crits",
+		"auto_jump_min" : 0,
+		"auto_jump_max"	: 0,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 0,
+		"currency_weight": 20,
+		"attributes" : [ ["damage bonus","1.0+0.5*wave"], ["fire rate bonus","0.01"], ["faster reload rate","0.01"],
+		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.3"], ["override footstep sound set","3"]
+		, ["dmg taken increased","0.9^wave"] ]
+	},
+	"Ride The Lightning" :
+	{
+		"class" : "scout",
+		"weapons" : ["Force-a-Nature", "The Battalion's Backup"],
+		"difficulty" : 3,
+		"behavior" : "None",
+		"weapon_restriction" : "PrimaryOnly",
+		"bot_attributes" : ["AlwaysCrits", "MiniBoss", "UseBossHealthBar"],
+		"tags" : ["bot_giant", "bot_gatebot"],
+		"health" : "60000+10000*wave",
+		"is_boss" : true,
+		"scale"	: 1.7,
+		"class_icon" : "scout_giant_fast",
+		"auto_jump_min" : 0,
+		"auto_jump_max"	: 0,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 0,
+		"currency_weight": 50,
+		"attributes" : [ ["damage bonus","1.0+0.5*wave"], ["fire rate bonus","0.01"], ["faster reload rate","0.01"],
+		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","1.0"], ["override footstep sound set","3"]
+		, ["dmg taken increased","0.9^wave"] ]
 	}
 }

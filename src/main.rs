@@ -1,10 +1,12 @@
 use clap::Parser;
+use evalexpr::eval_float_with_context_mut;
 use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context_mut, eval_with_context_mut, Value::Int, Value::Float};
 use std::fs::{self, File};
 use std::io::Write;
 use std::time::Instant;
 use rand::seq::SliceRandom;
 use rayon::prelude::*;
+use rand::prelude::*;
 mod bot;
 mod mission;
 mod wavespawn;
@@ -177,6 +179,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => 1,
                     Some(val) => val,
                 },
+                spawn_tank: match value.1["with_tank"].as_bool() {
+                    None => false,
+                    Some(val) => val,
+                },
             };
             for tag in &mission.wavespawn_tags{
                 if wavespawn.tags.contains(tag){
@@ -187,6 +193,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         println!("took {:?} to parse wavespawn config", now.elapsed());
     }
+    let giant_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("giant"))).collect();
+    let boss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("boss"))).collect();
+    let superboss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("superboss"))).collect();
+
     //Wave Generation Process
     let mut pop_file = String::new();
     let mut output_file = File::create("./output/".to_string()+&args.map+"_"+&mission.mission_name+".pop")?;
@@ -199,6 +209,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     pop_file.push_str("\tCanBotsAttackWhileInSpawnRoom\tNo\n");
     pop_file.push_str("\tFixedRespawnWaveTime\tYes\n");
 
+    //Each wave gets its own thread.
     let generation: String = (1..mission.wave_amount+1).into_par_iter().map(|i| {
         let mut wave_portion: String = String::new();
         let mut context = HashMapContext::new();
@@ -216,14 +227,43 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         //Wavespawn + Currency Weight
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];
         let mut total_weight: i64 = 0;
-        for _squad_num in 1..mission.wavespawn_amount+1{
-            let chosen_wavespawn = wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+
+        if i % mission.bot_superboss_waves == 0 {
+            let chosen_wavespawn: &Wavespawn = superboss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+            for chosen_bot in &chosen_wavespawn.squads{
+                total_weight += chosen_bot.currency_weight;
+            }
+            finalized_spawns.push(chosen_wavespawn);
+        }
+        else if i % mission.bot_boss_waves == 0 {
+            let chosen_wavespawn: &Wavespawn = boss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
             for chosen_bot in &chosen_wavespawn.squads{
                 total_weight += chosen_bot.currency_weight;
             }
             finalized_spawns.push(chosen_wavespawn);
         }
 
+        for _squad_num in 1..mission.wavespawn_amount+1{
+            if rand::thread_rng().gen::<f64>() > mission.bot_giant_chance {
+                let chosen_wavespawn = wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+                for chosen_bot in &chosen_wavespawn.squads{
+                    total_weight += chosen_bot.currency_weight;
+                }
+                if chosen_wavespawn.spawn_tank{
+                    total_weight += 20;
+                }
+                finalized_spawns.push(chosen_wavespawn);
+            }else{
+                let chosen_wavespawn = giant_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+                for chosen_bot in &chosen_wavespawn.squads{
+                    total_weight += chosen_bot.currency_weight;
+                }
+                if chosen_wavespawn.spawn_tank{
+                    total_weight += 20;
+                }
+                finalized_spawns.push(chosen_wavespawn);
+            }
+        }
         let mut bot_id: i64 = 0;
         let mut last_bot: i64 = 0;
         for wavespawn in finalized_spawns{
@@ -311,6 +351,41 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str("\t\t}\n");
             }
             last_bot = bot_id;
+            if wavespawn.spawn_tank {
+                wave_portion.push_str("\t\tWaveSpawn{\n");
+                wave_portion.push_str(&format!("\t\t\tName\tw{}_b{}_tank\n", i, bot_id));
+                if last_bot != 0 {
+                    wave_portion.push_str(&format!("\t\t\tWaitForAllDead\tw{}_b{}\n", i, last_bot));
+                }
+
+                wave_portion.push_str(&format!("\t\t\tTotalCount\t1\n"));
+                wave_portion.push_str(&format!("\t\t\tMaxActive\t1\n"));
+                wave_portion.push_str(&format!("\t\t\tSpawnCount\t1\n"));
+                wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t0\n"));
+                wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t5\n"));
+                wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));
+                wave_portion.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", 50.0 as f64 / total_weight as f64 * money_for_wave as f64 ));
+
+                wave_portion.push_str("\t\t\tSquad{\n\t\t\t\tTank{\n");
+
+                let eval_health = eval_float_with_context_mut(&mission.tank_health_formula, &mut context).unwrap();
+                let speed_mod = rand::thread_rng().gen_range(0.3..2.0);
+
+                wave_portion.push_str(&format!("\t\t\t\t\tHealth\t{:.0}\n",eval_health/speed_mod));
+                wave_portion.push_str(&format!("\t\t\t\t\tSpeed\t{:.0}\n",75.0*speed_mod));
+
+                wave_portion.push_str("\t\t\t\t\tOnKilledOutput{\n");
+                wave_portion.push_str("\t\t\t\t\t\tTarget\tboss_dead_relay\n");
+                wave_portion.push_str("\t\t\t\t\t\tAction\tTrigger\n\t\t\t\t\t}\n");
+
+                wave_portion.push_str("\t\t\t\t\tOnBombDroppedOutput{\n");
+                wave_portion.push_str("\t\t\t\t\t\tTarget\tboss_deploy_relay\n");
+                wave_portion.push_str("\t\t\t\t\t\tAction\tTrigger\n\t\t\t\t\t}\n");
+
+                wave_portion.push_str("\t\t\t\t}\n");
+                wave_portion.push_str("\t\t\t}\n");
+                wave_portion.push_str("\t\t}\n");
+            }
         }
         wave_portion.push_str("\t}\n");
         wave_portion

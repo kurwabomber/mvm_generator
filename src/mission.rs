@@ -20,6 +20,7 @@ pub struct Mission {
     pub wavespawn_tags: Vec<String>,
     pub wavespawn_amount: i64,
     pub mission_name: String,
+    pub tank_health_formula: String,
 }
 impl Mission{
     pub fn parse_map_config(&mut self, selected_map: &String) {
@@ -123,6 +124,9 @@ impl Mission{
         if let Some(wavespawn_amount) = mission_info.get("wavespawn_amount"){
             self.wavespawn_amount = wavespawn_amount.as_i64().unwrap();
         }
+        if let Some(tank_health_formula) = mission_info.get("tank_health_formula"){
+            self.tank_health_formula = tank_health_formula.as_str().unwrap().to_owned();
+        }
         println!("took {:?} to parse mission config", now.elapsed());
     }
 
@@ -147,6 +151,7 @@ impl Default for Mission {
             wavespawn_tags: vec!["normal".to_string()],
             wavespawn_amount: 6,
             mission_name: "".to_string(),
+            tank_health_formula: "10000 * 1.2^(wave-1)".to_string()
         }
     }
 }

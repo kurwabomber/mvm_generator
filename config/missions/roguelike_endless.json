@@ -1,0 +1,13 @@
+{
+    "wave_amount": 300,
+    "wavespawn_amount": 15,
+    "starting_money": 1600,
+    "money_per_wave": "500 + 50*wave",
+    "bot_giant_chance": 0.1,
+    "bot_boss_waves": 5,
+    "bot_superboss_waves": 10,
+    "attributes": [ ["dmg taken increased","0.95^(wave-1)"],  ["damage penalty","1.15^(wave-1)"] ],
+    "mission_name": "endless",
+    "allowed_tags": ["normal"],
+    "tank_health_formula": "10000 * 1.2^(wave-1)"
+}

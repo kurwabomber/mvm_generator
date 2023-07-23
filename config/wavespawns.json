@@ -3,21 +3,43 @@
 	{
 		"squads": ["Basic Scout", "Basic Soldier", "Basic Pyro"],
 		"tags": ["normal"],
-		"weight": 10,
+		"weight": 15,
 		"rarity": 1
 	},
 	"Sploodge Squad #2" :
 	{
 		"squads": ["Basic Heavy","Basic Medic"],
 		"tags": ["normal"],
-		"weight": 7,
+		"weight": 15,
 		"rarity": 1
+	},
+	"Sploodge Squad #3" :
+	{
+		"squads": ["Basic Scout"],
+		"tags": ["normal"],
+		"weight": 8,
+		"rarity": 1,
+		"with_tank": true
 	},
 	"Gangrene" :
 	{
 		"squads": ["Blunt Launcher","Basic Medic"],
-		"tags": ["normal","boss"],
-		"weight": 2,
+		"tags": ["normal","giant"],
+		"weight": 4,
 		"rarity": 3
+	},
+	"Boss Soldier" :
+	{
+		"squads": ["Sergeant Crits","Basic Medic"],
+		"tags": ["normal","boss"],
+		"weight": 3,
+		"rarity": 3
+	},
+	"=Razoe" :
+	{
+		"squads": ["Ride The Lightning"],
+		"tags": ["normal","superboss"],
+		"weight": 3,
+		"rarity": 7
 	}
 }
