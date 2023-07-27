@@ -6,40 +6,53 @@
 		"weight": 15,
 		"rarity": 1
 	},
-	"Sploodge Squad #2" :
+	"Uber Squad #1" :
 	{
-		"squads": ["Basic Heavy","Basic Medic"],
-		"tags": ["normal"],
+		"squads": ["Uber Scout", "Uber Soldier", "Uber Pyro"],
+		"tags": ["uber"],
 		"weight": 15,
 		"rarity": 1
 	},
-	"Sploodge Squad #3" :
+	"Uber Squad #2" :
 	{
-		"squads": ["Basic Scout"],
-		"tags": ["normal"],
-		"weight": 8,
-		"rarity": 1,
-		"with_tank": true
+		"squads": ["Uber Grinder", "Uber SMGer", "Uber Blaster"],
+		"tags": ["uber"],
+		"weight": 15,
+		"rarity": 1
 	},
-	"Gangrene" :
+	"Uber Squad #3" :
 	{
-		"squads": ["Blunt Launcher","Basic Medic"],
-		"tags": ["normal","giant"],
-		"weight": 4,
-		"rarity": 3
+		"squads": ["Uber Shredder", "Uber Milk Scout", "Uber Pistol Scout"],
+		"tags": ["uber"],
+		"weight": 15,
+		"rarity": 1
 	},
-	"Boss Soldier" :
+	"Uber Squad #4" :
 	{
-		"squads": ["Sergeant Crits","Basic Medic"],
-		"tags": ["normal","boss"],
-		"weight": 3,
-		"rarity": 3
+		"squads": ["Uber Barrage Soldier", "Uber Milk Scout", "Uber Concheror Samurai"],
+		"tags": ["uber"],
+		"weight": 15,
+		"rarity": 1
 	},
-	"TestBoss" :
+	"Uber Squad #5" :
 	{
-		"squads": ["Ride The Lightning"],
-		"tags": ["normal","superboss"],
-		"weight": 3,
-		"rarity": 7
+		"squads": ["Uber Heavy Shotgun", "Uber Deflector Giant", "Uber Medic"],
+		"tags": ["uber","giant"],
+		"weight": 15,
+		"rarity": 1
+	},
+	"Uber Squad #6" :
+	{
+		"squads": ["Uber Heavy Shotgun", "Uber Seargant Crits", "Uber Medic"],
+		"tags": ["uber","boss"],
+		"weight": 5,
+		"rarity": 1
+	},
+	"Uber Squad #7" :
+	{
+		"squads": ["Uber Heavy Shotgun", "Uber Deflector Superboss", "Uber Medic"],
+		"tags": ["uber","superboss"],
+		"weight": 5,
+		"rarity": 1
 	}
 }

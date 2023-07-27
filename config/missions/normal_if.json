@@ -1,12 +1,12 @@
 {
-    "wave_amount": 30,
-    "wavespawn_amount": 9,
+    "wave_amount": 15,
+    "wavespawn_amount": 11,
     "starting_money": 400,
-    "money_per_wave": "200+150*wave",
+    "money_per_wave": "10000.0 * 1.5^(wave-1)",
     "bot_giant_chance": 0.1,
     "bot_boss_waves": 3,
     "bot_superboss_waves": 6,
-    "attributes": [ ["dmg taken increased","0.9^(wave-1)"],  ["damage penalty","1.2^(wave-1)"] ],
+    "attributes": [ ["dmg taken increased","0.1 * 0.5^wave"],  ["damage penalty","10 * 2.25^wave"] ],
     "mission_name": "if_normal",
     "allowed_tags": ["uber"]
 }
