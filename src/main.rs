@@ -196,6 +196,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         println!("took {:?} to parse wavespawn config", now.elapsed());
     }
+    let bot_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter()
+        .filter(|i| !( i.tags.contains(&String::from("giant")) || i.tags.contains(&String::from("boss")) || i.tags.contains(&String::from("superboss"))) ).collect();
     let giant_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("giant"))).collect();
     let boss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("boss"))).collect();
     let superboss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("superboss"))).collect();
@@ -244,7 +246,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         for _squad_num in 1..mission.wavespawn_amount+1{
             if rand::thread_rng().gen::<f64>() > mission.bot_giant_chance {
-                let chosen_wavespawn = wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+                let chosen_wavespawn = bot_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
                 for chosen_bot in &chosen_wavespawn.squads{
                     total_weight += chosen_bot.currency_weight;
                 }
