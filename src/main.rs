@@ -222,8 +222,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         //stupid wave boilerplate shit
         wave_portion.push_str("\tWave\n\t{\n");
-        wave_portion.push_str("\t\tStartWaveOutput\n\t\t\t{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
-        wave_portion.push_str("\t\tDoneOutput\n\t\t\t{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        wave_portion.push_str("\t\tStartWaveOutput\n\t\t{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        wave_portion.push_str("\t\tDoneOutput\n\t\t{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
         
         //Wavespawn + Currency Weight
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];

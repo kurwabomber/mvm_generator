@@ -29,7 +29,7 @@
 	},
 	"Uber Squad #4" :
 	{
-		"squads": ["Uber Barrage Soldier", "Uber Milk Scout", "Uber Concheror Samurai"],
+		"squads": ["Uber Squad Leader", "Uber Milk Scout", "Uber Concheror Samurai"],
 		"tags": ["uber"],
 		"weight": 15,
 		"rarity": 1
@@ -53,6 +53,76 @@
 		"squads": ["Uber Heavy Shotgun", "Uber Deflector Superboss", "Uber Medic"],
 		"tags": ["uber","superboss"],
 		"weight": 5,
+		"rarity": 1
+	},
+	"Uber Squad #8" :
+	{
+		"squads": ["Uber Dragon's Fury", "Uber Squad Leader", "Uber Medic"],
+		"tags": ["uber","giant"],
+		"weight": 15,
+		"rarity": 1
+	},
+	"Uber Squad #9" :
+	{
+		"squads": ["Uber Barrage Soldier", "Uber Squad Leader", "Uber Barrage Demoman"],
+		"tags": ["uber"],
+		"weight": 15,
+		"rarity": 1
+	},
+	"Uber Squad  #10":
+	{
+		"squads": ["Uber Hyper League", "Uber Medic"],
+		"tags": ["uber"],
+		"weight": 12,
+		"rarity": 1
+	},
+	"Uber Squad #11" :
+	{
+		"squads": ["Uber Demoknight", "Uber Medic", "Uber Milk Scout"],
+		"tags": ["uber"],
+		"weight": 9,
+		"rarity": 1
+	},
+	"Uber Squad #12" :
+	{
+		"squads": ["Uber Armored Dragon's Fury", "Uber Crossbow Medic"],
+		"tags": ["uber"],
+		"weight": 9,
+		"rarity": 1
+	},
+	"Uber Squad #13" :
+	{
+		"squads": ["Uber Guard", "Uber Squad Leader", "Uber Greatbow Sniper"],
+		"tags": ["uber", "giant"],
+		"weight": 15,
+		"rarity": 1
+	},
+	"Uber Squad #14" :
+	{
+		"squads": ["Uber Guard", "Uber Squad Leader", "Uber Tavish"],
+		"tags": ["uber", "superboss"],
+		"weight": 5,
+		"rarity": 1
+	},
+	"Uber Squad #15" :
+	{
+		"squads": ["Uber Tavish"],
+		"tags": ["uber", "boss"],
+		"weight": 4,
+		"rarity": 1
+	},
+	"Uber Squad #16" :
+	{
+		"squads": ["Uber Scorch Spammer", "Uber Guard"],
+		"tags": ["uber"],
+		"weight": 10,
+		"rarity": 1
+	},
+	"Uber Squad #17" :
+	{
+		"squads": ["Uber Phlogistinator Giant", "Uber Manmelter Giant", "Uber Guard"],
+		"tags": ["uber", "giant"],
+		"weight": 10,
 		"rarity": 1
 	}
 }

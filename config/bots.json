@@ -289,16 +289,17 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["bullets per shot bonus","25.0"] ]
+		"attributes" : [ ["bullets per shot bonus","25.0"], ["fire rate penalty","3.0"] ]
 	},
 	"Uber Shredder" :
 	{
 		"class" : "scout",
 		"weapons" : ["The Flying Guillotine"],
+		"bot_attributes" : ["AlwaysFireWeapon"],
 		"difficulty" : 3,
 		"weapon_restriction" : "SecondaryOnly",
 		"health" : "1000",
-		"class_icon" : "scout",
+		"class_icon" : "scout_cleaver",
 		"count" : 9,
 		"max_active" : 9,
 		"spawn_per_timer" : 3,
@@ -312,9 +313,10 @@
 	{
 		"class" : "scout",
 		"weapons" : ["Mad Milk"],
+		"bot_attributes" : ["AlwaysFireWeapon"],
 		"difficulty" : 3,
 		"weapon_restriction" : "SecondaryOnly",
-		"health" : "1500",
+		"health" : "3000",
 		"class_icon" : "scout",
 		"count" : 12,
 		"max_active" : 12,
@@ -322,8 +324,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.03"], ["crit from behind","120.0"],
-		["Set DamageType Ignite","8.0"] ]
+		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.03"] ]
 	},
 	"Uber Pistol Scout" :
 	{
@@ -355,7 +356,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["faster reload rate", "0.1"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		"attributes" : [ ["faster reload rate", "0.1"], ["fire rate bonus HIDDEN", "0.005"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	},
 	"Uber Concheror Samurai" :
 	{
@@ -430,7 +431,7 @@
 	{
 		"class" : "soldier",
 		"difficulty" : 3,
-		"health" : "500000",
+		"health" : "200000",
 		"class_icon" : "soldier_seargant_crits",
 		"bot_attributes" : ["AlwaysCrit"],
 		"is_boss" : true,
@@ -449,7 +450,7 @@
 		"class" : "heavyweapons",
 		"weapons" : ["Deflector"],
 		"difficulty" : 3,
-		"health" : "4000000",
+		"health" : "500000",
 		"class_icon" : "heavy_deflector_push",
 		"bot_attributes" : ["AlwaysCrit"],
 		"is_boss" : true,
@@ -460,6 +461,204 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 20,
-		"attributes" : [ ["bullets per shot bonus", "5.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.5"] ]
+		"attributes" : [ ["bullets per shot bonus", "5.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.3"] ]
+	},
+	"Uber Dragon's Fury" :
+	{
+		"class" : "pyro",
+		"weapons" : ["Dragon's Fury"],
+		"difficulty" : 3,
+		"health" : "5000",
+		"class_icon" : "pyro_dragonfury",
+		"count" : 15,
+		"max_active" : 5,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 11,
+		"currency_weight": 8,
+		"attributes" : [ ["mult_item_meter_charge_rate", "0.3"], ["dmg pierces resists absorbs","1.0"] ]
+	},
+	"Uber Armored Dragon's Fury" :
+	{
+		"class" : "pyro",
+		"weapons" : ["Dragon's Fury", "The Battalion's Backup"],
+		"bot_attributes" : ["SpawnWithFullCharge"],
+		"difficulty" : 3,
+		"health" : "10000",
+		"class_icon" : "pyro_dragon_fury_armored",
+		"count" : 15,
+		"max_active" : 5,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 11,
+		"currency_weight": 15,
+		"attributes" : [ ["mult_item_meter_charge_rate", "0.3"], ["dmg pierces resists absorbs","1.0"], ["move speed penalty", "0.6"], ["increase buff duration", "100.0"] ]
+	},
+	"Uber Scorch Spammer" :
+	{
+		"class" : "pyro",
+		"weapons" : ["The Scorch Shot"],
+		"bot_attributes" : ["AlwaysCrit"],
+		"difficulty" : 3,
+		"health" : "3000",
+		"class_icon" : "pyro_scorch_spammer",
+		"count" : 20,
+		"max_active" : 5,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 11,
+		"currency_weight": 15,
+		"attributes" : [ ["fire rate bonus", "0.15"], ["damage bonus HIDDEN", "4.0"], ["Projectile speed increased", "3.0"], ["Projectile speed increased", "3.0"] ]
+	},
+	"Uber Barrage Demoman" :
+	{
+		"class" : "demoman",
+		"difficulty" : 3,
+		"bot_attributes" : ["HoldFireUntilFullReload"],
+		"health" : "2000",
+		"class_icon" : "demo_burst",
+		"count" : 15,
+		"max_active" : 15,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 8,
+		"attributes" : [ ["clip size bonus", "4.0"], ["faster reload rate", "0.1"], ["auto fires full clip all at once", "1"],
+		 ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+	},
+	"Uber Demoknight" :
+	{
+		"class" : "demoman",
+		"weapons" : ["Ali Baba's Wee Booties", "The Chargin' Targe", "The Eyelander"],
+		"difficulty" : 3,
+		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
+		"health" : "6000",
+		"class_icon" : "demoknight_armored",
+		"count" : 12,
+		"max_active" : 12,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 8,
+		"attributes" : [ ["fire rate bonus", "0.3"], ["melee range multiplier", "15.0"], ["damage taken mult 4", "0.66"],
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.5"] ]
+	},
+	"Uber Tavish" :
+	{
+		"class" : "demoman",
+		"weapons" : ["Ali Baba's Wee Booties", "The Chargin' Targe", "The Eyelander"],
+		"difficulty" : 3,
+		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
+		"health" : "500000",
+		"class_icon" : "demoknight_boss_tavish",
+		"scale" : 1.8,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 1,
+		"currency_weight": 25,
+		"attributes" : [ ["fire rate bonus", "0.2"], ["melee range multiplier", "35.0"], ["damage taken mult 4", "0.66"],
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.5"], 
+		 ["damage bonus HIDDEN","1.75"] ]
+	},
+	"Uber Greatbow Sniper" :
+	{
+		"class" : "sniper",
+		"weapons" : ["The Fortified Compound"],
+		"difficulty" : 3,
+		"bot_attributes" : ["AlwaysCrit"],
+		"health" : "1500",
+		"class_icon" : "sniper_bow",
+		"count" : 12,
+		"max_active" : 3,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 9,
+		"attributes" : [ ["fire rate bonus", "1.5"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","15.0"], ["Projectile speed increased HIDDEN","2.5"] ]
+	},
+	"Uber Crossbow Medic" :
+	{
+		"class" : "medic",
+		"weapons" : ["Crusader's Crossbow"],
+		"weapon_restriction" : "PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "2000",
+		"class_icon" : "medic_crossbow_burst",
+		"count" : 15,
+		"max_active" : 5,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 12,
+		"currency_weight": 6,
+		"attributes" : [ ["fire rate bonus", "0.1"], ["faster reload rate", "0.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","1.5"], ["Projectile speed increased HIDDEN","2.5"] ]
+	},
+	"Uber Guard" :
+	{
+		"class" : "heavyweapons",
+		"weapons" : ["Fists of Steel"],
+		"difficulty" : 3,
+		"health" : "20000",
+		"class_icon" : "heavy_steelfist",
+		"count" : 8,
+		"max_active" : 2,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 10,
+		"attributes" : [ ["mult cloak meter regen rate", "0.66"], ["damage taken mult 4", "0.66"], ["martyr powerup", "1.0"], ["move speed penalty", "0.65"]]
+	},
+	"Uber Squad Leader" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Half-Zatoichi","The Buff Banner"],
+		"difficulty" : 3,
+		"weapon_restriction" : "MeleeOnly",
+		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
+		"health" : "30000",
+		"class_icon" : "soldier_conch",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 8,
+		"attributes" : [ ["melee range multiplier", "15.0"], ["increase buff duration","100.0"], ["damage taken mult 4","0.33"], ["king powerup", "1.0"], ["move speed penalty", "0.65"] ]
+	},
+	"Uber Phlogistinator Giant" :
+	{
+		"class" : "pyro",
+		"weapons" : ["The Phlogistinator"],
+		"difficulty" : 3,
+		"health" : "25000",
+		"bot_attributes" : ["AlwaysFireWeapon"],
+		"scale" : 1.6,
+		"class_icon" : "pyro_phlog_giant",
+		"count" : 2,
+		"max_active" : 2,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 15,
+		"attributes" : [ ["flame_speed","6000.0"], ["weapon burn dmg increased","3.0"], ["infernal powerup","1.0"], ["move speed penalty", "0.65"] ]
+	},
+	"Uber Manmelter Giant" :
+	{
+		"class" : "pyro",
+		"weapons" : ["The Manmelter"],
+		"weapon_restriction" : "SecondaryOnly",
+		"difficulty" : 3,
+		"health" : "25000",
+		"bot_attributes" : ["AlwaysFireWeapon"],
+		"scale" : 1.6,
+		"class_icon" : "pyro_manmelter",
+		"count" : 2,
+		"max_active" : 2,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 15,
+		"attributes" : [ ["fire rate bonus","0.04"], ["projectile spread angle penalty","3.0"], ["agility powerup","1.0"], ["move speed penalty", "0.65"] ]
 	}
 }
