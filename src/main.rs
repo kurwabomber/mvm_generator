@@ -21,8 +21,6 @@ struct Args {
     #[arg(short, long)]
     name: String,
     #[arg(short, long)]
-    start_money: i32,
-    #[arg(short, long)]
     config: String,
 }
 //Hierarchy: Mission -> Waves -> Wavespawns -> Bots
@@ -291,6 +289,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str(&format!("\t\t\t\t\tHealth\t{}\n",eval_health));
                 wave_portion.push_str(&format!("\t\t\t\t\tName\t\"{}\"\n",bot.name));
                 wave_portion.push_str(&format!("\t\t\t\t\tClass\t\"{}\"\n",bot.class));
+                if bot.scale != 1.0 {
+                    wave_portion.push_str(&format!("\t\t\t\t\tScale\t\"{}\"\n",bot.scale));
+                }
                 let difficulty = match bot.difficulty {
                     2 => "Normal",
                     3 => "Hard",
@@ -306,6 +307,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
                 if bot.is_giant || bot.is_boss {
                     wave_portion.push_str("\t\t\t\t\tAttributes\t\"MiniBoss\"\n");
+                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_giant\"\n"));
+                }
+                else if mission.gatebots_enabled {
+                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_gatebot\"\n"));
                 }
                 if bot.is_boss {
                     wave_portion.push_str("\t\t\t\t\tAttributes\t\"UseBossHealthBar\"\n");

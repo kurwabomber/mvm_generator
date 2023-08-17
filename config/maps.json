@@ -60,6 +60,7 @@
 	"mvm_mannhattan" :
 	{
 		"bot_path_length" : 0.7,
+		"gatebots" : true,
 		"spawnbots" : ["spawnbot_main0", "spawnbot_mission_sniper0"],
 		"scale_mega" : 1.9,
 		"scale_doom" : 4.0,

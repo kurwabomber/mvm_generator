@@ -1,0 +1,12 @@
+{
+    "wave_amount": 25,
+    "wavespawn_amount": 8,
+    "starting_money": 125000,
+    "money_per_wave": "25000.0 * (1+(0.2*wave)) * 1.225^(wave-1)",
+    "bot_giant_chance": 1.0,
+    "bot_boss_waves": 2,
+    "bot_superboss_waves": 4,
+    "attributes": [ ["dmg taken increased","0.04/wave * 0.425^(wave-1)"],  ["damage penalty","14.0 * wave * 1.7825^(wave-1)"], ["knockback resistance", "0.2"] ],
+    "mission_name": "madness_if",
+    "allowed_tags": ["uber"]
+}

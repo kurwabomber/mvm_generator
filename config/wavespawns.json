@@ -124,5 +124,19 @@
 		"tags": ["uber", "giant"],
 		"weight": 10,
 		"rarity": 1
+	},
+	"Uber Squad #18" :
+	{
+		"squads": ["Uber Cannonball Spammer Giant", "Uber Barrage Demoman", "Uber Guard"],
+		"tags": ["uber", "giant"],
+		"weight": 8,
+		"rarity": 1
+	},
+	"Uber Squad #19" :
+	{
+		"squads": ["Uber Pyro Shotgun Giant", "Uber Squad Leader", "Uber Guard"],
+		"tags": ["uber", "giant"],
+		"weight": 12,
+		"rarity": 1
 	}
 }

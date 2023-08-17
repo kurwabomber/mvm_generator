@@ -9,6 +9,7 @@ pub struct Mission {
     pub spawn_tank_areas: Vec<String>,
     pub max_tank_speed: f64,
     pub engineers_enabled: bool,
+    pub gatebots_enabled: bool,
     /* Mission Specific Info */
     pub wave_amount: i64,
     pub starting_money: i64,
@@ -70,6 +71,10 @@ impl Mission{
             Some(value) => value,
         };
         self.engineers_enabled = match map_info["engies"].as_bool() {
+            None => false,
+            Some(value) => value,
+        };
+        self.gatebots_enabled = match map_info["gatebots"].as_bool() {
             None => false,
             Some(value) => value,
         };
@@ -151,7 +156,8 @@ impl Default for Mission {
             wavespawn_tags: vec!["normal".to_string()],
             wavespawn_amount: 6,
             mission_name: "".to_string(),
-            tank_health_formula: "10000 * 1.2^(wave-1)".to_string()
+            tank_health_formula: "10000 * 1.2^(wave-1)".to_string(),
+            gatebots_enabled: false
         }
     }
 }
