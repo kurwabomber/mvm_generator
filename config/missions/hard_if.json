@@ -6,7 +6,7 @@
     "bot_giant_chance": 0.5,
     "bot_boss_waves": 3,
     "bot_superboss_waves": 4,
-    "attributes": [ ["dmg taken increased","0.03/wave * 0.4^(wave-1)"],  ["damage penalty","17.0 * wave * 1.825^(wave-1)"], ["knockback resistance", "0.2"] ],
+    "attributes": [ ["dmg taken increased","0.04 / wave * 0.375^(wave-1)"],  ["damage penalty","15.0 * wave * 2.425^(wave-1)"], ["knockback resistance", "0.2"] ],
     "mission_name": "hard_if",
     "allowed_tags": ["uber"]
 }
