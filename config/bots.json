@@ -1,164 +1,4 @@
 {
-	"Basic Scout" :
-	{
-		"class" : "scout",
-		"difficulty" : 3,
-		"behavior" : "Mobber",
-		"weapon_restriction" : "PrimaryOnly",
-		"health" : "125+20*wave",
-		"scale"	: 1.0,
-		"class_icon" : "scout",
-		"auto_jump_min" : 0,
-		"auto_jump_max"	: 0,
-		"count" : 10,
-		"max_active" : 10,
-		"spawn_per_timer" : 2,
-		"time_before_spawn" : 0,
-		"time_between_spawn" : 5,
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Soldier" :
-	{
-		"class" : "soldier",
-		"difficulty" : 3,
-		"behavior" : "Mobber",
-		"weapon_restriction" : "PrimaryOnly",
-		"health" : "200+35*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Pyro" :
-	{
-		"class" : "pyro",
-		"difficulty" : 3,
-		"behavior" : "Mobber",
-		"weapon_restriction" : "PrimaryOnly",
-		"health" : "175+30*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Demoman" :
-	{
-		"class" : "demoman",
-		"difficulty" : 3,
-		"behavior" : "Mobber",
-		"weapon_restriction" : "PrimaryOnly",
-		"health" : "175+30*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Heavy" :
-	{
-		"class" : "heavyweapons",
-		"difficulty" : 3,
-		"behavior" : "Mobber",
-		"weapon_restriction" : "PrimaryOnly",
-		"health" : "300+50*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Engineer" :
-	{
-		"class" : "engineer",
-		"difficulty" : 3,
-		"health" : "300+20*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Medic" :
-	{
-		"class" : "medic",
-		"weapons" : ["Crusader's Crossbow"],
-		"difficulty" : 3,
-		"health" : "150+20*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Sniper" :
-	{
-		"class" : "sniper",
-		"weapons" : ["tf_weapon_sniperrifle"],
-		"weapon_restriction" : "PrimaryOnly",
-		"difficulty" : 3,
-		"health" : "125+20*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Basic Spy" :
-	{
-		"class" : "spy",
-		"difficulty" : 3,
-		"health" : "125+20*wave",
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"] ]
-	},
-	"Blunt Launcher" :
-	{
-		"class" : "soldier",
-		"weapons" : ["The Original", "The Battalion's Backup", "The Disciplinary Action"],
-		"difficulty" : 3,
-		"behavior" : "Push",
-		"weapon_restriction" : "PrimaryOnly",
-		"bot_attributes" : ["AlwaysCrit", "MiniBoss", "UseBossHealthBar"],
-		"tags" : ["bot_giant", "bot_gatebot"],
-		"health" : "5000+2000*wave",
-		"is_boss" : true,
-		"scale"	: 1.7,
-		"class_icon" : "soldier_barrage",
-		"auto_jump_min" : 0,
-		"auto_jump_max"	: 0,
-		"count" : 1,
-		"max_active" : 1,
-		"spawn_per_timer" : 1,
-		"time_before_spawn" : 0,
-		"time_between_spawn" : 0,
-		"currency_weight": 7,
-		"attributes" : [ ["damage bonus","1.0+0.3*wave"], ["fire rate bonus","0.2 * 0.9^wave"], ["faster reload rate","0.1 * 0.9^wave"],
-		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.5"], ["override footstep sound set","3"]
-		, ["dmg taken increased","0.95^wave"] ]
-	},
-	"Sergeant Crits" :
-	{
-		"class" : "soldier",
-		"weapons" : ["The Direct Hit", "The Battalion's Backup", "The Disciplinary Action"],
-		"difficulty" : 3,
-		"behavior" : "None",
-		"weapon_restriction" : "PrimaryOnly",
-		"bot_attributes" : ["AlwaysCrit", "MiniBoss", "UseBossHealthBar"],
-		"tags" : ["bot_giant", "bot_gatebot"],
-		"health" : "60000+10000*wave",
-		"is_boss" : true,
-		"scale"	: 1.7,
-		"class_icon" : "soldier_seargant_crits",
-		"auto_jump_min" : 0,
-		"auto_jump_max"	: 0,
-		"count" : 1,
-		"max_active" : 1,
-		"spawn_per_timer" : 1,
-		"time_before_spawn" : 0,
-		"time_between_spawn" : 0,
-		"currency_weight": 20,
-		"attributes" : [ ["damage bonus","1.0+0.5*wave"], ["fire rate bonus","0.01"], ["faster reload rate","0.01"],
-		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","0.3"], ["override footstep sound set","3"]
-		, ["dmg taken increased","0.9^wave"] ]
-	},
-	"Ride The Lightning" :
-	{
-		"class" : "scout",
-		"weapons" : ["Force-a-Nature", "The Battalion's Backup"],
-		"difficulty" : 3,
-		"behavior" : "None",
-		"weapon_restriction" : "PrimaryOnly",
-		"bot_attributes" : ["AlwaysCrit", "MiniBoss", "UseBossHealthBar"],
-		"tags" : ["bot_giant", "bot_gatebot"],
-		"health" : "60000+10000*wave",
-		"is_boss" : true,
-		"scale"	: 1.7,
-		"class_icon" : "scout_giant_fast",
-		"auto_jump_min" : 0,
-		"auto_jump_max"	: 0,
-		"count" : 1,
-		"max_active" : 1,
-		"spawn_per_timer" : 1,
-		"time_before_spawn" : 0,
-		"time_between_spawn" : 0,
-		"currency_weight": 50,
-		"attributes" : [ ["damage bonus","1.0+0.5*wave"], ["fire rate bonus","0.01"], ["faster reload rate","0.01"],
-		["clip size bonus","2.0 * 1.2^wave"], ["projectile spread angle penalty","4.0"], ["move speed penalty","1.0"], ["override footstep sound set","3"]
-		, ["dmg taken increased","0.9^wave"] ]
-	},
 	"Uber Scout" :
 	{
 		"class" : "scout",
@@ -383,9 +223,10 @@
 		"difficulty" : 3,
 		"weapon_restriction" : "MeleeOnly",
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
-		"health" : "6000",
+		"health" : "7000",
 		"class_icon" : "scout_stun",
-		"scale"	: 1.3,
+		"is_giant" : true,
+		"scale"	: 1.5,
 		"count" : 2,
 		"max_active" : 2,
 		"spawn_per_timer" : 1,
@@ -393,7 +234,7 @@
 		"time_between_spawn" : 20,
 		"currency_weight": 15,
 		"attributes" : [ ["damage bonus HIDDEN", "9.0"], ["melee range multiplier", "15.0"], ["knockout powerup","1.0"],
-		["increase buff duration","100.0"], ["dmg penalty vs players","1.5"] ]
+		["increase buff duration","100.0"], ["dmg penalty vs players","3.0"] ]
 	},
 	"Uber Heavy Shotgun" :
 	{
@@ -555,6 +396,7 @@
 		"health" : "500000",
 		"class_icon" : "demoknight_boss_tavish",
 		"scale" : 1.8,
+		"is_boss" : true,
 		"count" : 1,
 		"max_active" : 1,
 		"spawn_per_timer" : 1,
@@ -579,13 +421,12 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 9,
-		"attributes" : [ ["fire rate bonus", "1.5"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","15.0"], ["Projectile speed increased HIDDEN","3.5"] ]
+		"attributes" : [ ["fire rate bonus", "1.5"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","70.0"], ["Projectile speed increased HIDDEN","3.5"] ]
 	},
 	"Uber Crossbow Medic" :
 	{
 		"class" : "medic",
 		"weapons" : ["The Crusader's Crossbow"],
-		"bot_attributes" : ["HoldFireUntilFullReload"],
 		"weapon_restriction" : "PrimaryOnly",
 		"difficulty" : 3,
 		"health" : "2000",
@@ -596,8 +437,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 6,
-		"attributes" : [ ["fire rate bonus", "0.1"], ["faster reload rate", "0.02"], ["clip size bonus", "15.0"],
-		["auto fires full clip", "1.0"], ["damage bonus HIDDEN","2.5"], ["Projectile speed increased HIDDEN","2.5"] ]
+		"attributes" : [ ["fire rate bonus", "0.1"], ["faster reload rate", "0.0"], ["clip size bonus", "15.0"],
+		["damage bonus HIDDEN","2.5"], ["Projectile speed increased HIDDEN","2.5"] ]
 	},
 	"Uber Guard" :
 	{
@@ -613,7 +454,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 10,
-		"attributes" : [ ["damage bonus HIDDEN", "15.0"], ["mult cloak meter regen rate", "0.5"], ["move speed penalty", "0.65"]]
+		"attributes" : [ ["damage bonus HIDDEN", "15.0"], ["mult cloak meter regen rate", "0.75"], ["move speed penalty", "0.65"]]
 	},
 	"Uber Squad Leader" :
 	{
@@ -624,6 +465,7 @@
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
 		"scale" : 1.5,
 		"health" : "30000",
+		"is_giant" : true,
 		"class_icon" : "soldier_conch",
 		"count" : 1,
 		"max_active" : 1,
@@ -631,8 +473,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "12.0"], ["melee range multiplier", "15.0"], ["increase buff duration","100.0"],
-		 ["damage taken mult 4","0.66"], ["king powerup", "1.0"], ["move speed penalty", "0.65"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "18.0"], ["melee range multiplier", "15.0"], ["increase buff duration","100.0"],
+		["king powerup", "1.0"], ["move speed penalty", "0.5"] ]
 	},
 	"Uber Phlogistinator Giant" :
 	{
@@ -642,6 +484,7 @@
 		"health" : "25000",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"scale" : 1.6,
+		"is_giant" : true,
 		"class_icon" : "pyro_phlog_giant",
 		"count" : 2,
 		"max_active" : 2,
@@ -660,6 +503,7 @@
 		"health" : "25000",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"scale" : 1.6,
+		"is_giant" : true,
 		"class_icon" : "pyro_manmelter",
 		"count" : 2,
 		"max_active" : 2,
@@ -677,6 +521,7 @@
 		"difficulty" : 3,
 		"health" : "25000",
 		"scale" : 1.6,
+		"is_giant" : true,
 		"class_icon" : "heavy_shotgun_giant",
 		"count" : 2,
 		"max_active" : 2,
@@ -695,6 +540,7 @@
 		"difficulty" : 3,
 		"health" : "35000",
 		"scale" : 1.6,
+		"is_giant" : true,
 		"class_icon" : "demo_burst_giant",
 		"count" : 1,
 		"max_active" : 1,

@@ -1,11 +1,4 @@
 {
-	"Sploodge Squad" :
-	{
-		"squads": ["Basic Scout", "Basic Soldier", "Basic Pyro"],
-		"tags": ["normal"],
-		"weight": 15,
-		"rarity": 1
-	},
 	"Uber Squad #1" :
 	{
 		"squads": ["Uber Scout", "Uber Soldier", "Uber Pyro"],
