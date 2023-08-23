@@ -61,7 +61,7 @@
 		"class" : "heavyweapons",
 		"difficulty" : 3,
 		"health" : "1500",
-		"class_icon" : "heavyweapons",
+		"class_icon" : "heavy",
 		"count" : 15,
 		"max_active" : 10,
 		"spawn_per_timer" : 5,
@@ -274,7 +274,7 @@
 	{
 		"class" : "soldier",
 		"difficulty" : 3,
-		"health" : "200000",
+		"health" : "100000",
 		"class_icon" : "soldier_seargant_crits",
 		"bot_attributes" : ["AlwaysCrit"],
 		"is_boss" : true,
@@ -288,12 +288,12 @@
 		"attributes" : [ ["mult projectile count", "3.0"], ["projectile spread angle penalty","5.0"], ["move speed penalty", "0.5"],
 		 ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["damage bonus HIDDEN", "2.5"] ]
 	},
-	"Uber Deflector Superboss" :
+	"Uber Deflector Boss" :
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Deflector"],
 		"difficulty" : 3,
-		"health" : "500000",
+		"health" : "200000",
 		"class_icon" : "heavy_deflector_push",
 		"bot_attributes" : ["AlwaysCrit"],
 		"is_boss" : true,
@@ -393,7 +393,7 @@
 		"weapons" : ["Ali Baba's Wee Booties", "The Chargin' Targe", "The Eyelander"],
 		"difficulty" : 3,
 		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
-		"health" : "500000",
+		"health" : "150000",
 		"class_icon" : "demoknight_boss_tavish",
 		"scale" : 1.8,
 		"is_boss" : true,
@@ -403,8 +403,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 25,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["fire rate bonus", "0.2"], ["melee range multiplier", "35.0"], ["damage taken mult 4", "0.66"],
-		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], 
+		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["fire rate bonus", "0.2"], ["melee range multiplier", "35.0"],
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"],
 		 ["damage bonus HIDDEN","1.75"] ]
 	},
 	"Uber Greatbow Sniper" :
@@ -421,7 +421,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 9,
-		"attributes" : [ ["fire rate bonus", "1.5"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","70.0"], ["Projectile speed increased HIDDEN","3.5"] ]
+		"attributes" : [ ["fire rate bonus", "1.5"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage bonus HIDDEN","50.0"], ["Projectile speed increased HIDDEN","3.5"] ]
 	},
 	"Uber Crossbow Medic" :
 	{

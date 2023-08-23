@@ -43,7 +43,7 @@
 	},
 	"Uber Squad #7" :
 	{
-		"squads": ["Uber Heavy Shotgun", "Uber Deflector Superboss", "Uber Medic"],
+		"squads": ["Uber Heavy Shotgun", "Uber Deflector Boss", "Uber Medic"],
 		"tags": ["uber","superboss"],
 		"weight": 5,
 		"rarity": 1
