@@ -11,7 +11,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["bullets per shot bonus","2.5"], ["weapon spread bonus","0.4"], ["faster reload rate","0.01"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "5.0"], ["bullets per shot bonus","2.0"], ["weapon spread bonus","0.4"], ["faster reload rate","0.01"] ]
 	},
 	"Uber Soldier" :
 	{
@@ -25,7 +25,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "2.5"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "9.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	},
 	"Uber Pyro" :
 	{
@@ -40,7 +40,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "5.0"], ["flame_speed","6000.0"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "12.5"], ["flame_speed","6000.0"], ["weapon burn dmg increased","5.0"] ]
 	},
 	"Uber Demoman" :
 	{
@@ -54,7 +54,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "9.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	},
 	"Uber Grinder" :
 	{
@@ -68,7 +68,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["bullets per shot bonus","2.25"], ["weapon spread bonus","0.4"], ["fire rate bonus","0.6"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "4.0"], ["bullets per shot bonus","1.5"], ["weapon spread bonus","0.4"], ["fire rate bonus","0.5"] ]
 	},
 	"Uber Medic" :
 	{
@@ -82,7 +82,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "4.0"], ["fire rate bonus", "0.2"],
+		"attributes" : [ ["damage bonus HIDDEN", "5.0"], ["fire rate bonus", "0.15"],
 		["ubercharge rate bonus","5.0"], ["heal rate bonus","6.0"], ["add uber charge on hit","0.1"] ]
 	},
 	"Uber SMGer" :
@@ -130,7 +130,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["bullets per shot bonus","20.0"], ["fire rate penalty","5.0"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "1.33"], ["bullets per shot bonus","20.0"], ["fire rate penalty","5.0"] ]
 	},
 	"Uber Shredder" :
 	{
@@ -147,8 +147,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "2.0"], ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.03"], ["crit from behind","120.0"],
-		["Set DamageType Ignite","8.0"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "9.0"], ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.1"],
+		["crit from behind","120.0"], ["Set DamageType Ignite","8.0"], ["cloak_consume_on_feign_death_activate", "1.0"] ]
 	},
 	"Uber Milk Scout" :
 	{
@@ -165,7 +165,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.25"], ["Blast radius increased","2.0"] ]
+		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.25"],
+		 ["override projectile type","8.0"], ["Blast radius increased","2.0"] ]
 	},
 	"Uber Pistol Scout" :
 	{
@@ -181,7 +182,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["fire rate bonus","0.1"], ["faster reload rate", "0.01"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "1.5"], ["fire rate bonus","0.1"], ["faster reload rate", "0.01"] ]
 	},
 	"Uber Barrage Soldier" :
 	{
@@ -197,7 +198,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["faster reload rate", "0.5"], ["fire rate bonus HIDDEN", "0.005"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "1.25"], ["faster reload rate", "0.5"], ["fire rate bonus HIDDEN", "0.005"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	},
 	"Uber Concheror Samurai" :
 	{
@@ -214,7 +215,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["melee range multiplier", "15.0"], ["increase buff duration","100.0"], ["damage taken mult 4","0.33"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "8.0"], ["melee range multiplier", "15.0"], ["increase buff duration","100.0"], ["damage taken mult 4","0.33"] ]
 	},
 	"Uber Hyper League" :
 	{
@@ -268,14 +269,14 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 20,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["bullets per shot bonus", "2.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "8.0"], ["bullets per shot bonus", "2.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.5"] ]
 	},
-	"Uber Seargant Crits" :
+	"Uber Sergeant Crits" :
 	{
 		"class" : "soldier",
 		"difficulty" : 3,
 		"health" : "100000",
-		"class_icon" : "soldier_seargant_crits",
+		"class_icon" : "soldier_sergeant_crits",
 		"bot_attributes" : ["AlwaysCrit"],
 		"is_boss" : true,
 		"scale"	: 1.8,
@@ -286,7 +287,7 @@
 		"time_between_spawn" : 1,
 		"currency_weight": 50,
 		"attributes" : [ ["mult projectile count", "3.0"], ["projectile spread angle penalty","5.0"], ["move speed penalty", "0.5"],
-		 ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["damage bonus HIDDEN", "2.5"] ]
+		 ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["damage bonus HIDDEN", "7.5"] ]
 	},
 	"Uber Deflector Boss" :
 	{
@@ -304,7 +305,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 20,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["bullets per shot bonus", "5.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.3"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "9.0"], ["bullets per shot bonus", "5.0"], ["attack projectiles","3.0"], ["move speed penalty", "0.3"] ]
 	},
 	"Uber Dragon's Fury" :
 	{
@@ -319,7 +320,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 11,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "20.0"], ["dmg pierces resists absorbs","1.0"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "50.0"], ["dmg pierces resists absorbs","1.0"] ]
 	},
 	"Uber Armored Dragon's Fury" :
 	{
@@ -335,7 +336,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 11,
 		"currency_weight": 15,
-		"attributes" : [ ["damage bonus HIDDEN", "20.0"], ["dmg pierces resists absorbs","1.0"], ["move speed penalty", "0.6"], ["increase buff duration", "100.0"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "50.0"], ["dmg pierces resists absorbs","1.0"], ["move speed penalty", "0.6"], ["increase buff duration", "100.0"] ]
 	},
 	"Uber Scorch Spammer" :
 	{
@@ -352,7 +353,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 11,
 		"currency_weight": 15,
-		"attributes" : [ ["fire rate bonus", "0.3"], ["damage bonus HIDDEN", "6.0"], ["Projectile speed increased", "3.0"], ["Projectile speed increased", "3.0"] ]
+		"attributes" : [ ["fire rate bonus", "0.3"], ["damage bonus HIDDEN", "8.0"], ["Projectile speed increased", "3.0"], ["Projectile speed increased", "3.0"] ]
 	},
 	"Uber Barrage Demoman" :
 	{
@@ -367,7 +368,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["clip size bonus", "4.0"], ["faster reload rate", "0.5"], ["auto fires full clip all at once", "1"],
+		"attributes" : [ ["damage bonus HIDDEN", "2.0"], ["clip size bonus", "4.0"], ["faster reload rate", "0.5"], ["auto fires full clip all at once", "1"],
 		 ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	},
 	"Uber Demoknight" :
@@ -384,7 +385,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["fire rate bonus", "0.3"], ["melee range multiplier", "15.0"],
+		"attributes" : [ ["damage bonus HIDDEN", "5.0"], ["fire rate bonus", "0.6"], ["melee range multiplier", "15.0"],
 		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.1"] ]
 	},
 	"Uber Tavish" :
@@ -403,9 +404,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 25,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["fire rate bonus", "0.2"], ["melee range multiplier", "35.0"],
-		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"],
-		 ["damage bonus HIDDEN","1.75"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "8.0"], ["fire rate bonus", "0.4"], ["melee range multiplier", "35.0"],
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"] ]
 	},
 	"Uber Greatbow Sniper" :
 	{
@@ -438,7 +438,7 @@
 		"time_between_spawn" : 12,
 		"currency_weight": 6,
 		"attributes" : [ ["fire rate bonus", "0.1"], ["faster reload rate", "0.0"], ["clip size bonus", "15.0"],
-		["damage bonus HIDDEN","2.5"], ["Projectile speed increased HIDDEN","2.5"] ]
+		["damage bonus HIDDEN","4.0"], ["Projectile speed increased HIDDEN","2.5"] ]
 	},
 	"Uber Guard" :
 	{
@@ -454,7 +454,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 10,
-		"attributes" : [ ["damage bonus HIDDEN", "15.0"], ["mult cloak meter regen rate", "0.75"], ["move speed penalty", "0.65"]]
+		"attributes" : [ ["damage bonus HIDDEN", "50.0"], ["mult cloak meter regen rate", "0.75"], ["move speed penalty", "0.6"]]
 	},
 	"Uber Squad Leader" :
 	{
@@ -473,8 +473,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["damage bonus HIDDEN", "18.0"], ["melee range multiplier", "15.0"], ["increase buff duration","100.0"],
-		["king powerup", "1.0"], ["move speed penalty", "0.5"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "18.0"], ["melee range multiplier", "15.0"], ["increase buff duration","1000.0"],
+		["king powerup", "1.0"], ["move speed penalty", "0.4"] ]
 	},
 	"Uber Phlogistinator Giant" :
 	{
@@ -492,7 +492,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 15,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","3.0"], ["infernal powerup","1.0"], ["move speed penalty", "0.65"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "10.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","6.0"],
+		 ["infernal powerup","1.0"], ["move speed penalty", "0.65"] ]
 	},
 	"Uber Manmelter Giant" :
 	{
@@ -511,7 +512,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 15,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["fire rate bonus","0.04"], ["projectile spread angle penalty","3.0"], ["agility powerup","1.0"], ["move speed penalty", "0.65"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "6.0"], ["fire rate bonus","0.04"], ["projectile spread angle penalty","3.0"],
+		 ["agility powerup","1.0"], ["move speed penalty", "0.65"] ]
 	},
 	"Uber Pyro Shotgun Giant" :
 	{
@@ -529,8 +531,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 15,
-		"attributes" : [ ["damage bonus HIDDEN", "3.0"], ["Set DamageType Ignite","5.0"], ["relentless powerup","1.0"], ["mod max primary clip override", "-1.0"],
-		["weapon burn dmg increased", "4.0"] ]
+		"attributes" : [ ["damage bonus HIDDEN", "15.0"], ["Set DamageType Ignite","5.0"], ["relentless powerup","1.0"], ["mod max primary clip override", "-1.0"],
+		["weapon burn dmg increased", "7.0"] ]
 	},
 	"Uber Cannonball Spammer Giant" :
 	{
@@ -548,7 +550,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 7,
-		"attributes" : [ ["damage bonus HIDDEN", "7.0"], ["supernova powerup","1.0"], ["mod max primary clip override", "-1.0"],
+		"attributes" : [ ["damage bonus HIDDEN", "25.0"], ["supernova powerup","1.0"], ["mod max primary clip override", "-1.0"],
 		["grenade launcher mortar mode", "-1.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
 	}
 }
