@@ -144,6 +144,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             None => panic!("WTF! - Failed to parse attributes for {}", value.0.to_string()),
                         })
                         .collect(),
+                },
+                weapon_attributes: match value.1["weapon_attributes"].as_array() {
+                    None => vec![],
+                    Some(val) => val
+                        .iter()
+                        .map(|x| match x.as_array() {
+                            Some(inner) => [
+                                inner[0].as_str().unwrap().to_owned(),
+                                inner[1].as_str().unwrap().to_owned(),
+                            ],
+                            None => panic!("WTF! - Failed to parse attributes for {}", value.0.to_string()),
+                        })
+                        .collect(),
                 }
             };
             if new_bot.class_icon.is_empty(){
@@ -347,6 +360,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     }
                     //mission global attributes
                     for attribute in &mission.global_attributes{
+                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
+                            Float(val) => val,
+                            Int(val) => val as f64,
+                            _ => panic!("Error while parsing {}", attribute[1])
+                        };
+                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                    }
+                    wave_portion.push_str("\t\t\t\t\t}\n");
+                }
+                if bot.weapon_attributes.is_empty(){
+                    wave_portion.push_str("\t\t\t\t\tItemAttributes\n\t\t\t\t\t{\n");
+                    //primary specific attributes
+                    wave_portion.push_str(&format!("\t\t\t\t\tItemName\t{}\n", bot.weapons.get(0).unwrap()));
+                    for attribute in &bot.weapon_attributes{
                         let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
                             Float(val) => val,
                             Int(val) => val as f64,
