@@ -3,7 +3,7 @@
 	{
 		"class" : "scout",
 		"difficulty" : 3,
-		"health" : "800",
+		"health" : "1200",
 		"class_icon" : "scout",
 		"count" : 15,
 		"max_active" : 10,
@@ -17,7 +17,7 @@
 	{
 		"class" : "soldier",
 		"difficulty" : 3,
-		"health" : "1500",
+		"health" : "2500",
 		"class_icon" : "soldier",
 		"count" : 15,
 		"max_active" : 10,
@@ -31,7 +31,7 @@
 	{
 		"class" : "pyro",
 		"difficulty" : 3,
-		"health" : "1300",
+		"health" : "1800",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"class_icon" : "pyro",
 		"count" : 15,
@@ -46,7 +46,7 @@
 	{
 		"class" : "demoman",
 		"difficulty" : 3,
-		"health" : "1200",
+		"health" : "1600",
 		"class_icon" : "demoman",
 		"count" : 15,
 		"max_active" : 10,
@@ -60,7 +60,7 @@
 	{
 		"class" : "heavyweapons",
 		"difficulty" : 3,
-		"health" : "1500",
+		"health" : "3500",
 		"class_icon" : "heavy",
 		"count" : 15,
 		"max_active" : 10,
@@ -74,7 +74,7 @@
 	{
 		"class" : "medic",
 		"difficulty" : 3,
-		"health" : "1000",
+		"health" : "1300",
 		"class_icon" : "medic",
 		"count" : 15,
 		"max_active" : 10,
@@ -242,7 +242,7 @@
 		"weapon_restriction" : "MeleeOnly",
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
 		"health" : "3000",
-		"class_icon" : "soldier_conch_giant",
+		"class_icon" : "soldier_conch",
 		"count" : 20,
 		"max_active" : 20,
 		"spawn_per_timer" : 5,
@@ -655,7 +655,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 6,
 		"currency_weight": 7,
-		"attributes" : [ ["damage mult 13", "65.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","5.0"], ["revenge powerup", "1.0"] ]
+		"attributes" : [ ["damage mult 13", "65.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","5.0"], ["revenge powerup", "2.0"] ]
 	},
 	"Jumper Scout Giant" :
 	{
@@ -918,12 +918,164 @@
 		"difficulty" : 3,
 		"health" : "1800",
 		"class_icon" : "spy",
-		"count" : 1,
+		"count" : 12,
+		"max_active" : 6,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 16,
+		"currency_weight": 8,
+		"attributes" : [ ["damage mult 13", "30.0"], ["fire rate bonus","0.3"], ["faster reload rate","0.2"] ]
+	},
+	"Airstrafe Shortstop Scout" :
+	{
+		"class" : "scout",
+		"weapons" : ["The Shortstop"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "2000",
+		"class_icon" : "scout_shortstop",
+		"count" : 18,
+		"max_active" : 6,
+		"spawn_per_timer" : 6,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 9,
+		"currency_weight": 8,
+		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus","0.3"], ["faster reload rate","0.2"], ["move speed bonus", "1.5"] ]
+	},
+	"Rusher Giant Scout" :
+	{
+		"class" : "scout",
+		"weapons" : ["Baby Face's Blaster"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "15000",
+		"is_giant" : true,
+		"class_icon" : "scout_giant_fast",
+		"count" : 3,
 		"max_active" : 1,
 		"spawn_per_timer" : 1,
 		"time_before_spawn" : 0,
-		"time_between_spawn" : 12,
+		"time_between_spawn" : 16,
+		"currency_weight": 18,
+		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus","0.3"], ["faster reload rate","0.2"], ["move speed bonus", "1.8"], ["agility powerup", "1.0"] ]
+	},
+	"Direct Hit Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Direct Hit"],
+		"weapon_restriction":"PrimaryOnly",
+		"bot_attributes" : ["AlwaysCrit"],
+		"difficulty" : 3,
+		"health" : "3500",
+		"class_icon" : "soldier",
+		"count" : 30,
+		"max_active" : 10,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 9,
+		"attributes" : [ ["damage mult 13", "30.0"], ["fire rate bonus","0.3"], ["Projectile speed increased","2.0"] ]
+	},
+	"Crowd Control Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Original"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "2000",
+		"class_icon" : "soldier",
+		"count" : 30,
+		"max_active" : 10,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 9,
+		"attributes" : [ ["damage mult 13", "7.0"], ["fire rate bonus","0.6"], ["faster reload rate","0.01"],
+		 ["rocket specialist","4.0"], ["slow enemy on hit major", "2.0"], ["apply look velocity on damage", "500.0"] ]
+	},
+	"Shrapnel Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Black Box"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "4000",
+		"class_icon" : "soldier_blackbox",
+		"count" : 25,
+		"max_active" : 10,
+		"spawn_per_timer" : 5,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 9,
+		"attributes" : [ ["damage mult 13", "30.0"], ["fire rate penalty","1.5"], ["faster reload rate","0.01"],
+		 ["sapper damage bonus","20.0"], ["bleeding duration", "2.0"], ["Blast radius increased", "1.5"] ]
+	},
+	"Righteous Bison Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Righteous Bison"],
+		"weapon_restriction":"SecondaryOnly",
+		"bot_attributes" : ["AlwaysCrit"],
+		"difficulty" : 3,
+		"health" : "3000",
+		"class_icon" : "soldier",
+		"count" : 24,
+		"max_active" : 12,
+		"spawn_per_timer" : 6,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "120.0"], ["Reload time decreased","0.01"], ["agility powerup", "1.0"] ]
+		"attributes" : [ ["damage mult 13", "90.0"], ["faster reload rate","0.01"] ]
+	},
+	"Cow Mangler Soldier" :
+	{
+		"class" : "soldier",
+		"weapons" : ["The Cow Mangler 5000"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 3,
+		"health" : "5000",
+		"class_icon" : "soldier",
+		"count" : 24,
+		"max_active" : 12,
+		"spawn_per_timer" : 6,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "90.0"], ["faster reload rate","0.01"] ]
+	},
+	"Heavyweight Champion" :
+	{
+		"class" : "heavyweapons",
+		"weapons" : ["The Killing Gloves of Boxing"],
+		"weapon_restriction":"MeleeOnly",
+		"bot_attributes": ["AlwaysCrit"],
+		"difficulty" : 3,
+		"health" : "9000",
+		"class_icon" : "heavy_champ",
+		"count" : 48,
+		"max_active" : 12,
+		"spawn_per_timer" : 12,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 14,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "30.0"], ["melee range multiplier", "15.0"], ["damage taken mult 4","0.33"] ]
+	},
+	"Brass Beast Heavy" :
+	{
+		"class" : "heavyweapons",
+		"weapons" : ["The Brass Beast"],
+		"weapon_restriction":"MeleeOnly",
+		"bot_attributes": ["AlwaysCrit"],
+		"difficulty" : 3,
+		"health" : "8000",
+		"class_icon" : "heavy",
+		"count" : 12,
+		"max_active" : 6,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 16,
+		"currency_weight": 12,
+		"weapon_attributes": [["override projectile type","42.0"], ["mini rockets", "1.0"]],
+		"attributes" : [ ["damage mult 13", "20.0"] ]
 	}
 }
