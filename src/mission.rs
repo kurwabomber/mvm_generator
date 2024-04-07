@@ -22,6 +22,7 @@ pub struct Mission {
     pub wavespawn_amount: i64,
     pub mission_name: String,
     pub tank_health_formula: String,
+    pub rarity_formula: String,
 }
 impl Mission{
     pub fn parse_map_config(&mut self, selected_map: &String) {
@@ -132,6 +133,9 @@ impl Mission{
         if let Some(tank_health_formula) = mission_info.get("tank_health_formula"){
             self.tank_health_formula = tank_health_formula.as_str().unwrap().to_owned();
         }
+        if let Some(rarity_formula) = mission_info.get("rarity_formula"){
+            self.rarity_formula = rarity_formula.as_str().unwrap().to_owned();
+        }
         println!("took {:?} to parse mission config", now.elapsed());
     }
 
@@ -157,7 +161,8 @@ impl Default for Mission {
             wavespawn_amount: 6,
             mission_name: "".to_string(),
             tank_health_formula: "10000 * 1.2^(wave-1)".to_string(),
-            gatebots_enabled: false
+            gatebots_enabled: false,
+            rarity_formula: "1".to_string()
         }
     }
 }

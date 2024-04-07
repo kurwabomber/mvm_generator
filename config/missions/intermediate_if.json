@@ -8,5 +8,6 @@
     "bot_superboss_waves": 5,
     "attributes": [ ["dmg taken increased","0.08 * 0.4^(wave-1)"],  ["damage penalty","30.0 * 2.3^(wave-1)"], ["knockback resistance", "0.2"] ],
     "mission_name": "intermediate_if",
-    "allowed_tags": ["uber"]
+    "allowed_tags": ["uber"],
+    "rarity_formula": "1+0.14*wave"
 }

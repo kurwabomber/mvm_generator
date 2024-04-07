@@ -185,12 +185,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => vec![],
                     Some(val) => val.iter().map(|x| x.as_str().unwrap().to_owned()).collect(),
                 },
-                weight: match value.1["weight"].as_i64() {
-                    None => 1,
+                weight: match value.1["weight"].as_f64() {
+                    None => 1.0,
                     Some(val) => val,
                 },
-                rarity: match value.1["rarity"].as_i64() {
-                    None => 1,
+                rarity: match value.1["rarity"].as_f64() {
+                    None => 1.0,
                     Some(val) => val,
                 },
                 spawn_tank: match value.1["with_tank"].as_bool() {
@@ -230,6 +230,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         eval_empty_with_context_mut(&format!("wave = {}",i), &mut context).unwrap();
 
         let money_for_wave: f64 = eval_float_with_context_mut(&mission.money_per_wave, &mut context).unwrap();
+        let wave_rarity = eval_float_with_context_mut(&mission.rarity_formula, &mut context).unwrap();
 
         //stupid wave boilerplate shit
         wave_portion.push_str("\tWave\n\t{\n");
@@ -241,7 +242,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let mut total_weight: i64 = 0;
 
         if i % mission.bot_superboss_waves == 0 {
-            let chosen_wavespawn: &Wavespawn = superboss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+            let chosen_wavespawn: &Wavespawn = superboss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight * (1.0 - ((item.rarity-wave_rarity).abs())/wave_rarity) ).unwrap();
             for chosen_bot in &chosen_wavespawn.squads{
                 total_weight += chosen_bot.currency_weight;
             }
