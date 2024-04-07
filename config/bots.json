@@ -2,7 +2,7 @@
 	"Scout" :
 	{
 		"class" : "scout",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1200",
 		"class_icon" : "scout",
 		"count" : 15,
@@ -16,7 +16,7 @@
 	"Soldier" :
 	{
 		"class" : "soldier",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "2500",
 		"class_icon" : "soldier",
 		"count" : 15,
@@ -30,7 +30,7 @@
 	"Pyro" :
 	{
 		"class" : "pyro",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1800",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"class_icon" : "pyro",
@@ -45,7 +45,7 @@
 	"Demoman" :
 	{
 		"class" : "demoman",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1600",
 		"class_icon" : "demoman",
 		"count" : 15,
@@ -59,7 +59,7 @@
 	"Grinder" :
 	{
 		"class" : "heavyweapons",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "3500",
 		"class_icon" : "heavy",
 		"count" : 15,
@@ -73,7 +73,7 @@
 	"Medic" :
 	{
 		"class" : "medic",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1300",
 		"class_icon" : "medic",
 		"count" : 15,
@@ -90,7 +90,7 @@
 		"class" : "medic",
 		"weapons" : ["The Quick-Fix"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1000",
 		"class_icon" : "medic",
 		"count" : 15,
@@ -107,7 +107,7 @@
 		"class" : "medic",
 		"weapons" : ["The Kritzkrieg"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1000",
 		"class_icon" : "medic",
 		"count" : 15,
@@ -122,7 +122,7 @@
 	"SMGer" :
 	{
 		"class" : "sniper",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "900",
 		"weapon_restriction" : "SecondaryOnly",
 		"class_icon" : "sniper",
@@ -137,7 +137,7 @@
 	"Crit SMGer" :
 	{
 		"class" : "sniper",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "900",
 		"bot_attributes" : ["AlwaysCrit"],
 		"weapon_restriction" : "SecondaryOnly",
@@ -154,7 +154,7 @@
 	{
 		"class" : "scout",
 		"weapons" : ["The Force-a-Nature"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "700",
 		"bot_attributes" : ["AlwaysCrit"],
 		"class_icon" : "scout_fan",
@@ -171,7 +171,7 @@
 		"class" : "scout",
 		"weapons" : ["The Flying Guillotine"],
 		"bot_attributes" : ["AlwaysFireWeapon"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "SecondaryOnly",
 		"health" : "1000",
 		"class_icon" : "scout_cleaver",
@@ -189,7 +189,7 @@
 		"class" : "scout",
 		"weapons" : ["Mad Milk"],
 		"bot_attributes" : ["AlwaysFireWeapon"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "SecondaryOnly",
 		"health" : "3000",
 		"class_icon" : "scout",
@@ -206,7 +206,7 @@
 	{
 		"class" : "scout",
 		"weapons" : ["Pretty Boy's Pocket Pistol"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "SecondaryOnly",
 		"health" : "900",
 		"class_icon" : "scout",
@@ -222,7 +222,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Liberty Launcher"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["HoldFireUntilFullReload"],
 		"health" : "2000",
 		"class_icon" : "soldier_burstfire",
@@ -238,7 +238,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Half-Zatoichi","The Concheror"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "MeleeOnly",
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
 		"health" : "3000",
@@ -255,7 +255,7 @@
 	{
 		"class" : "scout",
 		"weapons" : ["Three-Rune Blade"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "MeleeOnly",
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
 		"health" : "7000",
@@ -275,7 +275,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["The Family Business"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "SecondaryOnly",
 		"health" : "5000",
 		"class_icon" : "heavy_shotgun",
@@ -292,7 +292,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Deflector"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "40000",
 		"class_icon" : "heavy_deflector_giant",
 		"is_giant" : true,
@@ -308,7 +308,7 @@
 	"Sergeant Crits" :
 	{
 		"class" : "soldier",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "100000",
 		"class_icon" : "soldier_sergeant_crits",
 		"bot_attributes" : ["AlwaysCrit"],
@@ -327,7 +327,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Deflector"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "200000",
 		"class_icon" : "heavy_deflector_push",
 		"bot_attributes" : ["AlwaysCrit"],
@@ -345,7 +345,7 @@
 	{
 		"class" : "pyro",
 		"weapons" : ["The Dragon's Fury"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "3500",
 		"class_icon" : "pyro_dragon_fury",
 		"count" : 15,
@@ -361,7 +361,7 @@
 		"class" : "pyro",
 		"weapons" : ["The Dragon's Fury"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "7000",
 		"class_icon" : "pyro_dragon_fury_armored",
 		"count" : 9,
@@ -378,7 +378,7 @@
 		"weapons" : ["The Scorch Shot"],
 		"weapon_restriction" : "SecondaryOnly",
 		"bot_attributes" : ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "3000",
 		"class_icon" : "pyro_scorch_spammer",
 		"count" : 20,
@@ -392,7 +392,7 @@
 	"Barrage Demoman" :
 	{
 		"class" : "demoman",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["HoldFireUntilFullReload"],
 		"health" : "2000",
 		"class_icon" : "demo_burst",
@@ -409,7 +409,7 @@
 	{
 		"class" : "demoman",
 		"weapons" : ["Ali Baba's Wee Booties", "The Chargin' Targe", "The Eyelander"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"health" : "6000",
 		"class_icon" : "demoknight_armored",
@@ -426,10 +426,29 @@
 	{
 		"class" : "demoman",
 		"weapons" : ["Ali Baba's Wee Booties", "The Chargin' Targe", "The Eyelander"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
 		"health" : "150000",
 		"class_icon" : "demoknight_boss_tavish",
+		"scale" : 1.8,
+		"is_boss" : true,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 1,
+		"currency_weight": 25,
+		"attributes" : [ ["damage mult 13", "16.0"], ["fire rate bonus", "0.4"], ["melee range multiplier", "35.0"],
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"] ]
+	},
+	"Super Scout" :
+	{
+		"class" : "scout",
+		"weapons" : ["The Holy Mackerel", "Bonk Boy"],
+		"difficulty" : 4,
+		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
+		"health" : "60000",
+		"class_icon" : "scout",
 		"scale" : 1.8,
 		"is_boss" : true,
 		"count" : 1,
@@ -445,7 +464,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Fortified Compound"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "1500",
 		"class_icon" : "sniper_bow",
@@ -462,7 +481,7 @@
 		"class" : "medic",
 		"weapons" : ["The Crusader's Crossbow"],
 		"weapon_restriction" : "PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "2000",
 		"class_icon" : "medic_crossbow_burst",
 		"count" : 15,
@@ -479,7 +498,7 @@
 		"class" : "heavyweapons",
 		"weapons" : ["Fists of Steel"],
 		"weapon_restriction" : "MeleeOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "15000",
 		"class_icon" : "heavy_steelfist",
 		"count" : 2,
@@ -494,7 +513,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Half-Zatoichi","The Buff Banner"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"weapon_restriction" : "MeleeOnly",
 		"bot_attributes" : ["SpawnWithFullCharge","AlwaysCrit"],
 		"scale" : 1.5,
@@ -514,7 +533,7 @@
 	{
 		"class" : "pyro",
 		"weapons" : ["The Phlogistinator"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "25000",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"scale" : 1.6,
@@ -527,14 +546,14 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 15,
 		"attributes" : [ ["damage mult 13", "20.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","6.0"],
-		 ["infernal powerup","1.0"], ["move speed bonus", "0.65"] ]
+		 ["supernova powerup","2.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Manmelter Giant" :
 	{
 		"class" : "pyro",
 		"weapons" : ["The Manmelter"],
 		"weapon_restriction" : "SecondaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "25000",
 		"bot_attributes" : ["AlwaysFireWeapon"],
 		"scale" : 1.6,
@@ -554,7 +573,7 @@
 		"class" : "pyro",
 		"weapons" : ["Panic Attack"],
 		"weapon_restriction" : "SecondaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "25000",
 		"scale" : 1.6,
 		"is_giant" : true,
@@ -573,7 +592,7 @@
 		"class" : "demoman",
 		"weapons" : ["The Loose Cannon"],
 		"weapon_restriction" : "PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "35000",
 		"scale" : 1.6,
 		"is_giant" : true,
@@ -592,7 +611,7 @@
 		"class" : "pyro",
 		"weapons" : ["The Dragon's Fury"],
 		"bot_attributes" : ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "40000",
 		"scale" : 1.6,
 		"is_giant": true,
@@ -609,7 +628,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["The Brass Beast"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "90000",
 		"class_icon" : "heavy_giant",
 		"count" : 1,
@@ -627,7 +646,7 @@
 	{
 		"class" : "sniper",
 		"weapon" : ["The Machina"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "10000",
 		"class_icon" : "sniper_giant",
 		"count" : 1,
@@ -644,7 +663,7 @@
 	"Raging Pyro Giant" :
 	{
 		"class" : "pyro",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "50000",
 		"class_icon" : "pyro_giant",
 		"count" : 1,
@@ -662,7 +681,7 @@
 		"class" : "scout",
 		"weapons" : ["The Force-a-Nature"],
 		"bot_attributes" : ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "10000",
 		"class_icon" : "scout_jumping_giant",
 		"count" : 3,
@@ -682,7 +701,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Liberty Launcher"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["HoldFireUntilFullReload", "AlwaysCrit"],
 		"health" : "25000",
 		"class_icon" : "soldier_libertylauncher_giant",
@@ -702,7 +721,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Tomislav"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "40000",
 		"class_icon" : "heavy_giant",
@@ -720,7 +739,7 @@
 	"Grinder Giant" :
 	{
 		"class" : "heavyweapons",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "40000",
 		"class_icon" : "heavy_giant",
@@ -738,7 +757,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Fists of Steel"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"weapon_restriction" : "MeleeOnly",
 		"health" : "125000",
@@ -752,13 +771,13 @@
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
 		"attributes" : [ ["damage mult 13", "150.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.1"],
-		 ["resistance powerup", "1.0"], ["melee range bonus", "15.0"] ]
+		 ["resistance powerup", "1.0"], ["melee range multiplier", "15.0"] ]
 	},
 	"Infernal Soldier Giant" :
 	{
 		"class" : "soldier",
 		"weapons" : ["The Original"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "30000",
 		"class_icon" : "soldier_spammer",
 		"scale" : 1.6,
@@ -769,14 +788,14 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "20.0"], ["infernal powerup","1.0"], ["mod max primary clip override", "-1.0"],
+		"attributes" : [ ["damage mult 13", "20.0"], ["supernova powerup","2.0"], ["mod max primary clip override", "-1.0"],
 		["Blast radius increased","1.75"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["weapon burn dmg increased", "5.0"] ]
 	},
 	"Hitman's Heatmaker Giant" :
 	{
 		"class" : "sniper",
 		"weapons" : ["The Hitman's Heatmaker"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "15000",
 		"class_icon" : "sniper_giant",
 		"scale" : 1.6,
@@ -793,7 +812,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Huntsman"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "20000",
 		"class_icon" : "sniper_bow_multi_giant",
 		"scale" : 1.6,
@@ -804,14 +823,14 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
-		"attributes" : [ ["thunderstorm powerup", "1.0"], ["arrow ignite", "1.0"], ["damage mult 13","90.0"], ["Projectile speed increased HIDDEN","4.5"],
+		"attributes" : [ ["supernova powerup", "3.0"], ["arrow ignite", "1.0"], ["damage mult 13","90.0"], ["Projectile speed increased HIDDEN","4.5"],
 		["fire rate bonus", "0.05"], ["faster reload rate", "0.1"]  ]
 	},
 	"Protector Giant" :
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["Natascha"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "60000",
 		"class_icon" : "heavy_chief_giant",
 		"scale" : 1.9,
@@ -828,7 +847,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Beggar's Bazooka"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["HoldFireUntilFullReload", "AlwaysCrit"],
 		"health" : "30000",
 		"class_icon" : "soldier_burstfire_giant",
@@ -847,7 +866,7 @@
 	{
 		"class" : "soldier",
 		"weapons" : ["The Equalizer"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "50000",
 		"class_icon" : "soldier_giant",
@@ -864,7 +883,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Cleaner's Carbine"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "15000",
 		"class_icon" : "sniper_giant",
@@ -881,7 +900,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Righteous Bison"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "25000",
 		"class_icon" : "soldier_giant",
 		"is_giant" : true,
@@ -898,7 +917,7 @@
 		"class" : "engineer",
 		"weapons" : ["The Pomson 6000"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "25000",
 		"class_icon" : "engineer_giant",
 		"is_giant" : true,
@@ -915,7 +934,7 @@
 		"class" : "spy",
 		"weapons" : ["The Enforcer"],
 		"weapon_restriction":"SecondaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "1800",
 		"class_icon" : "spy",
 		"count" : 12,
@@ -931,7 +950,7 @@
 		"class" : "scout",
 		"weapons" : ["The Shortstop"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "2000",
 		"class_icon" : "scout_shortstop",
 		"count" : 18,
@@ -947,7 +966,7 @@
 		"class" : "scout",
 		"weapons" : ["Baby Face's Blaster"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "15000",
 		"is_giant" : true,
 		"class_icon" : "scout_giant_fast",
@@ -965,7 +984,7 @@
 		"weapons" : ["The Direct Hit"],
 		"weapon_restriction":"PrimaryOnly",
 		"bot_attributes" : ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "3500",
 		"class_icon" : "soldier",
 		"count" : 30,
@@ -981,7 +1000,7 @@
 		"class" : "soldier",
 		"weapons" : ["The Original"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "2000",
 		"class_icon" : "soldier",
 		"count" : 30,
@@ -998,7 +1017,7 @@
 		"class" : "soldier",
 		"weapons" : ["The Black Box"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "4000",
 		"class_icon" : "soldier_blackbox",
 		"count" : 25,
@@ -1016,7 +1035,7 @@
 		"weapons" : ["The Righteous Bison"],
 		"weapon_restriction":"SecondaryOnly",
 		"bot_attributes" : ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "3000",
 		"class_icon" : "soldier",
 		"count" : 24,
@@ -1032,7 +1051,7 @@
 		"class" : "soldier",
 		"weapons" : ["The Cow Mangler 5000"],
 		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "5000",
 		"class_icon" : "soldier",
 		"count" : 24,
@@ -1049,7 +1068,7 @@
 		"weapons" : ["The Killing Gloves of Boxing"],
 		"weapon_restriction":"MeleeOnly",
 		"bot_attributes": ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "9000",
 		"class_icon" : "heavy_champ",
 		"count" : 48,
@@ -1066,7 +1085,7 @@
 		"weapons" : ["The Brass Beast"],
 		"weapon_restriction":"MeleeOnly",
 		"bot_attributes": ["AlwaysCrit"],
-		"difficulty" : 3,
+		"difficulty" : 4,
 		"health" : "8000",
 		"class_icon" : "heavy",
 		"count" : 12,

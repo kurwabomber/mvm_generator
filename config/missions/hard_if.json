@@ -4,9 +4,9 @@
     "starting_money": 100000,
     "money_per_wave": "25000.0 * (1+(0.2*wave)) * 1.225^(wave-1)",
     "bot_giant_chance": 0.5,
-    "bot_boss_waves": 8,
-    "bot_superboss_waves": 15,
-    "attributes": [ ["dmg taken increased","0.05 * 0.35^(wave-1)"],  ["damage penalty","45.0 * 2.45^(wave-1)"], ["knockback resistance", "0.2"] ],
+    "bot_boss_waves": 6,
+    "bot_superboss_waves": 12,
+    "attributes": [ ["dmg taken increased","0.05 * 0.35^(wave-1)"],  ["damage penalty","55.0 * 2.45^(wave-1)"], ["knockback resistance", "0.2"] ],
     "mission_name": "hard_if",
     "allowed_tags": ["uber"],
     "rarity_formula": "1+0.16*wave"

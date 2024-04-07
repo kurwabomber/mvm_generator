@@ -46,7 +46,7 @@
 		"squads": ["Heavy Shotgun", "Deflector Boss", "Medic"],
 		"tags": ["uber","superboss"],
 		"weight": 5,
-		"rarity": 3
+		"rarity": 5
 	},
 	"Squad #8" :
 	{
@@ -95,14 +95,14 @@
 		"squads": ["Guard", "Greatbow Sniper", "Squad Leader", "Tavish"],
 		"tags": ["uber", "superboss"],
 		"weight": 5,
-		"rarity": 5
+		"rarity": 3
 	},
 	"Squad #15" :
 	{
 		"squads": ["Tavish"],
 		"tags": ["uber", "boss"],
 		"weight": 6,
-		"rarity": 3
+		"rarity": 2
 	},
 	"Squad #16" :
 	{
@@ -278,5 +278,33 @@
 		"tags": ["uber", "giant"],
 		"weight": 12,
 		"rarity": 5
+	},
+	"Squad #41":
+	{
+		"squads": ["Super Scout"],
+		"tags": ["uber", "boss"],
+		"weight": 3,
+		"rarity": 1
+	},
+	"Squad #42":
+	{
+		"squads": ["Super Scout", "Shield Medic"],
+		"tags": ["uber", "superboss"],
+		"weight": 2,
+		"rarity": 1
+	},
+	"Squad #43":
+	{
+		"squads": ["Super Scout", "Greatbow Sniper"],
+		"tags": ["uber", "boss"],
+		"weight": 3,
+		"rarity": 2
+	},
+	"Squad #44":
+	{
+		"squads": ["Super Scout", "Guard"],
+		"tags": ["uber", "superboss"],
+		"weight": 2,
+		"rarity": 2
 	}
 }
