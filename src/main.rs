@@ -241,24 +241,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];
         let mut total_weight: i64 = 0;
 
-        if i % mission.bot_superboss_waves == 0 {
-            let chosen_wavespawn: &Wavespawn = superboss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight * (1.0 - ((item.rarity-wave_rarity).abs())/wave_rarity) ).unwrap();
-            for chosen_bot in &chosen_wavespawn.squads{
-                total_weight += chosen_bot.currency_weight;
-            }
-            finalized_spawns.push(chosen_wavespawn);
-        }
-        else if i % mission.bot_boss_waves == 0 {
-            let chosen_wavespawn: &Wavespawn = boss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
-            for chosen_bot in &chosen_wavespawn.squads{
-                total_weight += chosen_bot.currency_weight;
-            }
-            finalized_spawns.push(chosen_wavespawn);
-        }
-
         for _squad_num in 1..mission.wavespawn_amount+1{
             if rand::thread_rng().gen::<f64>() > mission.bot_giant_chance {
-                let chosen_wavespawn = bot_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+                let chosen_wavespawn = bot_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| (item.weight*(1.0-((item.rarity-wave_rarity).abs())/wave_rarity)).clamp(1.0, 1000.0) ).unwrap();
                 for chosen_bot in &chosen_wavespawn.squads{
                     total_weight += chosen_bot.currency_weight;
                 }
@@ -267,7 +252,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
                 finalized_spawns.push(chosen_wavespawn);
             }else{
-                let chosen_wavespawn = giant_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| item.weight).unwrap();
+                let chosen_wavespawn = giant_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| (item.weight*(1.0-((item.rarity-wave_rarity).abs())/wave_rarity)).clamp(1.0, 1000.0) ).unwrap();
                 for chosen_bot in &chosen_wavespawn.squads{
                     total_weight += chosen_bot.currency_weight;
                 }
@@ -276,6 +261,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
                 finalized_spawns.push(chosen_wavespawn);
             }
+        }
+        if i >= mission.bot_superboss_waves {
+            let chosen_wavespawn: &Wavespawn = superboss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| (item.weight*(1.0-((item.rarity-wave_rarity).abs())/wave_rarity)).clamp(1.0, 1000.0) ).unwrap();
+            for chosen_bot in &chosen_wavespawn.squads{
+                total_weight += chosen_bot.currency_weight;
+            }
+            finalized_spawns.push(chosen_wavespawn);
+        }
+        else if i >= mission.bot_boss_waves {
+            let chosen_wavespawn: &Wavespawn = boss_wavespawns.choose_weighted(&mut rand::thread_rng(), |item| (item.weight*(1.0-((item.rarity-wave_rarity).abs())/wave_rarity)).clamp(1.0, 1000.0) ).unwrap();
+            for chosen_bot in &chosen_wavespawn.squads{
+                total_weight += chosen_bot.currency_weight;
+            }
+            finalized_spawns.push(chosen_wavespawn);
         }
         let mut bot_id: i64 = 0;
         let mut last_bot: i64 = 0;
@@ -370,7 +369,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     }
                     wave_portion.push_str("\t\t\t\t\t}\n");
                 }
-                if bot.weapon_attributes.is_empty(){
+                if !bot.weapon_attributes.is_empty() && !bot.weapons.is_empty(){
                     wave_portion.push_str("\t\t\t\t\tItemAttributes\n\t\t\t\t\t{\n");
                     //primary specific attributes
                     wave_portion.push_str(&format!("\t\t\t\t\tItemName\t{}\n", bot.weapons.get(0).unwrap()));
