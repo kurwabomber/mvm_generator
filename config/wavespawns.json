@@ -99,7 +99,7 @@
 	},
 	"Squad #15" :
 	{
-		"squads": ["Tavish"],
+		"squads": ["Tavish", "Guard", "Greatbow Sniper"],
 		"tags": ["uber", "boss"],
 		"weight": 6,
 		"rarity": 2
@@ -281,30 +281,86 @@
 	},
 	"Squad #41":
 	{
-		"squads": ["Super Scout"],
+		"squads": ["Super Scout", "Jumper Scout Giant", "Milk Scout"],
 		"tags": ["uber", "boss"],
 		"weight": 3,
 		"rarity": 1
 	},
 	"Squad #42":
 	{
-		"squads": ["Super Scout", "Shield Medic"],
+		"squads": ["Super Scout", "Shield Medic", "Airstrafe Shortstop Scout", "Beggar's Bazooka Giant"],
 		"tags": ["uber", "superboss"],
 		"weight": 2,
 		"rarity": 1
 	},
 	"Squad #43":
 	{
-		"squads": ["Super Scout", "Greatbow Sniper"],
+		"squads": ["Super Scout", "Greatbow Sniper", "Greatbow Sniper", "Squad Leader"],
 		"tags": ["uber", "boss"],
 		"weight": 3,
 		"rarity": 2
 	},
 	"Squad #44":
 	{
-		"squads": ["Super Scout", "Guard"],
+		"squads": ["Super Scout", "Guard", "Shield Medic", "Armored Dragon's Fury"],
 		"tags": ["uber", "superboss"],
 		"weight": 2,
 		"rarity": 2
+	},
+	"Squad #45":
+	{
+		"squads": ["Vortex Scout", "Blaster", "Greatbow Sniper", "Squad Leader"],
+		"tags": ["uber", "boss"],
+		"weight": 2,
+		"rarity": 4
+	},
+	"Squad #47":
+	{
+		"squads": ["Barrage Blaster", "Barrage Demoman", "Barrage Soldier", "Cow Mangler Soldier", "Squad Leader"],
+		"tags": ["uber", "boss"],
+		"weight": 3,
+		"rarity": 5
+	},
+	"Squad #47 2nd variant":
+	{
+		"squads": ["Barrage Blaster", "Guard Giant", "Shrapnel Soldier", "Barrage Demoman", "Barrage Soldier", "Cow Mangler Soldier", "Squad Leader"],
+		"tags": ["uber", "superboss"],
+		"weight": 2,
+		"rarity": 6
+	},
+	"Squad #48":
+	{
+		"squads": ["Armored Infernal Behemoth", "Guard Giant", "Shield Medic", "Armored Dragon's Fury", "Squad Leader"],
+		"tags": ["uber", "superboss"],
+		"weight": 4,
+		"rarity": 6
+	},
+	"Squad #49":
+	{
+		"squads": ["Armored Infernal Behemoth", "Shield Medic", "Armored Dragon's Fury"],
+		"tags": ["uber", "boss"],
+		"weight": 3,
+		"rarity": 5
+	},
+	"Squad #50":
+	{
+		"squads": ["Accursed Prince Tavish", "Demoknight", "Guard Giant", "Concheror Samurai", "Squad Leader"],
+		"tags": ["uber", "superboss"],
+		"weight": 3,
+		"rarity": 7
+	},
+	"Squad #51":
+	{
+		"squads": ["The Brass Beast", "Guard Giant", "Shield Medic", "Armored Dragon's Fury", "Squad Leader"],
+		"tags": ["uber", "superboss"],
+		"weight": 3,
+		"rarity": 7
+	},
+	"Squad #52":
+	{
+		"squads": ["Blood Medic", "Heavy Shotgun", "Greatbow Sniper", "Guard", "Brass Beast Heavy", "Squad Leader"],
+		"tags": ["uber", "boss"],
+		"weight": 3,
+		"rarity": 4
 	}
 }
