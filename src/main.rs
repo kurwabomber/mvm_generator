@@ -370,10 +370,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     }
                     wave_portion.push_str("\t\t\t\t\t}\n");
                 }
+
                 if !bot.weapon_attributes.is_empty() && !bot.weapons.is_empty(){
                     wave_portion.push_str("\t\t\t\t\tItemAttributes\n\t\t\t\t\t{\n");
                     //primary specific attributes
-                    wave_portion.push_str(&format!("\t\t\t\t\tItemName\t{}\n", bot.weapons.get(0).unwrap()));
+                    wave_portion.push_str(&format!("\t\t\t\t\t\tItemName\t\"{}\"\n", bot.weapons.get(0).unwrap()));
                     for attribute in &bot.weapon_attributes{
                         let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
                             Float(val) => val,

@@ -358,7 +358,7 @@
 	},
 	"Squad #52":
 	{
-		"squads": ["Blood Medic", "Heavy Shotgun", "Greatbow Sniper", "Guard", "Brass Beast Heavy", "Squad Leader"],
+		"squads": ["Blood Medic", "Heavy Shotgun", "Greatbow Sniper", "Guard", "Brass Beast Heavy", "Blood Sacrifice", "Squad Leader"],
 		"tags": ["uber", "boss"],
 		"weight": 3,
 		"rarity": 4

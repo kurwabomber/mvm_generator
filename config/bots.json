@@ -518,9 +518,9 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 60,
-		"weapon_attributes" : [ ["burst fire count", "-4"], ["burst fire rate mult", "20"], ["weapon fire rate", "0.1"], ["projectile spread angle penalty", "2"],
-		["mult projectile count", "5"], ["override projectile type", "2"], ["damage mult 13", "2.0"], ["flame_ignore_player_velocity", "1.0"], ["multiple sentries", "1.0"],
-		["shot penetrate all players", "3.0"], ["paintkit_proto_def_index", "403"], ["set_item_texture_wear", "0.0"] ],
+		"weapon_attributes" : [ ["burst fire count", "-4.0"], ["burst fire rate mult", "20.0"], ["weapon fire rate", "0.1"], ["projectile spread angle penalty", "2.0"],
+		["mult projectile count", "5.0"], ["override projectile type", "2.0"], ["damage mult 13", "2.0"], ["flame_ignore_player_velocity", "1.0"], ["multiple sentries", "1.0"],
+		["shot penetrate all players", "3.0"], ["paintkit_proto_def_index", "403.0"], ["set_item_texture_wear", "0.0"] ],
 		"attributes" : [ ["damage mult 13", "20.0"], ["disguise on backstab", "200.0"], ["Blast radius increased", "2.0"],
 		 ["damage force reduction","0.0"], ["damage force increase text","5.0"], ["supernova powerup", "2.0"], ["damage taken mult 4", "0.33"] ]
 	},
