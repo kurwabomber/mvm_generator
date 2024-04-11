@@ -615,6 +615,22 @@
 		"currency_weight": 9,
 		"attributes" : [ ["fire rate bonus", "2.0"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage mult 13","90.0"], ["Projectile speed increased HIDDEN","4.5"] ]
 	},
+	"Expert Greatbow Sniper" :
+	{
+		"class" : "sniper",
+		"weapons" : ["The Fortified Compound"],
+		"difficulty" : 4,
+		"bot_attributes" : ["AlwaysCrit"],
+		"health" : "2500",
+		"class_icon" : "sniper_bow",
+		"count" : 12,
+		"max_active" : 3,
+		"spawn_per_timer" : 3,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 10,
+		"currency_weight": 9,
+		"attributes" : [ ["precision powerup", "1.0"], ["arrow ignite", "1.0"], ["damage taken mult 4", "0.66"], ["damage mult 13","90.0"], ["Projectile speed increased HIDDEN","4.5"] ]
+	},
 	"Crossbow Medic" :
 	{
 		"class" : "medic",
@@ -1132,7 +1148,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 9,
-		"attributes" : [ ["damage mult 13", "30.0"], ["fire rate bonus","0.3"], ["Projectile speed increased","2.0"] ]
+		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus","0.3"], ["Projectile speed increased","2.0"] ]
 	},
 	"Crowd Control Soldier" :
 	{

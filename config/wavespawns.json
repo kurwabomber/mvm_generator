@@ -137,7 +137,7 @@
 		"squads": ["Greatbow Sniper", "Airstrafe Shortstop Scout", "Direct Hit Soldier", "Guard"],
 		"tags": ["uber"],
 		"weight": 18,
-		"rarity": 3
+		"rarity": 5
 	},
 	"Squad #21" :
 	{
@@ -158,14 +158,14 @@
 		"squads": ["Crossbow Medic", "Crowd Control Soldier", "Direct Hit Soldier", "Brass Beast Giant"],
 		"tags": ["uber", "giant"],
 		"weight": 12,
-		"rarity": 3
+		"rarity": 4
 	},
 	"Squad #24" :
 	{
 		"squads": ["Shrapnel Soldier", "Crowd Control Soldier", "Direct Hit Soldier", "Cow Mangler Soldier"],
 		"tags": ["uber"],
 		"weight": 12,
-		"rarity": 2
+		"rarity": 4
 	},
 	"Squad #25" :
 	{
@@ -351,7 +351,7 @@
 	},
 	"Squad #51":
 	{
-		"squads": ["The Brass Beast", "Guard Giant", "Shield Medic", "Armored Dragon's Fury", "Squad Leader"],
+		"squads": ["The Brass Beast", "Guard Giant", "Shield Medic", "Expert Greatbow Sniper", "Squad Leader"],
 		"tags": ["uber", "superboss"],
 		"weight": 3,
 		"rarity": 7
