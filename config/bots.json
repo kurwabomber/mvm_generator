@@ -899,7 +899,7 @@
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"weapon_restriction" : "MeleeOnly",
-		"health" : "125000",
+		"health" : "90000",
 		"class_icon" : "heavy_steelfist_giant",
 		"scale" : 1.6,
 		"is_giant": true,
@@ -909,7 +909,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "150.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.1"],
+		"attributes" : [ ["damage mult 13", "150.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.3"],
 		 ["resistance powerup", "1.0"], ["melee range multiplier", "15.0"] ]
 	},
 	"Infernal Soldier Giant" :
