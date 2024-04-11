@@ -68,7 +68,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "15.0"], ["bullets per shot bonus","2.0"], ["weapon spread bonus","0.3"], ["fire rate bonus","0.3"] ]
+		"attributes" : [ ["damage mult 13", "10.0"], ["bullets per shot bonus","2.0"], ["weapon spread bonus","0.3"] ]
 	},
 	"Medic" :
 	{

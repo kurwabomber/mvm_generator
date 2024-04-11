@@ -6,7 +6,7 @@
     "bot_giant_chance": 1.0,
     "bot_boss_waves": 2,
     "bot_superboss_waves": 4,
-    "attributes": [ ["dmg taken divided","12.0 * 4.0^(wave-1)"],  ["damage penalty","35.0 * 2.85^(wave-1)"], ["mult max health", "1+(wave-1)*0.2"], ["move speed penalty", "1.5"], ["knockback resistance", "0.2"] ],
+    "attributes": [ ["dmg taken divided","12.0 * 2.7^(wave-1)"],  ["damage penalty","35.0 * 2.85^(wave-1)"], ["mult max health", "1+(wave-1)*0.2"], ["move speed penalty", "1.5"], ["knockback resistance", "0.2"] ],
     "mission_name": "madness_if",
     "allowed_tags": ["uber"],
     "rarity_formula": "1+0.24*wave"
