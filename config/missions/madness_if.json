@@ -1,13 +1,13 @@
 {
     "wave_amount": 25,
-    "wavespawn_amount": 8,
-    "starting_money": 125000,
-    "money_per_wave": "30000.0 * (1+(0.22*wave)) * 1.25^(wave-1)",
+    "wavespawn_amount": 6,
+    "starting_money": 100000,
+    "money_per_wave": "25000.0 * (1+(0.22*wave)) * 1.25^(wave-1)",
     "bot_giant_chance": 1.0,
     "bot_boss_waves": 2,
     "bot_superboss_waves": 4,
-    "attributes": [ ["dmg taken increased","0.05 * 0.35^(wave-1)"],  ["damage penalty","45.0 * 2.45^(wave-1)"], ["knockback resistance", "0.2"], ["move speed penalty", "1.5"] ],
+    "attributes": [ ["dmg taken divided","20.0 * 4.0^(wave-1)"],  ["damage penalty","35.0 * 3.5^(wave-1)"], ["mult max health", "1+(wave-1)*0.2"], ["move speed penalty", "1.5"], ["knockback resistance", "0.2"] ],
     "mission_name": "madness_if",
     "allowed_tags": ["uber"],
-    "rarity_formula": "1+0.2*wave"
+    "rarity_formula": "1+0.24*wave"
 }
