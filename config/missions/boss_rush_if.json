@@ -1,12 +1,12 @@
 {
     "wave_amount": 25,
-    "wavespawn_amount": 2,
+    "wavespawn_amount": 1,
     "starting_money": 150000,
     "money_per_wave": "25000.0 * (1+(0.2*wave)) * 1.225^(wave-1)",
     "bot_giant_chance": 1.0,
     "bot_boss_waves": 1,
     "bot_superboss_waves": 1,
-    "attributes": [ ["dmg taken divided","12.0 * 2.7^(wave-1)"],  ["damage penalty","35.0 * 2.85^(wave-1)"], ["mult max health", "1+(wave-1)*0.2"], ["knockback resistance", "0.2"] ],
+    "attributes": [ ["dmg taken divided","1.67^(wave-1)*(wave+1)^2.75"],  ["damage penalty","3*1.7^(wave-1)*(wave+1)^1.9"], ["knockback resistance", "0.2"] ],
     "mission_name": "boss_rush_if",
     "allowed_tags": ["uber"],
     "rarity_formula": "1+0.18*wave"
