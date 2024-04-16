@@ -85,22 +85,39 @@
 		"attributes" : [ ["damage mult 13", "7.0"], ["fire rate bonus", "0.15"],
 		["heal rate bonus","6.0"], ["add uber charge on hit","0.02"] ]
 	},
+	"Uber Medic" :
+	{
+		"class" : "medic",
+		"difficulty" : 4,
+		"bot_attributes":["SpawnWithFullCharge"],
+		"health" : "1300",
+		"class_icon" : "medic_uber",
+		"count" : 8,
+		"max_active" : 8,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 3,
+		"currency_weight": 8,
+		"attributes" : [ ["damage mult 13", "7.0"], ["fire rate bonus", "0.15"],
+		["heal rate bonus","15.0"], ["add uber charge on hit","0.02"] ]
+	},
 	"Shield Medic" :
 	{
 		"class" : "medic",
 		"weapons" : ["The Quick-Fix"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
 		"difficulty" : 4,
-		"health" : "1000",
-		"class_icon" : "medic",
+		"health" : "3000",
+		"class_icon" : "medic_d",
 		"count" : 15,
 		"max_active" : 15,
 		"spawn_per_timer" : 3,
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 5,
 		"currency_weight": 8,
+		"weapon_attributes" : [["generate rage on heal", "2.0"]],
 		"attributes" : [ ["damage mult 13", "7.0"], ["fire rate bonus", "0.15"],
-		["generate rage on heal","2.0"], ["heal rate bonus","15.0"], ["increase buff duration","2.0"] ]
+		["heal rate bonus","45.0"], ["increase buff duration","2.0"] ]
 	},
 	"Kritz Medic" :
 	{
@@ -664,7 +681,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 10,
-		"attributes" : [ ["damage mult 13", "50.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.5"]]
+		"attributes" : [ ["damage mult 13", "50.0"], ["mult cloak meter regen rate", "0.5"], ["move speed bonus", "0.5"]]
 	},
 	"Squad Leader" :
 	{
@@ -918,7 +935,7 @@
 		"bot_attributes" : ["AlwaysCrit"],
 		"weapon_restriction" : "MeleeOnly",
 		"health" : "90000",
-		"class_icon" : "heavy_steelfist_giant",
+		"class_icon" : "tank",
 		"scale" : 1.6,
 		"is_giant": true,
 		"count" : 1,
@@ -927,7 +944,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "150.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.3"],
+		"attributes" : [ ["damage mult 13", "150.0"], ["mult cloak meter regen rate", "0.66"], ["move speed bonus", "0.6"],
 		 ["resistance powerup", "1.0"], ["melee range multiplier", "15.0"] ]
 	},
 	"Infernal Soldier Giant" :
@@ -952,8 +969,9 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Hitman's Heatmaker"],
+		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
 		"difficulty" : 4,
-		"health" : "15000",
+		"health" : "25000",
 		"class_icon" : "sniper_giant",
 		"scale" : 1.6,
 		"is_giant": true,
@@ -963,6 +981,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
+		"weapon_attributes": [ ["override projectile type", "2.0"], ["Projectile speed increased", "1000.0"] ],
 		"attributes" : [ ["damage mult 13", "70.0"], ["supernova powerup","1.0"], ["faster reload rate", "0.1"] ]
 	},
 	"Electrified Bowman Giant" :

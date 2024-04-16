@@ -36,14 +36,14 @@
 	},
 	"Squad #6" :
 	{
-		"squads": ["Heavy Shotgun", "Sergeant Crits", "Medic"],
+		"squads": ["Heavy Shotgun", "Sergeant Crits", "Uber Medic"],
 		"tags": ["uber","boss"],
 		"weight": 5,
 		"rarity": 4
 	},
 	"Squad #7" :
 	{
-		"squads": ["Heavy Shotgun", "Deflector Boss", "Medic"],
+		"squads": ["Heavy Shotgun", "Deflector Boss", "Uber Medic"],
 		"tags": ["uber","superboss"],
 		"weight": 5,
 		"rarity": 5
@@ -134,14 +134,14 @@
 	},
 	"Squad #20" :
 	{
-		"squads": ["Greatbow Sniper", "Airstrafe Shortstop Scout", "Direct Hit Soldier", "Guard"],
+		"squads": ["Greatbow Sniper", "Kritz Medic", "Airstrafe Shortstop Scout", "Direct Hit Soldier", "Guard"],
 		"tags": ["uber"],
 		"weight": 18,
 		"rarity": 5
 	},
 	"Squad #21" :
 	{
-		"squads": ["Greatbow Sniper", "Crowd Control Soldier", "Direct Hit Soldier", "Brass Beast Heavy"],
+		"squads": ["Greatbow Sniper", "Kritz Medic", "Crowd Control Soldier", "Direct Hit Soldier", "Brass Beast Heavy"],
 		"tags": ["uber"],
 		"weight": 12,
 		"rarity": 4
@@ -190,7 +190,7 @@
 	},
 	"Squad #28" :
 	{
-		"squads": ["Hitman's Heatmaker Giant", "Electrified Bowman Giant", "Protector Giant", "Direct Hit Soldier"],
+		"squads": ["Hitman's Heatmaker Giant", "Electrified Bowman Giant", "Protector Giant", "Direct Hit Soldier", "Kritz Medic"],
 		"tags": ["uber", "giant"],
 		"weight": 12,
 		"rarity": 5
@@ -274,7 +274,7 @@
 	},
 	"Squad #40" :
 	{
-		"squads": ["Brass Beast Heavy", "Grinder", "SMGer Giant", "Squad Leader"],
+		"squads": ["Brass Beast Heavy", "Grinder", "Uber Medic", "SMGer Giant", "Squad Leader"],
 		"tags": ["uber", "giant"],
 		"weight": 12,
 		"rarity": 5
@@ -290,7 +290,7 @@
 	{
 		"squads": ["Super Scout", "Shield Medic", "Airstrafe Shortstop Scout", "Beggar's Bazooka Giant"],
 		"tags": ["uber", "superboss"],
-		"weight": 2,
+		"weight": 5,
 		"rarity": 1
 	},
 	"Squad #43":
