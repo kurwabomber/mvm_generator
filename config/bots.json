@@ -495,8 +495,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 40,
-		"weapon_attributes" : [ ["override projectile type","47.0"], ["Blast radius increased", "2.0"], ["Projectile speed increased", "2.0"] ],
-		"attributes" : [ ["damage mult 13", "80.0"], ["disguise on backstab", "500.0"], ["move speed bonus", "2.0"],
+		"weapon_attributes" : [ ["damage mult 13", "10.0"], ["override projectile type","47.0"], ["Blast radius increased", "1.25"], ["Projectile speed increased", "2.0"] ],
+		"attributes" : [ ["disguise on backstab", "500.0"], ["move speed bonus", "1.7"],
 		 ["damage force reduction","0.0"], ["damage force increase text","4.0"], ["agility powerup", "3.0"] ]
 	},
 	"Barrage Blaster" :
@@ -608,7 +608,7 @@
 		"weapon_restriction" : "SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
-		"health" : "50000",
+		"health" : "20000",
 		"class_icon" : "scout_basher_lite",
 		"count" : 20,
 		"max_active" : 20,
@@ -616,7 +616,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 6,
 		"currency_weight": 1,
-		"attributes" : [ ["damage mult 13","30.0"], ["fire rate bonus", "0.3"], ["damage taken mult 4", "50.0"], ["plague powerup","3.0"] ]
+		"attributes" : [ ["damage mult 13","12.0"], ["fire rate bonus", "0.3"], ["damage taken mult 4", "50.0"], ["plague powerup","3.0"] ]
 	},
 	"Greatbow Sniper" :
 	{
