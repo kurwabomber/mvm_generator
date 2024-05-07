@@ -1075,7 +1075,7 @@
 	},
 	"Bison Soldier Giant" :
 	{
-		"class" : "sniper",
+		"class" : "soldier",
 		"weapons" : ["The Righteous Bison"],
 		"weapon_restriction" : "SecondaryOnly",
 		"difficulty" : 4,
