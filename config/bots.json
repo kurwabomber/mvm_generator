@@ -982,7 +982,7 @@
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
 		"weapon_attributes": [ ["override projectile type", "2.0"], ["Projectile speed increased", "1000.0"] ],
-		"attributes" : [ ["damage mult 13", "70.0"], ["supernova powerup","1.0"], ["faster reload rate", "0.1"] ]
+		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup","1.0"], ["faster reload rate", "0.1"] ]
 	},
 	"Electrified Bowman Giant" :
 	{
@@ -1059,6 +1059,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Cleaner's Carbine"],
+		"weapon_restriction" : "SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysCrit"],
 		"health" : "15000",
@@ -1076,6 +1077,7 @@
 	{
 		"class" : "sniper",
 		"weapons" : ["The Righteous Bison"],
+		"weapon_restriction" : "SecondaryOnly",
 		"difficulty" : 4,
 		"health" : "25000",
 		"class_icon" : "soldier_giant",
@@ -1086,7 +1088,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "120.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"] ]
+		"attributes" : [ ["damage mult 13", "40.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"] ]
 	},
 	"Pomson Engineer Giant" :
 	{
