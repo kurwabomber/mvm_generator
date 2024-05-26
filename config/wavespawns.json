@@ -218,7 +218,7 @@
 	},
 	"Squad #32" :
 	{
-		"squads": ["Bison Soldier Giant", "Pomson Engineer Giant", "Squad Leader", "Guard", "Heavyweight Champion"],
+		"squads": ["Bison Soldier Giant", "Righteous Bison Soldier", "Squad Leader", "Guard", "Heavyweight Champion"],
 		"tags": ["uber", "giant"],
 		"weight": 12,
 		"rarity": 3

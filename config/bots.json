@@ -1090,23 +1090,6 @@
 		"currency_weight": 12,
 		"attributes" : [ ["damage mult 13", "40.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"] ]
 	},
-	"Pomson Engineer Giant" :
-	{
-		"class" : "engineer",
-		"weapons" : ["The Pomson 6000"],
-		"weapon_restriction":"PrimaryOnly",
-		"difficulty" : 4,
-		"health" : "25000",
-		"class_icon" : "engineer_giant",
-		"is_giant" : true,
-		"count" : 1,
-		"max_active" : 1,
-		"spawn_per_timer" : 1,
-		"time_before_spawn" : 0,
-		"time_between_spawn" : 12,
-		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "120.0"], ["Reload time decreased","0.01"], ["agility powerup", "1.0"] ]
-	},
 	"Burst Enforcer Spy" :
 	{
 		"class" : "spy",

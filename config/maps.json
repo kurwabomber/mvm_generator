@@ -4,10 +4,7 @@
 		"bot_path_length" : 0.5,
 		"spawnbots" : ["spawnbot", "spawnbot_invasion", "spawnbot_left", "spawnbot_right", "spawnbot_single_flag", "spawnbot_mission_sniper"],
 		"spawntanks" : ["boss_path_a1"],
-		"max_tank_speed" : 500,
-		"scale_mega" : 1.8,
-		"scale_doom" : 3.4,
-		"spawndooms" : ["spawnbot_single_flag"]
+		"max_tank_speed" : 500
 	},
 	"mvm_coaltown" :
 	{

@@ -234,8 +234,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         //stupid wave boilerplate shit
         wave_portion.push_str("\tWave\n\t{\n");
-        wave_portion.push_str("\t\tStartWaveOutput\n\t\t{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        if mission.classic_relay  {
+            wave_portion.push_str("\t\tStartWaveOutput\n\t\t{\n\t\t\tTarget\twave_start_relay_classic\n\t\t\tAction\tTrigger\n\t\t}\n");
+        }
+        else{
+            wave_portion.push_str("\t\tStartWaveOutput\n\t\t{\n\t\t\tTarget\twave_start_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        }
+
         wave_portion.push_str("\t\tDoneOutput\n\t\t{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        
+        if mission.gatebots_enabled {
+            wave_portion.push_str("\t\tInitWaveOutput\n\t\t{\n\t\t\tTarget\tholograms_3way_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        }
+        wave_portion.push_str("\t\tCheckpoint\n\t\tYes\n");
         
         //Wavespawn + Currency Weight
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];

@@ -10,6 +10,7 @@ pub struct Mission {
     pub max_tank_speed: f64,
     pub engineers_enabled: bool,
     pub gatebots_enabled: bool,
+    pub classic_relay: bool,
     /* Mission Specific Info */
     pub wave_amount: i64,
     pub starting_money: i64,
@@ -76,6 +77,10 @@ impl Mission{
             Some(value) => value,
         };
         self.gatebots_enabled = match map_info["gatebots"].as_bool() {
+            None => false,
+            Some(value) => value,
+        };
+        self.classic_relay = match map_info["classic_relay"].as_bool() {
             None => false,
             Some(value) => value,
         };
@@ -150,6 +155,7 @@ impl Default for Mission {
             spawn_tank_areas: vec!["boss_path_a1".to_string()],
             max_tank_speed: 500.0,
             engineers_enabled: false,
+            classic_relay: false,
             wave_amount: 6,
             starting_money: 400,
             money_per_wave: "100*wave".to_string(),
