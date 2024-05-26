@@ -289,6 +289,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let mut bot_id: i64 = 0;
         let mut last_bot: i64 = 0;
+        let mut rng = thread_rng();
         for wavespawn in finalized_spawns{
             for bot in &wavespawn.squads{
                 bot_id += 1;
@@ -303,7 +304,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
                 wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
                 wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
-                wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", "spawnbot"));//For now, we just default to spawnbot, logic will come later.
+                if bot.is_boss{
+                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_boss_areas.choose(&mut rng).unwrap()));
+                }
+                else if bot.is_giant{
+                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_giants_areas.choose(&mut rng).unwrap()));
+                }
+                else {
+                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_bot_areas.choose(&mut rng).unwrap()));
+                }
                 wave_portion.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
 
                 wave_portion.push_str("\t\t\tSquad\n\t\t\t{\n\t\t\t\tTFBot\n\t\t\t\t{\n");
