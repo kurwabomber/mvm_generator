@@ -216,8 +216,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
-		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["fire rate bonus","0.25"],
-		 ["override projectile type","8.0"], ["Blast radius increased","2.0"] ]
+		"weapon_attributes" : [ ["Blast radius increased","2.0"], ["armor piercing", "10.0"] ],
+		"attributes" : [ ["effect bar recharge rate increased","0.0"], ["override projectile type","8.0"] ]
 	},
 	"Pistol Scout" :
 	{
