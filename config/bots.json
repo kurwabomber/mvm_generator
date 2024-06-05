@@ -456,7 +456,7 @@
 		"time_between_spawn" : 1,
 		"currency_weight": 25,
 		"attributes" : [ ["damage mult 13", "16.0"], ["fire rate bonus", "0.4"], ["melee range multiplier", "35.0"],
-		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"] ]
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.2"], ["mult smack time", "0.2"], ["move speed bonus", "0.8"] ]
 	},
 	"Super Scout" :
 	{
@@ -465,7 +465,7 @@
 		"weapon_restriction" : "MeleeOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon", "AlwaysCrit"],
-		"health" : "40000",
+		"health" : "30000",
 		"class_icon" : "scout_giant_fast",
 		"scale" : 1.6,
 		"is_boss" : true,
@@ -485,7 +485,7 @@
 		"weapon_restriction" : "SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : [ "AlwaysCrit"],
-		"health" : "50000",
+		"health" : "40000",
 		"class_icon" : "scout_giant_fast",
 		"scale" : 1.6,
 		"is_boss" : true,
@@ -495,7 +495,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
 		"currency_weight": 40,
-		"weapon_attributes" : [ ["damage mult 13", "10.0"], ["override projectile type","47.0"], ["Blast radius increased", "1.25"], ["Projectile speed increased", "2.0"] ],
+		"weapon_attributes" : [ ["damage mult 13", "6.0"], ["override projectile type","47.0"], ["Projectile speed increased", "2.0"] ],
 		"attributes" : [ ["disguise on backstab", "500.0"], ["move speed bonus", "1.7"],
 		 ["damage force reduction","0.0"], ["damage force increase text","4.0"], ["agility powerup", "3.0"] ]
 	},
@@ -519,7 +519,7 @@
 		"currency_weight": 60,
 		"weapon_attributes" : [ ["fire rate bonus", "0.3"], ["Projectile speed increased", "2.0"] ],
 		"attributes" : [ ["damage mult 13", "18.0"], ["disguise on backstab", "500.0"], ["Blast radius increased", "2.0"],
-		 ["damage force reduction","0.0"], ["damage force increase text","2.0"], ["strength powerup", "3.0"] ]
+		 ["damage force reduction","0.0"], ["damage force increase text","2.0"], ["strength powerup", "3.0"], ["move speed bonus", "0.5"] ]
 	},
 	"Armored Infernal Behemoth" :
 	{
@@ -541,7 +541,7 @@
 		["mult projectile count", "5.0"], ["override projectile type", "2.0"], ["damage mult 13", "2.0"], ["flame_ignore_player_velocity", "1.0"], ["multiple sentries", "1.0"],
 		["shot penetrate all players", "3.0"], ["paintkit_proto_def_index", "403.0"], ["set_item_texture_wear", "0.0"] ],
 		"attributes" : [ ["damage mult 13", "20.0"], ["disguise on backstab", "200.0"], ["Blast radius increased", "2.0"],
-		 ["damage force reduction","0.0"], ["damage force increase text","5.0"], ["supernova powerup", "2.0"], ["damage taken mult 4", "0.33"] ]
+		 ["damage force reduction","0.0"], ["damage force increase text","5.0"], ["supernova powerup", "2.0"], ["damage taken mult 4", "0.33"], ["move speed bonus", "0.5"] ]
 	},
 	"Accursed Prince Tavish" :
 	{
@@ -560,7 +560,7 @@
 		"time_between_spawn" : 1,
 		"currency_weight": 90,
 		"attributes" : [ ["damage mult 13", "22.0"], ["fire rate bonus", "0.4"], ["melee range multiplier", "35.0"], ["damage force increase text", "6.0"],
-		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.0"], ["mult smack time", "0.2"], ["king powerup", "1.0"] ]
+		 ["damage force reduction","0.0"], ["Attack not cancel charge","1.0"], ["charge recharge rate increased","0.0"], ["mult smack time", "0.2"], ["king powerup", "1.0"], ["move speed bonus", "0.8"] ]
 	},
 	"The Brass Beast" :
 	{
@@ -579,7 +579,7 @@
 		"time_between_spawn" : 1,
 		"currency_weight": 125,
 		"attributes" : [ ["damage mult 13", "19.0"], ["fire rate bonus", "0.2"], ["damage force increase text", "7.0"], ["major move speed bonus", "0.4"],
-		 ["damage force reduction","0.0"], ["increase buff duration","1000.0"], ["minigun spinup time decreased", "0.2"],  ["supernova powerup", "3.0"]]
+		 ["damage force reduction","0.0"], ["increase buff duration","1000.0"], ["minigun spinup time decreased", "0.2"],  ["supernova powerup", "3.0"], ["move speed bonus", "0.4"]]
 	},
 	"Blood Medic" :
 	{
@@ -598,7 +598,7 @@
 		"time_between_spawn" : 1,
 		"currency_weight": 50,
 		"weapon_attributes" : [ ["additional ubers bit", "127.0"], ["ubercharge rate bonus", "10.0"] ],
-		"attributes" : [ ["damage mult 13", "19.0"], ["fire rate bonus", "0.2"], ["damage force increase text", "3.0"], ["major move speed bonus", "1.1"],
+		"attributes" : [ ["damage mult 13", "19.0"], ["fire rate bonus", "0.2"], ["damage force increase text", "3.0"], ["move speed bonus", "0.7"],
 		 ["damage force reduction","0.0"], ["minigun spinup time decreased", "0.2"], ["king powerup", "1.0"], ["precision powerup", "1.0"] ]
 	},
 	"Blood Sacrifice":
@@ -759,7 +759,7 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 15,
 		"attributes" : [ ["damage mult 13", "80.0"], ["Set DamageType Ignite","5.0"], ["relentless powerup","1.0"], ["mod max primary clip override", "-1.0"],
-		["weapon burn dmg increased", "7.0"] ]
+		["weapon burn dmg increased", "7.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Cannonball Spammer Giant" :
 	{
@@ -778,7 +778,7 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 7,
 		"attributes" : [ ["damage mult 13", "35.0"], ["supernova powerup","1.0"], ["mod max primary clip override", "-1.0"],
-		["grenade launcher mortar mode", "-1.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"] ]
+		["grenade launcher mortar mode", "-1.0"], ["Blast radius increased","2.5"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["move speed bonus", "0.6"] ]
 	},
 	"Dragon's Fury Giant" :
 	{
@@ -796,7 +796,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 8,
 		"currency_weight": 10,
-		"attributes" : [ ["damage mult 13", "70.0"], ["dmg pierces resists absorbs","1.0"], ["vampire powerup","1.0"], ["mult_item_meter_charge_rate","0.3"] ]
+		"attributes" : [ ["damage mult 13", "70.0"], ["dmg pierces resists absorbs","1.0"], ["vampire powerup","1.0"], ["mult_item_meter_charge_rate","0.2"], ["move speed bonus", "0.6"] ]
 	},
 	"Brass Beast Giant" :
 	{
@@ -814,7 +814,7 @@
 		"time_between_spawn" : 6,
 		"currency_weight": 11,
 		"weapon_attributes" : [ ["override projectile type","42.0"], ["mini rockets", "1.0"] ],
-		"attributes" : [ ["damage mult 13", "24.0"], ["weapon spread bonus","0.3"], ["agility powerup","1.0"] , ["move speed bonus", "0.3"]]
+		"attributes" : [ ["damage mult 13", "24.0"], ["weapon spread bonus","0.3"], ["agility powerup","1.0"] , ["move speed bonus", "0.4"]]
 	},
 	"Machina Sniper Giant" :
 	{
@@ -848,7 +848,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 6,
 		"currency_weight": 7,
-		"attributes" : [ ["damage mult 13", "65.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","5.0"], ["revenge powerup", "2.0"] ]
+		"attributes" : [ ["damage mult 13", "65.0"], ["flame_speed","6000.0"], ["weapon burn dmg increased","5.0"], ["revenge powerup", "2.0"], ["move speed bonus", "0.7"] ]
 	},
 	"Jumper Scout Giant" :
 	{
@@ -869,7 +869,7 @@
 		"time_between_spawn" : 5,
 		"currency_weight": 9,
 		"attributes" : [ ["damage mult 13", "5.0"], ["bullets per shot bonus","25.0"], ["fire rate penalty","5.0"],
-		["agility powerup", "1.0"], ["move speed bonus", "0.4"] ]
+		["agility powerup", "1.0"], ["move speed bonus", "0.6"] ]
 	},
 	"Captain Liberty" :
 	{
@@ -908,7 +908,7 @@
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
 		"weapon_attributes" : [ ["fire rate penalty", "3.0"], ["damage bonus", "3.0"] ],
-		"attributes" : [ ["damage mult 13", "15.0"], ["bullets per shot bonus","2.0"], ["relentless powerup","1.0"] ]
+		"attributes" : [ ["damage mult 13", "15.0"], ["bullets per shot bonus","2.0"], ["relentless powerup","1.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Grinder Giant" :
 	{
@@ -963,7 +963,7 @@
 		"time_between_spawn" : 7,
 		"currency_weight": 8,
 		"attributes" : [ ["damage mult 13", "20.0"], ["supernova powerup","2.0"], ["mod max primary clip override", "-1.0"],
-		["Blast radius increased","1.75"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["weapon burn dmg increased", "5.0"] ]
+		["Blast radius increased","1.75"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"], ["weapon burn dmg increased", "5.0"], ["move speed bonus", "0.6"] ]
 	},
 	"Hitman's Heatmaker Giant" :
 	{
@@ -982,7 +982,7 @@
 		"time_between_spawn" : 10,
 		"currency_weight": 8,
 		"weapon_attributes": [ ["override projectile type", "2.0"], ["Projectile speed increased", "1000.0"] ],
-		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup","1.0"], ["faster reload rate", "0.1"] ]
+		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup","1.0"], ["faster reload rate", "0.1"], ["move speed bonus", "0.65"] ]
 	},
 	"Electrified Bowman Giant" :
 	{
@@ -1036,7 +1036,7 @@
 		"currency_weight": 20,
 		"attributes" : [ ["damage mult 13", "3.5"], ["faster reload rate", "0.1"], ["fire rate bonus HIDDEN", "0.005"], 
 		["Blast radius increased","2.0"], ["Projectile speed increased","2.0"], ["dmg falloff decreased","0.5"],
-		["clip size bonus","10.0"], ["projectile spread angle penalty", "5.0"], ["relentless powerup", "1.0"] ]
+		["clip size bonus","10.0"], ["projectile spread angle penalty", "5.0"], ["relentless powerup", "1.0"], ["move speed bonus", "0.5"] ]
 	},
 	"Equalizer Giant" :
 	{
@@ -1071,7 +1071,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 30,
-		"attributes" : [ ["damage mult 13", "20.0"], ["Reload time decreased","0.01"], ["relentless powerup", "1.0"] ]
+		"attributes" : [ ["damage mult 13", "20.0"], ["Reload time decreased","0.01"], ["relentless powerup", "1.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Bison Soldier Giant" :
 	{
@@ -1088,7 +1088,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "40.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"] ]
+		"attributes" : [ ["damage mult 13", "40.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Burst Enforcer Spy" :
 	{
@@ -1128,7 +1128,7 @@
 		"weapons" : ["Baby Face's Blaster"],
 		"weapon_restriction":"PrimaryOnly",
 		"difficulty" : 4,
-		"health" : "15000",
+		"health" : "9000",
 		"is_giant" : true,
 		"class_icon" : "scout_giant_fast",
 		"count" : 3,
