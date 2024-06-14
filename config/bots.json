@@ -1244,7 +1244,7 @@
 	{
 		"class" : "heavyweapons",
 		"weapons" : ["The Brass Beast"],
-		"weapon_restriction":"MeleeOnly",
+		"weapon_restriction":"PrimaryOnly",
 		"bot_attributes": ["AlwaysCrit"],
 		"difficulty" : 4,
 		"health" : "8000",
