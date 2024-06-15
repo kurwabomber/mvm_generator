@@ -1263,5 +1263,56 @@
 		"currency_weight": 12,
 		"weapon_attributes": [["override projectile type","42.0"], ["mini rockets", "1.0"]],
 		"attributes" : [ ["damage mult 13", "20.0"] ]
+	},
+	"Firestorm Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["Wrench"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "10000",
+		"class_icon" : "engineer",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "2.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
+		"attributes" : [ ["damage mult 13", "35.0"] ]
+	},
+	"Ballista Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["Wrench"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "10000",
+		"class_icon" : "engineer",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"weapon_attributes": [["override projectile type","44.0"], ["engy building health bonus", "5.0"], ["engy sentry damage bonus", "3.5"]],
+		"attributes" : [ ["damage mult 13", "35.0"] ]
+	},
+	"Artillery Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["Wrench"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "10000",
+		"class_icon" : "engineer",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"weapon_attributes": [["engy building health bonus", "10.0"], ["engy sentry damage bonus", "0.66"], ["dmg penalty vs nonstunned", "4"], ["mult firerocket rate", "0.7"], ["engy sentry radius increased", "5.0"]],
+		"attributes" : [ ["damage mult 13", "35.0"] ]
 	}
 }
