@@ -6,7 +6,7 @@
     "bot_giant_chance": 0.3,
     "bot_boss_waves": 7,
     "bot_superboss_waves": 14,
-    "attributes": [ ["dmg taken divided","1.5^(wave-1)*(wave+1)^1.7"],  ["damage penalty","3.5*1.5^(wave-1)*wave"], ["damage force reduction", "0.2"] ],
+    "attributes": [ ["dmg taken divided","1.5^(wave-1)*(wave+1)^1.7"],  ["damage mult 1","3.5*1.5^(wave-1)*wave"], ["damage force reduction", "0.2"] ],
     "mission_name": "intermediate_if",
     "allowed_tags": ["uber"],
     "rarity_formula": "1+0.16*wave"
