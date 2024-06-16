@@ -1017,7 +1017,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 10,
 		"currency_weight": 12,
-		"attributes" : [ ["inverter powerup", "1.0"], ["damage mult 13", "20.0"], ["bullets per shot bonus","2.0"], ["weapon spread bonus","0.3"] ]
+		"attributes" : [ ["inverter powerup", "1.0"], ["damage mult 13", "20.0"], ["bullets per shot bonus","2.0"], ["weapon spread bonus","0.3"], ["move speed bonus", "0.4"] ]
 	},
 	"Beggar's Bazooka Giant" :
 	{
