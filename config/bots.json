@@ -1090,7 +1090,7 @@
 		"time_between_spawn" : 12,
 		"currency_weight": 12,
 		"weapon_attributes" : [ ["override projectile type", "1.0"], ["conference call damage", "1.25"]],
-		"attributes" : [ ["damage mult 13", "30.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"], ["move speed bonus", "0.65"] ]
+		"attributes" : [ ["damage mult 13", "4.0"], ["Reload time decreased","0.01"], ["vampire powerup", "1.0"], ["disguise on backstab", "100.0"], ["move speed bonus", "0.65"] ]
 	},
 	"Burst Enforcer Spy" :
 	{
@@ -1211,7 +1211,7 @@
 		"time_between_spawn" : 6,
 		"currency_weight": 12,
 		"weapon_attributes" : [ ["override projectile type", "1.0"], ["conference call damage", "1.25"]],
-		"attributes" : [ ["damage mult 13", "30.0"], ["faster reload rate","0.01"] ]
+		"attributes" : [ ["damage mult 13", "3.0"], ["faster reload rate","0.01"] ]
 	},
 	"Cow Mangler Soldier" :
 	{
