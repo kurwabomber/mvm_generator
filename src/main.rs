@@ -1,6 +1,5 @@
 use clap::Parser;
-use evalexpr::eval_float_with_context_mut;
-use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context_mut, eval_with_context_mut, Value::Int, Value::Float};
+use evalexpr::{HashMapContext, eval_empty_with_context_mut, eval_int_with_context_mut, eval_with_context_mut,eval_float_with_context_mut, Value::Int, Value::Float};
 use std::fs::{self, File};
 use std::io::Write;
 use std::time::Instant;
@@ -218,11 +217,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut output_file = File::create("./output/".to_string()+&args.map+"_"+&mission.mission_name+".pop")?;
 
     //Write the header of the file
-    pop_file.push_str("#base robot_giant.pop\n#base robot_standard.pop\n#base robot_gatebot.pop\n");
+    //pop_file.push_str("#base robot_giant.pop\n#base robot_standard.pop\n#base robot_gatebot.pop\n");
     pop_file.push_str("WaveSchedule\n{\n");
     pop_file.push_str("\tRespawnWaveTime 8\n");
     pop_file.push_str("\tCanBotsAttackWhileInSpawnRoom No\n");
     pop_file.push_str("\tFixedRespawnWaveTime Yes\n");
+    pop_file.push_str("\tAdvanced 1\n");
     pop_file.push_str(&format!("\tStartingCurrency\t{}\n", mission.starting_money));
 
     //Each wave gets its own thread.
@@ -238,7 +238,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         wave_portion.push_str("\tWave\n\t{\n");
 
         wave_portion.push_str("\t\tCheckpoint\t\tYes\n");
-        //wave_portion.push_str("\t\tWaitWhenDone\t\t60\n");
+        wave_portion.push_str("\t\tWaitWhenDone\t\t60\n");
 
         if mission.classic_relay  {
             wave_portion.push_str("\t\tStartWaveOutput\n\t\t{\n\t\t\tTarget\twave_start_relay_classic\n\t\t\tAction\tTrigger\n\t\t}\n");
@@ -247,7 +247,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             wave_portion.push_str(&format!("\t\tStartWaveOutput\n\t\t{{\n\t\t\tTarget\t{}\n\t\t\tAction\tTrigger\n\t\t}}\n", mission.relayname));
         }
 
-        wave_portion.push_str("\t\tDoneOutput\n\t\t{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        if mission.gatebots_enabled {
+            wave_portion.push_str("\t\tInitWaveOutput\n\t\t{\n\t\t\tTarget\tholograms_3way_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        }
+        else{
+            wave_portion.push_str("\t\tDoneOutput\n\t\t{\n\t\t\tTarget\twave_finished_relay\n\t\t\tAction\tTrigger\n\t\t}\n");
+        }
         
         //Wavespawn + Currency Weight
         let mut finalized_spawns: Vec<&Wavespawn> = vec![];
@@ -297,7 +302,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str("\t\tWaveSpawn\n\t\t{\n");
                 wave_portion.push_str(&format!("\t\t\tName\t\"w{}_b{}\"\n", i, bot_id));
                 if last_bot != 0 {
-                    wave_portion.push_str(&format!("\t\t\tWaitForAllDead\tw{}_b{}\n", i, last_bot));
+                    wave_portion.push_str(&format!("\t\t\tWaitForAllDead\t\"w{}_b{}\"\n", i, last_bot));
                 }
 
                 wave_portion.push_str(&format!("\t\t\tTotalCount\t{}\n", bot.count));
@@ -305,14 +310,34 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
                 wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
                 wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
-                if bot.is_boss{
-                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_boss_areas.choose(&mut rng).unwrap()));
+
+                if mission.gatebots_enabled {
+                    if bot.is_boss{
+                        for area in &mission.spawn_boss_areas{
+                            wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", area));
+                        }
+                    }
+                    else if bot.is_giant{
+                        for area in &mission.spawn_giants_areas{
+                            wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", area));
+                        }
+                    }
+                    else {
+                        for area in &mission.spawn_bot_areas{
+                            wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", area));
+                        }
+                    }
                 }
-                else if bot.is_giant{
-                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_giants_areas.choose(&mut rng).unwrap()));
-                }
-                else {
-                    wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_bot_areas.choose(&mut rng).unwrap()));
+                else{
+                    if bot.is_boss{
+                        wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_boss_areas.choose(&mut rng).unwrap()));
+                    }
+                    else if bot.is_giant{
+                        wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_giants_areas.choose(&mut rng).unwrap()));
+                    }
+                    else {
+                        wave_portion.push_str(&format!("\t\t\tWhere\t{}\n", mission.spawn_bot_areas.choose(&mut rng).unwrap()));
+                    }
                 }
                 wave_portion.push_str(&format!("\t\t\tTotalCurrency\t{:.0}\n", bot.currency_weight as f64 / total_weight as f64 * money_for_wave as f64 ));
 
@@ -339,18 +364,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 for bot_attribute in &bot.bot_attributes{
                     wave_portion.push_str(&format!("\t\t\t\t\tAttributes\t\"{}\"\n", bot_attribute));
                 }
-                if bot.is_giant || bot.is_boss {
-                    wave_portion.push_str("\t\t\t\t\tAttributes\t\"MiniBoss\"\n");
-                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_giant\"\n"));
-                }
-                else if mission.gatebots_enabled {
-                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_gatebot\"\n"));
-                }
                 if bot.is_boss {
                     wave_portion.push_str("\t\t\t\t\tAttributes\t\"UseBossHealthBar\"\n");
-                }
-                if !bot.behavior.is_empty(){
-                    wave_portion.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
                 }
                 if bot.auto_jump_min != 0{
                     wave_portion.push_str(&format!("\t\t\t\t\tAutoJumpMin\t{}\n", bot.auto_jump_min));
@@ -361,51 +376,42 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 if bot.max_vision_range != 0{
                     wave_portion.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
                 }
-                for item in &bot.weapons{
-                    wave_portion.push_str(&format!("\t\t\t\t\tItem\t\"{}\"\n", item));
-                }
-                for tag in &bot.tags{
-                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"{}\"\n", tag));
-                }
 
-                if !bot.attributes.is_empty() || !mission.global_attributes.is_empty(){
-                    wave_portion.push_str("\t\t\t\t\tCharacterAttributes\n\t\t\t\t\t{\n");
-                    //bot specific attributes
-                    for attribute in &bot.attributes{
-                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
-                            Float(val) => val,
-                            Int(val) => val as f64,
-                            _ => panic!("Error while parsing {}", attribute[1])
-                        };
-                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                if bot.is_giant || bot.is_boss {
+                    wave_portion.push_str("\t\t\t\t\tAttributes\t\"MiniBoss\"\n");
+                    wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_giant\"\n"));
+
+                    parse_bot_attributes(bot, &mission, &mut wave_portion, &mut context);
+                }
+                else if mission.gatebots_enabled {
+                    wave_portion.push_str("\t\t\t\t\tEventChangeAttributes\n\t\t\t\t\t{\n");
+                    wave_portion.push_str("\t\t\t\t\t\tDefault\n\t\t\t\t\t\t{\n");
+                    wave_portion.push_str(&format!("\t\t\t\t\t\t\tItem\t\"{}\"\n", give_gatebot_cap_name(&bot.class)));
+                    wave_portion.push_str("\t\t\t\t\t\t\tTag\tnav_prefer_gate1_flank\n");
+                    wave_portion.push_str("\t\t\t\t\t\t\tTag\tbot_gatebot\n");
+                    wave_portion.push_str("\t\t\t\t\t\t\tBehaviorModifiers\tpush\n");
+                    wave_portion.push_str("\t\t\t\t\t\t\tAttributes\tIgnoreFlag\n");
+                    parse_bot_attributes(bot, &mission, &mut wave_portion, &mut context);
+                    wave_portion.push_str("\t\t\t\t\t\t}\n");
+                    wave_portion.push_str("\t\t\t\t\t\tRevertGateBotsBehavior\n\t\t\t\t\t\t{\n");
+                    wave_portion.push_str(&format!("\t\t\t\t\t\t\tItem\t\"{}\"\n", give_gatebot_cap_name(&bot.class)));
+                    wave_portion.push_str("\t\t\t\t\t\t\tItemAttributes\n\t\t\t\t\t\t\t{\n");
+                    wave_portion.push_str(&format!("\t\t\t\t\t\t\t\tItemName\t\"{}\"\n", give_gatebot_cap_name(&bot.class)));
+                    wave_portion.push_str("\t\t\t\t\t\t\t\t\"item style override\"\t1\n");
+                    wave_portion.push_str("\t\t\t\t\t\t\t}\n");
+                    
+                    if !bot.behavior.is_empty(){
+                        wave_portion.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
                     }
-                    //mission global attributes
-                    for attribute in &mission.global_attributes{
-                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
-                            Float(val) => val,
-                            Int(val) => val as f64,
-                            _ => panic!("Error while parsing {}", attribute[1])
-                        };
-                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
-                    }
+                    parse_bot_attributes(bot, &mission, &mut wave_portion, &mut context);
+                    wave_portion.push_str("\t\t\t\t\t\t}\n");
                     wave_portion.push_str("\t\t\t\t\t}\n");
-                }
-
-                if !bot.weapon_attributes.is_empty() && !bot.weapons.is_empty(){
-                    wave_portion.push_str("\t\t\t\t\tItemAttributes\n\t\t\t\t\t{\n");
-                    //primary specific attributes
-                    wave_portion.push_str(&format!("\t\t\t\t\t\tItemName\t\"{}\"\n", bot.weapons.get(0).unwrap()));
-                    for attribute in &bot.weapon_attributes{
-                        let evaluation = match eval_with_context_mut(&attribute[1], &mut context).unwrap(){
-                            Float(val) => val,
-                            Int(val) => val as f64,
-                            _ => panic!("Error while parsing {}", attribute[1])
-                        };
-                        wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+                }else{
+                    parse_bot_attributes(bot, &mission, &mut wave_portion, &mut context);
+                    if !bot.behavior.is_empty(){
+                        wave_portion.push_str(&format!("\t\t\t\t\tBehaviorModifiers\t{}\n", bot.behavior));
                     }
-                    wave_portion.push_str("\t\t\t\t\t}\n");
                 }
-
 
                 wave_portion.push_str("\t\t\t\t}\n");
                 wave_portion.push_str("\t\t\t}\n");
@@ -458,4 +464,64 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Finished in {:?}", beginning.elapsed());
     Ok(())
+}
+
+fn parse_bot_attributes(bot:&Bot, mission:&Mission, wave_portion:&mut String, context:&mut HashMapContext){
+    for item in &bot.weapons{
+        wave_portion.push_str(&format!("\t\t\t\t\tItem\t\"{}\"\n", item));
+    }
+    for tag in &bot.tags{
+        wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"{}\"\n", tag));
+    }
+
+    if !bot.attributes.is_empty() || !mission.global_attributes.is_empty(){
+        wave_portion.push_str("\t\t\t\t\tCharacterAttributes\n\t\t\t\t\t{\n");
+        //bot specific attributes
+        for attribute in &bot.attributes{
+            let evaluation = match eval_with_context_mut(&attribute[1], context).unwrap(){
+                Float(val) => val,
+                Int(val) => val as f64,
+                _ => panic!("Error while parsing {}", attribute[1])
+            };
+            wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+        }
+        //mission global attributes
+        for attribute in &mission.global_attributes{
+            let evaluation = match eval_with_context_mut(&attribute[1], context).unwrap(){
+                Float(val) => val,
+                Int(val) => val as f64,
+                _ => panic!("Error while parsing {}", attribute[1])
+            };
+            wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+        }
+        wave_portion.push_str("\t\t\t\t\t}\n");
+    }
+
+    if !bot.weapon_attributes.is_empty() && !bot.weapons.is_empty(){
+        wave_portion.push_str("\t\t\t\t\tItemAttributes\n\t\t\t\t\t{\n");
+        //primary specific attributes
+        wave_portion.push_str(&format!("\t\t\t\t\t\tItemName\t\"{}\"\n", bot.weapons.get(0).unwrap()));
+        for attribute in &bot.weapon_attributes{
+            let evaluation = match eval_with_context_mut(&attribute[1], context).unwrap(){
+                Float(val) => val,
+                Int(val) => val as f64,
+                _ => panic!("Error while parsing {}", attribute[1])
+            };
+            wave_portion.push_str(&format!("\t\t\t\t\t\t\"{}\"\t{}\n", attribute[0], evaluation));
+        }
+        wave_portion.push_str("\t\t\t\t\t}\n");
+    }
+}
+fn give_gatebot_cap_name(s: &str) -> String {
+    match s {
+        "scout" => "MvM GateBot Light Scout".to_string(),
+        "soldier" => "MvM GateBot Light Soldier".to_string(),
+        "pyro" => "MvM GateBot Light Pyro".to_string(),
+        "demoman" => "MvM GateBot Light Demoman".to_string(),
+        "heavyweapons" => "MvM GateBot Light Heavy".to_string(),
+        "engineer" => "MvM GateBot Light Engineer".to_string(),
+        "medic" => "MvM GateBot Light Medic".to_string(),
+        "sniper" => "MvM GateBot Light Sniper".to_string(),
+        "spy" | _ => "MvM GateBot Light Spy".to_string(),
+    }
 }
