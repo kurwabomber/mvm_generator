@@ -11,6 +11,7 @@ pub struct Mission {
     pub engineers_enabled: bool,
     pub gatebots_enabled: bool,
     pub classic_relay: bool,
+    pub relayname: String,
     /* Mission Specific Info */
     pub wave_amount: i64,
     pub starting_money: i64,
@@ -83,6 +84,10 @@ impl Mission{
         self.classic_relay = match map_info["classic_relay"].as_bool() {
             None => false,
             Some(value) => value,
+        };
+        self.relayname = match map_info["relayname"].as_str() {
+            None => "wave_start_relay".to_string(),
+            Some(value) => value.to_string(),
         };
         println!("took {:?} to parse map config", now.elapsed());
     }
@@ -168,7 +173,8 @@ impl Default for Mission {
             mission_name: "".to_string(),
             tank_health_formula: "10000 * 1.2^(wave-1)".to_string(),
             gatebots_enabled: false,
-            rarity_formula: "1".to_string()
+            rarity_formula: "1".to_string(),
+            relayname: "wave_start_relay".to_string(),
         }
     }
 }
