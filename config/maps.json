@@ -6,7 +6,8 @@
 		"spawngiants" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawnbosses" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawntanks" : ["boss_path_a1"],
-		"max_tank_speed" : 500
+		"max_tank_speed" : 500,
+		"spawnsupports": ["spawnbot_mission_spy"]
 	},
 	"mvm_coaltown" :
 	{
@@ -19,7 +20,7 @@
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.8,
 		"scale_doom" : 4.4,
-		"spawndooms": ["spawnbot_mission_spy"]
+		"spawnsupports": ["spawnbot_mission_spy"]
 	},
 	"mvm_mannworks" :
 	{
@@ -34,7 +35,7 @@
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.75,
 		"scale_doom" : 4.0,
-		"spawndooms" : ["spawnbot_left"]
+		"spawnsupports" : ["spawnbot_left"]
 	},
 	"mvm_bigrock" :
 	{
@@ -45,8 +46,7 @@
 		"spawntanks" : ["boss_path_1"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.9,
-		"scale_doom" : 2.8,
-		"spawndooms" : ["spawnbot_mission_spy"]
+		"spawnsupports" : ["spawnbot_mission_spy"]
 	},
 	"mvm_rottenburg" :
 	{
@@ -58,19 +58,18 @@
 		"spawntanks" : ["tank_path_a_10", "tank_path_b_10"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 2.2,
-		"scale_doom" : 4.7,
 		"spawnmegas" : ["spawnbot", "spawnbot_chief"],
-		"spawndooms" : ["spawnbot"]
+		"spawnsupports" : ["spawnbot"]
 	},
 	"mvm_mannhattan" :
 	{
 		"bot_path_length" : 0.7,
-		"spawnbots" : ["spawnbot_main0", "spawnbot_mission_sniper0"],
-		"spawngiants" : ["spawnbot_main0", "spawnbot_mission_sniper0"],
-		"spawnbosses" : ["spawnbot_main0"],
+		"gatebots": true,
+		"spawnbots" : ["spawnbot_main0",  "spawnbot_main1", "spawnbot_main2"],
+		"spawngiants" : ["spawnbot_main0", "spawnbot_main1", "spawnbot_main2"],
+		"spawnbosses" : ["spawnbot_main0", "spawnbot_main1", "spawnbot_main2"],
 		"scale_mega" : 1.9,
-		"scale_doom" : 4.0,
-		"spawndooms" : ["spawnbot_main0"]
+		"spawnsupports" : ["spawnbot_main0", "spawnbot_main1", "spawnbot_main2"]
 	},
 	"mvm_ghost_town" :
 	{
@@ -82,7 +81,6 @@
 		"spawntanks" : ["boss_path_a1"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.8,
-		"scale_doom" : 4.4,
-		"spawndooms": ["spawnbot_mission_spy"]
+		"spawnsupports": ["spawnbot_mission_spy"]
 	}
 }
