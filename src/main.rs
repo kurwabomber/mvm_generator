@@ -387,6 +387,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
                 wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
                 wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
+                if wavespawn.tags.contains(&"support".to_string()){
+                    wave_portion.push_str("\t\t\tSupport\t1\n");
+                }
+
 
                 if mission.gatebots_enabled {
                     if bot.is_boss{
@@ -453,11 +457,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 if bot.max_vision_range != 0{
                     wave_portion.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
                 }
-
-                if wavespawn.tags.contains(&"support".to_string()){
-                    wave_portion.push_str("\t\t\t\t\tSupport\t1\n");
-                }
-
                 if bot.is_giant || bot.is_boss {
                     wave_portion.push_str("\t\t\t\t\tAttributes\t\"MiniBoss\"\n");
                     wave_portion.push_str(&format!("\t\t\t\t\tTag\t\"bot_giant\"\n"));
