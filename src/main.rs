@@ -107,6 +107,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => false,
                     Some(val) => val,
                 },
+                is_gatebot: match value.1["is_gatebot"].as_bool() {
+                    None => false,
+                    Some(val) => val,
+                },
                 currency_weight: match value.1["currency_weight"].as_i64() {
                     None => 1,
                     Some(val) => val,
@@ -193,6 +197,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     Some(val) => val,
                 },
                 spawn_tank: match value.1["with_tank"].as_bool() {
+                    None => false,
+                    Some(val) => val,
+                },
+                is_support: match value.1["is_support"].as_bool() {
                     None => false,
                     Some(val) => val,
                 },
@@ -383,7 +391,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
                     parse_bot_attributes(bot, &mission, &mut wave_portion, &mut context);
                 }
-                else if mission.gatebots_enabled {
+                else if mission.gatebots_enabled && (rng.gen_bool(0.5) || bot.is_gatebot) { //50% of bots or they are gatebot supports
                     wave_portion.push_str("\t\t\t\t\tEventChangeAttributes\n\t\t\t\t\t{\n");
                     wave_portion.push_str("\t\t\t\t\t\tDefault\n\t\t\t\t\t\t{\n");
                     wave_portion.push_str(&format!("\t\t\t\t\t\t\tItem\t\"{}\"\n", give_gatebot_cap_name(&bot.class)));
