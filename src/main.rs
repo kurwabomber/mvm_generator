@@ -375,9 +375,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         for wavespawn in finalized_spawns{
             for bot in &wavespawn.squads{
-                bot_id += 1;
                 wave_portion.push_str("\t\tWaveSpawn\n\t\t{\n");
-                wave_portion.push_str(&format!("\t\t\tName\t\"w{}_b{}\"\n", i, bot_id));
+
+                if wavespawn.tags.contains(&"support".to_string()){
+                    wave_portion.push_str("\t\t\tSupport\t1\n");
+                    wave_portion.push_str(&format!("\t\t\tName\t\"w{}_bs{}\"\n", i, bot_id));
+                }else{
+                    bot_id += 1;
+                    wave_portion.push_str(&format!("\t\t\tName\t\"w{}_b{}\"\n", i, bot_id));
+                }
                 if last_bot != 0 && !wavespawn.tags.contains(&"support".to_string()){
                     wave_portion.push_str(&format!("\t\t\tWaitForAllDead\t\"w{}_b{}\"\n", i, last_bot));
                 }
@@ -387,9 +393,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wave_portion.push_str(&format!("\t\t\tSpawnCount\t{}\n", bot.spawn_per_timer));
                 wave_portion.push_str(&format!("\t\t\tWaitBeforeStarting\t{}\n", bot.time_before_spawn));
                 wave_portion.push_str(&format!("\t\t\tWaitBetweenSpawns\t{}\n", bot.time_between_spawn));
-                if wavespawn.tags.contains(&"support".to_string()){
-                    wave_portion.push_str("\t\t\tSupport\t1\n");
-                }
+
 
 
                 if mission.gatebots_enabled {
