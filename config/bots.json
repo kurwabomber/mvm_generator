@@ -1278,7 +1278,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "2.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
+		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "100.0"], ["engy sentry damage bonus", "2.0"], 
+		["engy sentry fire rate increased", "0.5"]],
 		"attributes" : [ ["damage mult 13", "35.0"] ]
 	},
 	"Hellstorm Engineer" :
@@ -1296,7 +1297,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "3.0"], ["engy sentry damage bonus", "3.0"], ["engy sentry fire rate increased", "0.4"]],
+		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "150.0"], ["engy sentry damage bonus", "3.0"], 
+		["engy sentry fire rate increased", "0.4"]],
 		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup", "2"] ]
 	},
 	"Ballista Engineer" :
@@ -1313,7 +1315,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "5.0"], ["engy sentry damage bonus", "4.0"], ["engy sentry fire rate increased", "0.25"]],
+		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "100.0"], ["engy sentry damage bonus", "4.0"], 
+		["engy sentry fire rate increased", "0.25"]],
 		"attributes" : [ ["damage mult 13", "35.0"] ]
 	},
 	"Electro-Ballista Engineer" :
@@ -1331,7 +1334,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "6.0"], ["engy sentry damage bonus", "4.5"], ["engy sentry fire rate increased", "0.25"], ["engy sentry radius increased", "1.75"]],
+		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "200.0"], ["engy sentry damage bonus", "4.5"], 
+		["engy sentry fire rate increased", "0.25"], ["engy sentry radius increased", "1.75"]],
 		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup", "3.0"] ]
 	},
 	"Artillery Engineer" :
@@ -1348,7 +1352,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["engy building health bonus", "5.0"], ["engy sentry damage bonus", "0.66"], ["dmg penalty vs nonstunned", "4.0"], ["mult firerocket rate", "0.7"], ["engy sentry radius increased", "5.0"]],
+		"weapon_attributes": [["engy building health bonus", "150.0"], ["engy sentry damage bonus", "0.66"], ["dmg penalty vs nonstunned", "4.0"],
+		["mult firerocket rate", "0.7"], ["engy sentry radius increased", "5.0"]],
 		"attributes" : [ ["damage mult 13", "35.0"] ]
 	},
 	"Eagle Artillery Engineer" :
@@ -1367,7 +1372,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 25,
-		"weapon_attributes": [["engy building health bonus", "3.0"], ["engy sentry damage bonus", "1.5"], ["dmg penalty vs nonstunned", "10.0"], ["mult firerocket rate", "2.0"],["engy sentry fire rate increased", "8.0"], ["engy sentry radius increased", "10.0"], ["build rate bonus", "5.5"], ["Construction rate decreased", "5.5"]],
+		"weapon_attributes": [["engy building health bonus", "750.0"], ["engy sentry damage bonus", "1.5"], ["dmg penalty vs nonstunned", "10.0"], 
+		["mult firerocket rate", "2.0"],["engy sentry fire rate increased", "8.0"], ["engy sentry radius increased", "10.0"], ["build rate bonus", "5.5"], ["Construction rate decreased", "5.5"]],
 		"attributes" : [ ["damage mult 13", "40.0"], ["strength powerup", "3.0"] ]
 	},
 	"Rooter" :
@@ -1405,7 +1411,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 8,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus", "0.33"], ["move speed bonus", "1.75"], ["cannot pick up intelligence", "1.0"], ["melee range multiplier", "10.0"], ["agility powerup", "2.0"], ["increased jump height", "3.0"], ["noise maker", "20.0"]]
+		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus", "0.33"], ["move speed bonus", "1.75"], ["cannot pick up intelligence", "1.0"], 
+		["melee range multiplier", "10.0"], ["agility powerup", "2.0"], ["increased jump height", "3.0"], ["noise maker", "20.0"]]
 	},
 	"Loch-n-Load Demoman" :
 	{
@@ -1517,7 +1524,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 4,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "1.75"], ["player_gravity_ballon_head", "300"], ["voice pitch scale", "4.0"], ["resistance powerup", "2.0"]]
+		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "1.75"], ["player_gravity_ballon_head", "300"], 
+		["voice pitch scale", "4.0"], ["resistance powerup", "2.0"]]
 	},
 	"Leech" :
 	{
@@ -1552,7 +1560,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 4,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "20.0"], ["cannot pick up intelligence", "1.0"], ["plague powerup", "1.0"], ["plague powerup", "2.0"], ["plague powerup", "3.0"], ["voice pitch scale", "2.5"], ["melee range multiplier", "5.0"]]
+		"attributes" : [ ["damage mult 13", "20.0"], ["cannot pick up intelligence", "1.0"], ["plague powerup", "2.0"], ["vampire powerup", "2.0"], 
+		["voice pitch scale", "2.5"], ["melee range multiplier", "5.0"]]
 	},
 	"Giant SVF Pyro" :
 	{
@@ -1643,6 +1652,63 @@
 		"time_between_spawn" : 8,
 		"currency_weight": 20,
 		"weapon_attributes" : [["sapper damage bonus", "50.0"]],
-		"attributes" : [ ["damage mult 13", "40.0"], ["precision powerup", "1.0"], ["precision powerup", "2.0"], ["faster reload rate", "0.08"], ["fire rate bonus", "6.5"], ["clip size bonus", "6.0"]]
+		"attributes" : [ ["damage mult 13", "40.0"], ["precision powerup", "2.0"], ["faster reload rate", "0.08"], ["fire rate bonus", "6.5"], ["clip size bonus", "6.0"]]
+	},
+	"Quake Soldier" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Original"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"bot_attributes" : [ "AutoJump"],
+		"health" : "7500",
+		"class_icon" : "soldier",
+		"auto_jump_min" : 1,
+		"auto_jump_max" : 1,
+		"count" : 8,
+		"max_active" : 8,
+		"spawn_per_timer" : 4,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increased air control", "5.0"], ["move speed bonus", "3.0"], ["cannot pick up intelligence", "1.0"], 
+		["mult dmg direct hit", "3.0"], ["Projectile speed decreased", "0.8"]]
+	},
+	"Lightning Rod" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"bot_attributes" : ["SpawnWithFullCharge"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "12000",
+		"class_icon" : "soldier",
+		"scale" : 1.25,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], 
+		["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
+	},
+	"Giant Lightning Rod" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"bot_attributes" : ["SpawnWithFullCharge"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "12000",
+		"class_icon" : "soldier",
+		"scale" : 1.25,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], ["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
 	}
 }
