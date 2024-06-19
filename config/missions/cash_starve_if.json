@@ -6,7 +6,7 @@
     "bot_giant_chance": 0.3,
     "bot_boss_waves": 8,
     "bot_superboss_waves": 15,
-    "attributes": [ ["dmg taken divided","1.6^(wave-1)*(wave+1)^1.9"],  ["damage penalty","4.5*1.6^(wave-1)*wave"], ["damage force reduction", "0.2"] ],
+    "attributes": [ ["dmg taken divided","1.6^(wave-1)*(wave+1)^1.9"],  ["damage mult 1","4.5*1.6^(wave-1)*wave"], ["damage force reduction", "0.2"] ],
     "mission_name": "cash_starve_if",
     "allowed_tags": ["uber"],
     "rarity_formula": "1+0.18*wave"

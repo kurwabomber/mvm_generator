@@ -2,11 +2,13 @@
 	"mvm_decoy" :
 	{
 		"bot_path_length" : 0.5,
+		"engies" : true,
 		"spawnbots" : ["spawnbot", "spawnbot_invasion", "spawnbot_left", "spawnbot_right", "spawnbot_single_flag", "spawnbot_mission_sniper"],
 		"spawngiants" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawnbosses" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawntanks" : ["boss_path_a1"],
-		"max_tank_speed" : 500
+		"max_tank_speed" : 500,
+		"spawnsupports": ["spawnbot_mission_sniper", "spawnbot_mission_spy"]
 	},
 	"mvm_coaltown" :
 	{
@@ -19,7 +21,7 @@
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.8,
 		"scale_doom" : 4.4,
-		"spawndooms": ["spawnbot_mission_spy"]
+		"spawnsupports": ["spawnbot_mission_sniper", "spawnbot_mission_spy"]
 	},
 	"mvm_mannworks" :
 	{
@@ -27,63 +29,61 @@
 		"engies" : false,
 		"wave_start_relay" : "bombpath_arrows_clear_relay",
 		"wave_finished_relay" : "bombpath_wavefinished",
-		"spawnbots" : ["spawnbot", "spawnbot_left", "spawnbot_right", "spawnbot_lower", "spawnbot_mission_sniper", "spawnbot_mission_spy"],
+		"spawnbots" : ["spawnbot", "spawnbot_left", "spawnbot_right", "spawnbot_lower"],
 		"spawngiants" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawnbosses" : ["spawnbot", "spawnbot_left", "spawnbot_right"],
 		"spawntanks" : ["boss_path_1", "boss_path2_1"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.75,
 		"scale_doom" : 4.0,
-		"spawndooms" : ["spawnbot_left"]
+		"spawnsupports" : ["spawnbot_left", "spawnbot_mission_sniper", "spawnbot_mission_spy"]
 	},
 	"mvm_bigrock" :
 	{
 		"bot_path_length" : 1.0,
+		"engies" : true,
 		"spawnbots" : ["spawnbot"],
 		"spawngiants" : ["spawnbot"],
 		"spawnbosses" : ["spawnbot"],
 		"spawntanks" : ["boss_path_1"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.9,
-		"scale_doom" : 2.8,
-		"spawndooms" : ["spawnbot_mission_spy"]
+		"spawnsupports" : ["spawnbot", "spawnbot_mission_spy"]
 	},
 	"mvm_rottenburg" :
 	{
 		"bot_path_length" : 0.65,
 		"classic_relay" : true,
+		"engies" : true,
 		"spawnbots" : ["spawnbot", "flankers", "spawnbot_chief", "spawnbot_mission_sniper", "spawnbot_mission_sentry_buster"],
 		"spawngiants" : ["spawnbot", "flankers", "spawnbot_chief", "spawnbot_mission_sentry_buster"],
 		"spawnbosses" : ["spawnbot", "spawnbot_chief"],
 		"spawntanks" : ["tank_path_a_10", "tank_path_b_10"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 2.2,
-		"scale_doom" : 4.7,
-		"spawnmegas" : ["spawnbot", "spawnbot_chief"],
-		"spawndooms" : ["spawnbot"]
+		"spawnsupports" : ["spawnbot", "spawnbot_mission_sniper"]
 	},
 	"mvm_mannhattan" :
 	{
 		"bot_path_length" : 0.7,
-		"gatebots" : true,
-		"spawnbots" : ["spawnbot_main0", "spawnbot_mission_sniper0"],
-		"spawngiants" : ["spawnbot_main0", "spawnbot_mission_sniper0"],
-		"spawnbosses" : ["spawnbot_main0"],
+		"gatebots": true,
+		"engies" : true,
+		"spawnbots" : ["spawnbot_main0",  "spawnbot_main1", "spawnbot_main2"],
+		"spawngiants" : ["spawnbot_main0", "spawnbot_main1", "spawnbot_main2"],
+		"spawnbosses" : ["spawnbot_main0", "spawnbot_main1", "spawnbot_main2"],
 		"scale_mega" : 1.9,
-		"scale_doom" : 4.0,
-		"spawndooms" : ["spawnbot_main0"]
+		"spawnsupports" : ["spawnbot_mission_sniper0", "spawnbot_mission_sniper1", "spawnbot_main2"]
 	},
 	"mvm_ghost_town" :
 	{
 		"bot_path_length" : 0.6,
 		"engies" : false,
-		"spawnbots" : ["spawnbot", "spawnbot_giant", "spawnbot_invasion", "spawnbot_mission_sniper"],
+		"spawnbots" : ["spawnbot", "spawnbot_giant", "spawnbot_invasion"],
 		"spawngiants" : ["spawnbot_giant", "spawnbot_mission_spy", "spawnbot_mission_sniper"],
 		"spawnbosses" : ["spawnbot", "spawnbot_giant"],
 		"spawntanks" : ["boss_path_a1"],
 		"max_tank_speed" : 500,
 		"scale_mega" : 1.8,
-		"scale_doom" : 4.4,
-		"spawndooms": ["spawnbot_mission_spy"]
+		"spawnsupports": ["spawnbot_mission_sniper", "spawnbot_mission_spy"]
 	}
 }

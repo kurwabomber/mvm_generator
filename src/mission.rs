@@ -6,11 +6,13 @@ pub struct Mission {
     pub spawn_bot_areas: Vec<String>,
     pub spawn_giants_areas: Vec<String>,
     pub spawn_boss_areas: Vec<String>,
+    pub spawn_support_areas: Vec<String>,
     pub spawn_tank_areas: Vec<String>,
     pub max_tank_speed: f64,
     pub engineers_enabled: bool,
     pub gatebots_enabled: bool,
     pub classic_relay: bool,
+    pub relayname: String,
     /* Mission Specific Info */
     pub wave_amount: i64,
     pub starting_money: i64,
@@ -68,6 +70,15 @@ impl Mission{
                 .collect(),
         };
 
+        self.spawn_support_areas = match map_info["spawnsupports"].as_array() {
+            None => vec!["spawnsupports".to_string()],
+            Some(value) => value
+                .iter()
+                .map(|x| x.as_str().unwrap().to_owned())
+                .collect(),
+        };
+
+
         self.max_tank_speed = match map_info["max_tank_speed"].as_f64() {
             None => 300.0,
             Some(value) => value,
@@ -83,6 +94,10 @@ impl Mission{
         self.classic_relay = match map_info["classic_relay"].as_bool() {
             None => false,
             Some(value) => value,
+        };
+        self.relayname = match map_info["relayname"].as_str() {
+            None => "wave_start_relay".to_string(),
+            Some(value) => value.to_string(),
         };
         println!("took {:?} to parse map config", now.elapsed());
     }
@@ -153,6 +168,7 @@ impl Default for Mission {
             spawn_giants_areas: vec!["spawnbot".to_string()],
             spawn_boss_areas: vec!["spawnbot".to_string()],
             spawn_tank_areas: vec!["boss_path_a1".to_string()],
+            spawn_support_areas: vec!["spawnbot".to_string()],
             max_tank_speed: 500.0,
             engineers_enabled: false,
             classic_relay: false,
@@ -168,7 +184,8 @@ impl Default for Mission {
             mission_name: "".to_string(),
             tank_health_formula: "10000 * 1.2^(wave-1)".to_string(),
             gatebots_enabled: false,
-            rarity_formula: "1".to_string()
+            rarity_formula: "1".to_string(),
+            relayname: "wave_start_relay".to_string(),
         }
     }
 }
