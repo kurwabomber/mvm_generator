@@ -1283,6 +1283,25 @@
 		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "15.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
 		"attributes" : [ ["damage mult 13", "9.0"] ]
 	},
+	"Hellstorm Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["The Southern Hospitality"],
+		"is_mission_bot" : true,
+		"difficulty" : 4,
+		"health" : "25000",
+		"class_icon" : "engineer",
+		"scale" : 1.2,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "150.0"], ["engy sentry damage bonus", "3.0"], 
+		["engy sentry fire rate increased", "0.4"]],
+		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup", "2"] ]
+	},
 	"Ballista Engineer" :
 	{
 		"class"	: "engineer",
@@ -1300,6 +1319,25 @@
 		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "20.0"], ["engy sentry damage bonus", "3.5"]],
 		"attributes" : [ ["damage mult 13", "8.0"] ]
 	},
+	"Electro-Ballista Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["Wrench"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "25000",
+		"class_icon" : "engineer",
+		"scale" : 1.2,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 12,
+		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "200.0"], ["engy sentry damage bonus", "4.5"], 
+		["engy sentry fire rate increased", "0.25"], ["engy sentry radius increased", "1.75"]],
+		"attributes" : [ ["damage mult 13", "40.0"], ["supernova powerup", "3.0"] ]
+	},
 	"Artillery Engineer" :
 	{
 		"class"	: "engineer",
@@ -1316,6 +1354,26 @@
 		"currency_weight": 12,
 		"weapon_attributes": [["engy building health bonus", "30.0"], ["engy sentry damage bonus", "0.66"], ["mult firerocket rate", "0.3"], ["engy sentry radius increased", "5.0"]],
 		"attributes" : [ ["damage mult 13", "11.0"] ]
+	},
+	"Eagle Artillery Engineer" :
+	{
+		"class"	: "engineer",
+		"weapons" : ["Wrench"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "75000",
+		"class_icon" : "engineer",
+		"is_boss" : true,
+		"scale" : 0.75,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 25,
+		"weapon_attributes": [["engy building health bonus", "750.0"], ["engy sentry damage bonus", "1.5"], ["dmg penalty vs nonstunned", "10.0"], 
+		["mult firerocket rate", "2.0"],["engy sentry fire rate increased", "8.0"], ["engy sentry radius increased", "10.0"], ["build rate bonus", "0.18"], ["Construction rate decreased", "5.5"]],
+		"attributes" : [ ["damage mult 13", "40.0"], ["strength powerup", "3.0"] ]
 	},
 	"Rooter" :
 	{
@@ -1352,7 +1410,25 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 4,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus", "0.33"], ["move speed bonus", "4.0"], ["cannot pick up intelligence", "1.0"], ["melee range multiplier", "10.0"], ["agility powerup", "2.0"]]
+		"attributes" : [ ["damage mult 13", "20.0"], ["fire rate bonus", "0.33"], ["move speed bonus", "1.75"], ["cannot pick up intelligence", "1.0"], 
+		["melee range multiplier", "10.0"], ["agility powerup", "2.0"], ["increased jump height", "3.0"], ["noise maker", "20.0"]]
+	},
+	"Loch-n-Load Demoman" :
+	{
+		"class"	: "demoman",
+		"weapons" : ["The Loch-n-Load"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"health" : "5000",
+		"class_icon" : "demo_giant",
+		"count" : 12,
+		"max_active" : 12,
+		"spawn_per_timer" : 4,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 4,
+		"currency_weight": 12,
+		"weapon_attributes" : [["projectile gravity native", "0.0"], ["grenade no drag","1.0"], ["damage bonus", "2.0"]],
+		"attributes" : [ ["damage mult 13", "30.0"], ["faster reload rate", "0.75"], ["auto fires full clip all at once", "1"], ["clip size penalty", "0.66"]]
 	},
 	"Giant Loch-n-Load Demoman" :
 	{
@@ -1418,7 +1494,7 @@
 		"bot_attributes" : ["AutoJump", "AlwaysCrit"],
 		"health" : "600",
 		"class_icon" : "scout",
-		"scale" : 0.25,
+		"scale" : 0.17,
 		"auto_jump_min" : 4,
 		"auto_jump_max" : 4,
 		"count" : 48,
@@ -1428,6 +1504,27 @@
 		"time_between_spawn" : 3,
 		"currency_weight": 4,
 		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "2.0"], ["player gravity ballon head", "300"], ["voice pitch scale", "3.0"]]
+	},
+	"Giant Fly" :
+	{
+		"class"	: "scout",
+		"weapons" : ["Scout's Pistol"],
+		"weapon_restriction":"SecondaryOnly",
+		"difficulty" : 4,
+		"bot_attributes" : ["AutoJump", "AlwaysCrit"],
+		"health" : "1500",
+		"class_icon" : "scout_giant",
+		"scale" : 0.34,
+		"auto_jump_min" : 4,
+		"auto_jump_max" : 4,
+		"count" : 8,
+		"max_active" : 8,
+		"spawn_per_timer" : 4,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 4,
+		"currency_weight": 8,
+		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "1.75"], ["player_gravity_ballon_head", "300"], 
+		["voice pitch scale", "4.0"], ["resistance powerup", "2.0"]]
 	},
 	"Leech" :
 	{
@@ -1446,6 +1543,25 @@
 		"time_between_spawn" : 4,
 		"currency_weight": 8,
 		"attributes" : [ ["damage mult 13", "20.0"], ["cannot pick up intelligence", "1.0"], ["plague powerup", "2.0"], ["voice pitch scale", "4.0"]]
+	},
+	"Elder Leech" :
+	{
+		"class"	: "spy",
+		"weapons" : ["Knife"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "10000",
+		"class_icon" : "spy",
+		"is_giant" : true,
+		"scale" : 0.25,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 4,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 4,
+		"currency_weight": 8,
+		"attributes" : [ ["damage mult 13", "20.0"], ["cannot pick up intelligence", "1.0"], ["plague powerup", "2.0"], ["vampire powerup", "2.0"], 
+		["voice pitch scale", "2.5"], ["melee range multiplier", "5.0"]]
 	},
 	"Giant SVF Pyro" :
 	{
@@ -1495,5 +1611,136 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 0,
 		"attributes" : [ ["damage mult 13", "70.0"] ]
+	},
+	"The Iron Bomber" :
+	{
+		"class"	: "demoman",
+		"weapons" : ["The Iron Bomber"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"health" : "175000",
+		"class_icon" : "demo_giant",
+		"scale" : 1.6,
+		"is_boss" : true,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 12,
+		"currency_weight": 35,
+		"weapon_attributes" : [["overheal decay penalty", "10"], ["overheal decay bonus", "75.0"]],
+		"attributes" : [ ["damage mult 13", "30.0"], ["inverter powerup", "3.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "2.0"], ["Blast radius increased", "2.0"]]
+	},
+	"The Incendiary Bomber" :
+	{
+		"class"	: "demoman",
+		"weapons" : ["The Iron Bomber"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"health" : "250000",
+		"class_icon" : "demo_giant",
+		"scale" : 1.6,
+		"is_boss" : true,
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 12,
+		"currency_weight": 45,
+		"weapon_attributes" : [["overheal decay penalty", "15"], ["overheal decay bonus", "100.0"]],
+		"attributes" : [ ["damage mult 13", "27.5"], ["inverter powerup", "3.0"],["supernova powerup", "2.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "3.0"], ["Blast radius increased", "2.5"]]
+	},
+	"Aimless Bowman" :
+	{
+		"class"	: "sniper",
+		"weapons" : ["The Huntsman"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"health" : "11000",
+		"class_icon" : "sniper_bow_multi",
+		"scale" : 1.4,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 20,
+		"weapon_attributes" : [["sapper damage bonus", "35.0"]],
+		"attributes" : [ ["damage mult 13", "45.0"], ["precision powerup", "2.0"], ["faster reload rate", "0.1"], ["fire rate bonus", "6.0"], ["clip size bonus", "5.0"]]
+	},
+	"Not Aimless Bowman" :
+	{
+		"class"	: "sniper",
+		"weapons" : ["The Huntsman"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"health" : "12500",
+		"class_icon" : "sniper_bow_multi",
+		"scale" : 1.5,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 20,
+		"weapon_attributes" : [["sapper damage bonus", "50.0"]],
+		"attributes" : [ ["damage mult 13", "40.0"], ["precision powerup", "1.0"], ["faster reload rate", "0.08"], ["fire rate bonus", "6.5"], ["clip size bonus", "6.0"]]
+	},
+	"Quake Soldier" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Original"],
+		"weapon_restriction":"PrimaryOnly",
+		"difficulty" : 4,
+		"bot_attributes" : [ "AutoJump"],
+		"health" : "7500",
+		"class_icon" : "soldier",
+		"auto_jump_min" : 1,
+		"auto_jump_max" : 1,
+		"count" : 8,
+		"max_active" : 8,
+		"spawn_per_timer" : 4,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increased air control", "5.0"], ["move speed bonus", "3.0"], ["cannot pick up intelligence", "1.0"], 
+		["mult dmg direct hit", "3.0"], ["Projectile speed decreased", "0.8"]]
+	},
+	"Lightning Rod" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"bot_attributes" : ["SpawnWithFullCharge"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "12000",
+		"class_icon" : "soldier",
+		"scale" : 1.25,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], 
+		["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
+	},
+	"Giant Lightning Rod" :
+	{
+		"class"	: "soldier",
+		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"bot_attributes" : ["SpawnWithFullCharge"],
+		"weapon_restriction":"MeleeOnly",
+		"difficulty" : 4,
+		"health" : "12000",
+		"class_icon" : "soldier",
+		"scale" : 1.25,
+		"count" : 4,
+		"max_active" : 4,
+		"spawn_per_timer" : 2,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 8,
+		"currency_weight": 12,
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], ["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
 	}
 }
