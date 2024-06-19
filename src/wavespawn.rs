@@ -7,6 +7,5 @@ pub struct Wavespawn {
     pub weight: f64,
     pub rarity: f64,
     pub spawn_tank: bool,
-    pub is_support: bool,
 }
 

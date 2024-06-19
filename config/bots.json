@@ -1270,9 +1270,9 @@
 	{
 		"class"	: "engineer",
 		"weapons" : ["Wrench"],
-		"weapon_restriction":"MeleeOnly",
+		"is_mission_bot" : true,
 		"difficulty" : 4,
-		"health" : "10000",
+		"health" : "20000",
 		"class_icon" : "engineer_firering",
 		"count" : 1,
 		"max_active" : 1,
@@ -1280,16 +1280,16 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "2.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
-		"attributes" : [ ["damage mult 13", "35.0"] ]
+		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "15.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
+		"attributes" : [ ["damage mult 13", "9.0"] ]
 	},
 	"Ballista Engineer" :
 	{
 		"class"	: "engineer",
 		"weapons" : ["Wrench"],
-		"weapon_restriction":"MeleeOnly",
+		"is_mission_bot" : true,
 		"difficulty" : 4,
-		"health" : "10000",
+		"health" : "20000",
 		"class_icon" : "engineer_rangertime",
 		"count" : 1,
 		"max_active" : 1,
@@ -1297,16 +1297,16 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["override projectile type","44.0"], ["engy building health bonus", "5.0"], ["engy sentry damage bonus", "3.5"]],
-		"attributes" : [ ["damage mult 13", "35.0"] ]
+		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "20.0"], ["engy sentry damage bonus", "3.5"]],
+		"attributes" : [ ["damage mult 13", "8.0"] ]
 	},
 	"Artillery Engineer" :
 	{
 		"class"	: "engineer",
 		"weapons" : ["Wrench"],
-		"weapon_restriction":"MeleeOnly",
+		"is_mission_bot" : true,
 		"difficulty" : 4,
-		"health" : "10000",
+		"health" : "20000",
 		"class_icon" : "engineer",
 		"count" : 1,
 		"max_active" : 1,
@@ -1314,8 +1314,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["engy building health bonus", "10.0"], ["engy sentry damage bonus", "0.66"], ["dmg penalty vs nonstunned", "4"], ["mult firerocket rate", "0.7"], ["engy sentry radius increased", "5.0"]],
-		"attributes" : [ ["damage mult 13", "35.0"] ]
+		"weapon_attributes": [["engy building health bonus", "30.0"], ["engy sentry damage bonus", "0.66"], ["mult firerocket rate", "0.3"], ["engy sentry radius increased", "5.0"]],
+		"attributes" : [ ["damage mult 13", "11.0"] ]
 	},
 	"Rooter" :
 	{
@@ -1434,6 +1434,7 @@
 		"class"	: "spy",
 		"weapons" : ["Knife"],
 		"weapon_restriction":"MeleeOnly",
+		"is_mission_bot" : true,
 		"difficulty" : 4,
 		"health" : "3000",
 		"class_icon" : "spy",
@@ -1461,5 +1462,37 @@
 		"time_between_spawn" : 12,
 		"currency_weight": 20,
 		"attributes" : [ ["damage mult 13", "35.0"], ["knockout powerup", "2.0"], ["melee range multiplier", "8"]]
+	},
+	"Sydney Sleeper Sniper" :
+	{
+		"class"	: "sniper",
+		"weapons": ["The Sydney Sleeper", "Darwin's Danger Shield"],
+		"is_mission_bot" : true,
+		"difficulty" : 4,
+		"health" : "2500",
+		"class_icon" : "sniper",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 0,
+		"attributes" : [ ["damage mult 13", "40.0"] ]
+	},
+	"Support Machina Sniper" :
+	{
+		"class"	: "sniper",
+		"weapons": ["The Machina", "Cozy Camper"],
+		"is_mission_bot" : true,
+		"difficulty" : 4,
+		"health" : "2500",
+		"class_icon" : "sniper",
+		"count" : 1,
+		"max_active" : 1,
+		"spawn_per_timer" : 1,
+		"time_before_spawn" : 0,
+		"time_between_spawn" : 15,
+		"currency_weight": 0,
+		"attributes" : [ ["damage mult 13", "70.0"] ]
 	}
 }

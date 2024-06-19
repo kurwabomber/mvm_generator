@@ -111,6 +111,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => false,
                     Some(val) => val,
                 },
+                is_mission_bot: match value.1["is_mission_bot"].as_bool() {
+                    None => false,
+                    Some(val) => val,
+                },
                 currency_weight: match value.1["currency_weight"].as_i64() {
                     None => 1,
                     Some(val) => val,
@@ -200,10 +204,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     None => false,
                     Some(val) => val,
                 },
-                is_support: match value.1["is_support"].as_bool() {
-                    None => false,
-                    Some(val) => val,
-                },
             };
             for tag in &mission.wavespawn_tags{
                 if wavespawn.tags.contains(tag){
@@ -219,6 +219,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let giant_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("giant"))).collect();
     let boss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("boss"))).collect();
     let superboss_wavespawns: Vec<Wavespawn> = wavespawns.clone().into_par_iter().filter(|i| i.tags.contains(&String::from("superboss"))).collect();
+    let mission_bots: Vec<Bot> = bots.clone().into_par_iter().filter(|i| i.is_mission_bot).collect();
+    let non_engineer_mission_bots: Vec<Bot> = bots.clone().into_par_iter().filter(|i| i.is_mission_bot && i.class != "engineer").collect();
 
     //Wave Generation Process
     let mut pop_file = String::new();
@@ -243,6 +245,77 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let wave_rarity = eval_float_with_context_mut(&mission.rarity_formula, &mut context).unwrap();
 
         //stupid wave boilerplate shit
+
+        let mut bot_id: i64 = 0;
+        let mut last_bot: i64 = 0;
+        let mut rng = thread_rng();
+
+        if rng.gen_bool(0.75){
+            let chosen_bot: &Bot;
+            if mission.engineers_enabled {
+                chosen_bot = mission_bots.choose(&mut rng).unwrap();
+            }else{
+                chosen_bot = non_engineer_mission_bots.choose(&mut rng).unwrap();
+            }
+            wave_portion.push_str("\tMission\n\t{\n");
+            wave_portion.push_str(&format!("\t\tObjective\t{}\n", chosen_bot.class));
+            wave_portion.push_str(&format!("\t\tInitialCooldown\t{}\n", rng.gen_range(50..120)));
+            wave_portion.push_str(&format!("\t\tCooldownTime\t{}\n", rng.gen_range(30..75)));
+            wave_portion.push_str(&format!("\t\tDesiredCount\t{}\n", rng.gen_range(2..4)));
+            for area in &mission.spawn_support_areas{
+                wave_portion.push_str(&format!("\t\tWhere\t{}\n", area));
+            }
+            wave_portion.push_str(&format!("\t\tBeginAtWave\t{}\n", i));
+            wave_portion.push_str("\t\tRunForThisManyWaves\t1\n");
+
+            wave_portion.push_str("\t\tTFBot\n\t\t{\n");
+            wave_portion.push_str(&format!("\t\t\tClassIcon\t\"{}\"\n",chosen_bot.class_icon));
+
+            let eval_health = eval_int_with_context_mut(&chosen_bot.health, &mut context).unwrap();
+            wave_portion.push_str(&format!("\t\t\tHealth\t{}\n",eval_health));
+            wave_portion.push_str(&format!("\t\t\tName\t\"{}\"\n",chosen_bot.name));
+            wave_portion.push_str(&format!("\t\t\tClass\t\"{}\"\n",chosen_bot.class));
+            if chosen_bot.scale != 1.0 {
+                wave_portion.push_str(&format!("\t\t\tScale\t\"{}\"\n",chosen_bot.scale));
+            }
+            let difficulty = match chosen_bot.difficulty {
+                2 => "Normal",
+                3 => "Hard",
+                4 => "Expert",
+                _ => "Easy"
+            };
+            wave_portion.push_str(&format!("\t\t\tSkill\t{}\n",difficulty));
+            if !chosen_bot.weapon_restriction.is_empty(){
+                wave_portion.push_str(&format!("\t\t\tWeaponRestrictions\t{}\n", chosen_bot.weapon_restriction));
+            }
+            for bot_attribute in &chosen_bot.bot_attributes{
+                wave_portion.push_str(&format!("\t\t\tAttributes\t\"{}\"\n", bot_attribute));
+            }
+            if chosen_bot.is_boss {
+                wave_portion.push_str("\t\t\tAttributes\t\"UseBossHealthBar\"\n");
+            }
+            if chosen_bot.auto_jump_min != 0{
+                wave_portion.push_str(&format!("\t\t\tAutoJumpMin\t{}\n", chosen_bot.auto_jump_min));
+            }
+            if chosen_bot.auto_jump_max != 0{
+                wave_portion.push_str(&format!("\t\t\tAutoJumpMax\t{}\n", chosen_bot.auto_jump_max));
+            }
+            if chosen_bot.max_vision_range != 0{
+                wave_portion.push_str(&format!("\t\t\tMaxVisionRange\t{}\n", chosen_bot.max_vision_range));
+            }
+            if chosen_bot.is_giant || chosen_bot.is_boss {
+                wave_portion.push_str("\t\t\tAttributes\t\"MiniBoss\"\n");
+                wave_portion.push_str(&format!("\t\t\tTag\t\"bot_giant\"\n"));
+            }
+            parse_bot_attributes(chosen_bot, &mission, &mut wave_portion, &mut context);
+            if !chosen_bot.behavior.is_empty(){
+                wave_portion.push_str(&format!("\t\t\tBehaviorModifiers\t{}\n", chosen_bot.behavior));
+            }
+
+            wave_portion.push_str("\t\t}\n");
+            wave_portion.push_str("\t}\n");
+        }
+
         wave_portion.push_str("\tWave\n\t{\n");
 
         wave_portion.push_str("\t\tCheckpoint\t\tYes\n");
@@ -300,16 +373,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 finalized_spawns.push(chosen_wavespawn);
             }
         }
-        
-        let mut bot_id: i64 = 0;
-        let mut last_bot: i64 = 0;
-        let mut rng = thread_rng();
         for wavespawn in finalized_spawns{
             for bot in &wavespawn.squads{
                 bot_id += 1;
                 wave_portion.push_str("\t\tWaveSpawn\n\t\t{\n");
                 wave_portion.push_str(&format!("\t\t\tName\t\"w{}_b{}\"\n", i, bot_id));
-                if last_bot != 0 {
+                if last_bot != 0 && !wavespawn.tags.contains(&"support".to_string()){
                     wave_portion.push_str(&format!("\t\t\tWaitForAllDead\t\"w{}_b{}\"\n", i, last_bot));
                 }
 
@@ -383,6 +452,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
                 if bot.max_vision_range != 0{
                     wave_portion.push_str(&format!("\t\t\t\t\tMaxVisionRange\t{}\n", bot.max_vision_range));
+                }
+
+                if wavespawn.tags.contains(&"support".to_string()){
+                    wave_portion.push_str("\t\t\t\t\tSupport\t1\n");
                 }
 
                 if bot.is_giant || bot.is_boss {

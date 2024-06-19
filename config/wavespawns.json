@@ -362,5 +362,75 @@
 		"tags": ["uber", "boss"],
 		"weight": 3,
 		"rarity": 4
+	},
+	"Squad #53":
+	{
+		"squads": ["Heavy Shotgun", "Blaster", "SMGer"],
+		"tags": ["uber", "support"],
+		"weight": 4,
+		"rarity": 1
+	},
+	"Squad #54":
+	{
+		"squads": ["Fly", "Rooter", "Crowd Control Soldier"],
+		"tags": ["uber", "support"],
+		"weight": 11,
+		"rarity": 4
+	},
+	"Squad #55":
+	{
+		"squads": ["Fly", "Shield Medic", "Kritz Medic"],
+		"tags": ["uber", "support"],
+		"weight": 7,
+		"rarity": 2
+	},
+	"Squad #56":
+	{
+		"squads": ["Shrapnel Soldier", "Crowd Control Soldier", "Armored Dragon's Fury"],
+		"tags": ["uber", "support"],
+		"weight": 5,
+		"rarity": 3
+	},
+	"Squad #57":
+	{
+		"squads": ["Gas Passer", "Fly"],
+		"tags": ["uber", "support"],
+		"weight": 5,
+		"rarity": 1
+	},
+	"Squad #58":
+	{
+		"squads": ["Giant Gas Passer", "Giant SVF Pyro"],
+		"tags": ["uber", "giant"],
+		"weight": 9,
+		"rarity": 2
+	},
+	"Squad #59":
+	{
+		"squads": ["Giant Gas Passer", "Giant Loch-n-Load Demoman", "Crowd Control Soldier"],
+		"tags": ["uber", "giant"],
+		"weight": 9,
+		"rarity": 4
+	},
+	"Squad #60":
+	{
+		"squads": ["Giant SVF Pyro", "SMGer Giant", "Hyper League"],
+		"tags": ["uber", "giant"],
+		"weight": 6,
+		"rarity": 3
+	},
+	"Squad #61":
+	{
+		"squads": ["Quaker Market Gardener", "Brass Beast Heavy", "Rooter"],
+		"tags": ["uber", "giant"],
+		"weight": 6,
+		"rarity": 4
+	},
+	"Squad #62":
+	{
+		"squads": ["Quaker Market Gardener", "Righteous Bison Soldier", "Scorch Spammer"],
+		"tags": ["uber", "giant"],
+		"weight": 8,
+		"rarity": 3
 	}
 }
