@@ -1375,7 +1375,7 @@
 	"Gas Passer" :
 	{
 		"class"	: "pyro",
-		"weapons" : ["Gas Passer"],
+		"weapons" : ["The Gas Passer"],
 		"weapon_restriction":"SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon"],
@@ -1393,7 +1393,7 @@
 	"Giant Gas Passer" :
 	{
 		"class"	: "pyro",
-		"weapons" : ["Gas Passer"],
+		"weapons" : ["The Gas Passer"],
 		"weapon_restriction":"SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon"],
