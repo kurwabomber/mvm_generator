@@ -1202,18 +1202,17 @@
 		"class" : "soldier",
 		"weapons" : ["The Righteous Bison"],
 		"weapon_restriction":"SecondaryOnly",
-		"bot_attributes" : ["AlwaysCrit"],
 		"difficulty" : 4,
 		"health" : "3000",
 		"class_icon" : "soldier_bison",
-		"count" : 24,
-		"max_active" : 24,
+		"count" : 18,
+		"max_active" : 18,
 		"spawn_per_timer" : 6,
 		"time_before_spawn" : 0,
-		"time_between_spawn" : 2,
+		"time_between_spawn" : 4,
 		"currency_weight": 12,
 		"weapon_attributes" : [ ["override projectile type", "1.0"], ["conference call damage", "1.0"]],
-		"attributes" : [ ["damage mult 13", "6.0"], ["faster reload rate","0.01"] ]
+		"attributes" : [ ["damage mult 13", "10.0"], ["faster reload rate","0.01"] ]
 	},
 	"Cow Mangler Soldier" :
 	{
@@ -1281,12 +1280,13 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
 		"weapon_attributes": [["override projectile type","33.0"], ["engy building health bonus", "15.0"], ["engy sentry damage bonus", "2.0"], ["engy sentry fire rate increased", "0.5"]],
-		"attributes" : [ ["damage mult 13", "9.0"] ]
+		"attributes" : [ ["damage mult 13", "16.0"] ]
 	},
 	"Hellstorm Engineer" :
 	{
 		"class"	: "engineer",
 		"weapons" : ["The Southern Hospitality"],
+		"bot_attributes" : ["TeleportToHint"],
 		"is_mission_bot" : true,
 		"difficulty" : 4,
 		"health" : "25000",
@@ -1306,6 +1306,7 @@
 	{
 		"class"	: "engineer",
 		"weapons" : ["The Southern Hospitality"],
+		"bot_attributes" : ["TeleportToHint"],
 		"is_mission_bot" : true,
 		"difficulty" : 4,
 		"health" : "20000",
@@ -1317,12 +1318,14 @@
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
 		"weapon_attributes": [["override projectile type","34.0"], ["engy building health bonus", "20.0"], ["engy sentry damage bonus", "3.5"]],
-		"attributes" : [ ["damage mult 13", "8.0"] ]
+		"attributes" : [ ["damage mult 13", "14.0"] ]
 	},
 	"Electro-Ballista Engineer" :
 	{
 		"class"	: "engineer",
-		"weapons" : ["Wrench"],
+		"weapons" : ["The Southern Hospitality"],
+		"bot_attributes" : ["TeleportToHint"],
+		"is_mission_bot" : true,
 		"weapon_restriction":"MeleeOnly",
 		"difficulty" : 4,
 		"health" : "25000",
@@ -1342,6 +1345,7 @@
 	{
 		"class"	: "engineer",
 		"weapons" : ["The Jag"],
+		"bot_attributes" : ["TeleportToHint"],
 		"is_mission_bot" : true,
 		"difficulty" : 4,
 		"health" : "20000",
@@ -1352,8 +1356,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 15,
 		"currency_weight": 12,
-		"weapon_attributes": [["engy building health bonus", "30.0"], ["engy sentry damage bonus", "0.66"], ["mult firerocket rate", "0.3"], ["engy sentry radius increased", "5.0"]],
-		"attributes" : [ ["damage mult 13", "11.0"] ]
+		"weapon_attributes": [["engy building health bonus", "30.0"], ["mult firerocket rate", "0.3"], ["dmg penalty vs nonstunned", "5.0"],  ["engy sentry radius increased", "5.0"]],
+		"attributes" : [ ["damage mult 13", "17.0"] ]
 	},
 	"Eagle Artillery Engineer" :
 	{
