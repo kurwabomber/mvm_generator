@@ -204,7 +204,7 @@
 	},
 	"Squad #30" :
 	{
-		"squads": ["Demoknight", "Squad Leader", "Guard", "Heavyweight Champion", "Burst Enforcer Spy"],
+		"squads": ["Demoknight", "Squad Leader", "Guard", "Heavyweight Champion"],
 		"tags": ["uber"],
 		"weight": 12,
 		"rarity": 3
@@ -365,7 +365,7 @@
 	},
 	"Squad #53":
 	{
-		"squads": ["Heavy Shotgun", "Blaster", "SMGer"],
+		"squads": ["Blaster", "SMGer"],
 		"tags": ["uber", "support"],
 		"weight": 4,
 		"rarity": 1
@@ -386,7 +386,7 @@
 	},
 	"Squad #56":
 	{
-		"squads": ["Shrapnel Soldier", "Crowd Control Soldier", "Armored Dragon's Fury"],
+		"squads": ["Shrapnel Soldier", "Armored Dragon's Fury"],
 		"tags": ["uber", "support"],
 		"weight": 5,
 		"rarity": 3
@@ -432,5 +432,75 @@
 		"tags": ["uber", "giant"],
 		"weight": 8,
 		"rarity": 3
+	},
+	"Squad #63":
+	{
+		"squads": ["Loch-n-Load Demoman"],
+		"tags": ["uber", "support"],
+		"weight": 5,
+		"rarity": 1
+	},
+	"Squad #64":
+	{
+		"squads": ["Giant Loch-n-Load Demoman", "Elder Leech"],
+		"tags": ["uber", "giant"],
+		"weight": 5,
+		"rarity": 2
+	},
+	"Squad #65":
+	{
+		"squads": ["Hyper League", "Shield Medic", "Aimless Bowman"],
+		"tags": ["uber", "giant"],
+		"weight": 5,
+		"rarity": 2
+	},
+	"Squad #66":
+	{
+		"squads": ["Not Aimless Bowman", "Squad Leader", "Greatbow Sniper", "Guard Giant"],
+		"tags": ["uber", "giant"],
+		"weight": 6,
+		"rarity": 5
+	},
+	"Squad #67":
+	{
+		"squads": ["Heavyweight Champion", "Lightning Rod", "Kritz Medic"],
+		"tags": ["uber", "giant"],
+		"weight": 4,
+		"rarity": 3
+	},
+	"Squad #68":
+	{
+		"squads": ["Giant Lightning Rod", "Airstrafe Shortstop Scout", "Concheror Samurai"],
+		"tags": ["uber", "giant"],
+		"weight": 5,
+		"rarity": 4
+	},
+	"Squad #69":
+	{
+		"squads": ["Greatbow Sniper"],
+		"tags": ["uber", "support"],
+		"weight": 3,
+		"rarity": 4
+	},
+	"Squad #70":
+	{
+		"squads":["Quake Soldier"],
+		"tags": ["uber", "support"],
+		"weight": 3,
+		"rarity": 5
+	},
+	"Squad #71":
+	{
+		"squads":["Rusher Giant Scout"],
+		"tags": ["uber", "support"],
+		"weight": 3,
+		"rarity": 7
+	},
+	"Squad #72":
+	{
+		"squads":["Expert Greatbow Sniper", "Direct Hit Soldier"],
+		"tags": ["uber", "support"],
+		"weight": 4,
+		"rarity": 7
 	}
 }

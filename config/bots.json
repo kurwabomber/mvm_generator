@@ -1240,7 +1240,7 @@
 		"health" : "8000",
 		"class_icon" : "heavy_champ",
 		"count" : 48,
-		"max_active" : 48,
+		"max_active" : 24,
 		"spawn_per_timer" : 12,
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 1,
@@ -1420,6 +1420,7 @@
 	"Loch-n-Load Demoman" :
 	{
 		"class"	: "demoman",
+		"bot_attributes" : ["HoldFireUntilFullReload"],
 		"weapons" : ["The Loch-n-Load"],
 		"weapon_restriction":"PrimaryOnly",
 		"difficulty" : 4,
@@ -1431,12 +1432,13 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 4,
 		"currency_weight": 12,
-		"weapon_attributes" : [["projectile gravity native", "0.0"], ["grenade no drag","1.0"], ["damage bonus", "2.0"]],
+		"weapon_attributes" : [["sticky air burst mode", "0.0"], ["projectile gravity native", "0.0"], ["grenade no drag","1.0"], ["damage bonus", "2.0"], ["grenade explode on impact", "1.0"]],
 		"attributes" : [ ["damage mult 13", "30.0"], ["faster reload rate", "0.75"], ["auto fires full clip all at once", "1"], ["clip size penalty", "0.66"]]
 	},
 	"Giant Loch-n-Load Demoman" :
 	{
 		"class"	: "demoman",
+		"bot_attributes" : ["HoldFireUntilFullReload"],
 		"weapons" : ["The Loch-n-Load"],
 		"weapon_restriction":"PrimaryOnly",
 		"difficulty" : 4,
@@ -1449,8 +1451,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 5,
 		"currency_weight": 20,
-		"weapon_attributes" : [["projectile gravity native", "0.0"], ["grenade no drag","1.0"], ["damage bonus", "2.0"]],
-		"attributes" : [ ["damage mult 13", "25.0"], ["precision powerup", "3.0"], ["faster reload rate", "0.5"], ["auto fires full clip all at once", "1"], ["clip size penalty", "0.66"]]
+		"weapon_attributes" : [["sticky air burst mode", "0.0"], ["projectile gravity native", "0.0"], ["grenade no drag","1.0"], ["damage bonus", "2.0"], ["grenade explode on impact", "1.0"]],
+		"attributes" : [ ["damage mult 13", "25.0"], ["precision powerup", "3.0"], ["faster reload rate", "0.5"], ["auto fires full clip all at once", "1"], ["clip size penalty", "0.66"], ["move speed bonus", "0.6"]]
 	},
 	"Gas Passer" :
 	{
@@ -1459,7 +1461,7 @@
 		"weapon_restriction":"SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon"],
-		"health" : "6000",
+		"health" : "2000",
 		"class_icon" : "pyro_gascann_explode",
 		"count" : 8,
 		"max_active" : 8,
@@ -1477,7 +1479,7 @@
 		"weapon_restriction":"SecondaryOnly",
 		"difficulty" : 4,
 		"bot_attributes" : ["AlwaysFireWeapon"],
-		"health" : "6000",
+		"health" : "15000",
 		"class_icon" : "pyro_gascann_explode_giant",
 		"is_giant" : true,
 		"count" : 2,
@@ -1487,7 +1489,7 @@
 		"time_between_spawn" : 6,
 		"currency_weight": 20,
 		"weapon_attributes" : [["explode_on_ignite", "1.0"], ["mult_item_meter_charge_rate", "0.02"], ["Blast radius increased", "2.25"], ["fireworks chance", "1.0"]],
-		"attributes" : [ ["damage mult 13", "25.0"], ["supernova powerup", "2.0"]]
+		"attributes" : [ ["damage mult 13", "25.0"], ["supernova powerup", "2.0"], ["move speed bonus", "0.6"]]
 	},
 	"Fly" :
 	{
@@ -1527,7 +1529,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 4,
 		"currency_weight": 8,
-		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "1.75"], ["player_gravity_ballon_head", "300"], 
+		"attributes" : [ ["damage mult 13", "15.0"], ["cannot pick up intelligence", "1.0"], ["fire rate bonus", "1.75"], ["player gravity ballon head", "300"], 
 		["voice pitch scale", "4.0"], ["resistance powerup", "2.0"]]
 	},
 	"Leech" :
@@ -1535,7 +1537,6 @@
 		"class"	: "spy",
 		"weapons" : ["Knife"],
 		"weapon_restriction":"MeleeOnly",
-		"is_mission_bot" : true,
 		"difficulty" : 4,
 		"health" : "2500",
 		"class_icon" : "spy",
@@ -1570,6 +1571,7 @@
 	"Giant SVF Pyro" :
 	{
 		"class"	: "pyro",
+		"bot_attributes" : ["AlwaysFireWeapon"],
 		"weapons" : ["Sharpened Volcano Fragment"],
 		"weapon_restriction":"MeleeOnly",
 		"is_giant": true,
@@ -1582,7 +1584,7 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 5,
 		"currency_weight": 20,
-		"attributes" : [ ["damage mult 13", "35.0"], ["knockout powerup", "2.0"], ["melee range multiplier", "8"]]
+		"attributes" : [ ["damage mult 13", "35.0"], ["knockout powerup", "2.0"], ["melee range multiplier", "18.0"], ["move speed bonus", "0.65"]]
 	},
 	"Sydney Sleeper Sniper" :
 	{
@@ -1632,8 +1634,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 35,
-		"weapon_attributes" : [["overheal decay penalty", "10"], ["overheal decay bonus", "75.0"]],
-		"attributes" : [ ["damage mult 13", "30.0"], ["inverter powerup", "3.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "2.0"], ["Blast radius increased", "2.0"]]
+		"weapon_attributes" : [["overheal decay penalty", "10"], ["overheal decay bonus", "75.0"], ["Blast radius increased", "2.0"]],
+		"attributes" : [ ["damage mult 13", "30.0"], ["inverter powerup", "3.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "2.0"], ["move speed bonus", "0.4"]]
 	},
 	"The Incendiary Bomber" :
 	{
@@ -1651,8 +1653,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 12,
 		"currency_weight": 45,
-		"weapon_attributes" : [["overheal decay penalty", "15"], ["overheal decay bonus", "100.0"]],
-		"attributes" : [ ["damage mult 13", "27.5"], ["inverter powerup", "3.0"],["supernova powerup", "2.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "3.0"], ["Blast radius increased", "2.5"]]
+		"weapon_attributes" : [["overheal decay penalty", "15"], ["overheal decay bonus", "100.0"], ["Blast radius increased", "2.5"]],
+		"attributes" : [ ["damage mult 13", "27.5"], ["inverter powerup", "3.0"],["supernova powerup", "2.0"], ["faster reload rate", "0.01"], ["fire rate bonus", "3.0"], ["move speed bonus", "0.4"]]
 	},
 	"Aimless Bowman" :
 	{
@@ -1670,7 +1672,7 @@
 		"time_between_spawn" : 8,
 		"currency_weight": 20,
 		"weapon_attributes" : [["sapper damage bonus", "35.0"]],
-		"attributes" : [ ["damage mult 13", "45.0"], ["precision powerup", "2.0"], ["faster reload rate", "0.1"], ["fire rate bonus", "6.0"], ["clip size bonus", "5.0"]]
+		"attributes" : [ ["damage mult 13", "45.0"], ["precision powerup", "2.0"], ["faster reload rate", "0.1"], ["fire rate bonus", "0.16"], ["clip size bonus", "5.0"]]
 	},
 	"Not Aimless Bowman" :
 	{
@@ -1687,8 +1689,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 8,
 		"currency_weight": 20,
-		"weapon_attributes" : [["sapper damage bonus", "50.0"]],
-		"attributes" : [ ["damage mult 13", "40.0"], ["precision powerup", "1.0"], ["faster reload rate", "0.08"], ["fire rate bonus", "6.5"], ["clip size bonus", "6.0"]]
+		"weapon_attributes" : [["sapper damage bonus", "50.0"], ["crit from behind", "150.0"]],
+		"attributes" : [ ["damage mult 13", "40.0"], ["precision powerup", "1.0"], ["faster reload rate", "0.08"], ["fire rate bonus", "0.12"], ["clip size bonus", "6.0"]]
 	},
 	"Quake Soldier" :
 	{
@@ -1713,7 +1715,7 @@
 	"Lightning Rod" :
 	{
 		"class"	: "soldier",
-		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"weapons" : ["The Battalion's Backup", "The Disciplinary Action"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
 		"weapon_restriction":"MeleeOnly",
 		"difficulty" : 4,
@@ -1726,17 +1728,19 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 8,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], 
-		["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
+		"weapon_attributes" : [ ["has pipboy build interface", "4.0"] ],
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["clip size bonus", "3.0"], 
+		["melee range multiplier", "15.0"], ["apply look velocity on damage", "-300.0"]]
 	},
 	"Giant Lightning Rod" :
 	{
 		"class"	: "soldier",
-		"weapons" : ["The Disciplinary Action", "The Battalion's Backup"],
+		"weapons" : ["The Battalion's Backup", "The Disciplinary Action"],
 		"bot_attributes" : ["SpawnWithFullCharge"],
 		"weapon_restriction":"MeleeOnly",
 		"difficulty" : 4,
-		"health" : "12000",
+		"health" : "35000",
+		"is_giant" : true,
 		"class_icon" : "vex_soldier_whip_electric_giant",
 		"scale" : 1.25,
 		"count" : 4,
@@ -1745,6 +1749,8 @@
 		"time_before_spawn" : 0,
 		"time_between_spawn" : 8,
 		"currency_weight": 12,
-		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["has pipboy build interface", "4.0"], ["clip size bonus", "3.0"], ["melee range multiplier", "15.0"], ["apply look velocity on damage", "-100.0"]]
+		"weapon_attributes" : [ ["has pipboy build interface", "4.0"] ],
+		"attributes" : [ ["damage mult 13", "35.0"], ["increase buff duration", "50.0"], ["clip size bonus", "3.0"], 
+		["melee range multiplier", "15.0"], ["apply look velocity on damage", "-300.0"], ["move speed bonus", "0.6"]]
 	}
 }
