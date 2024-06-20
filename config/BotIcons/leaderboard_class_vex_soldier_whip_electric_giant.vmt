@@ -1,6 +1,6 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "Users/Mixailo/Downloads/leaderboard_class_vex_soldier_whip_electric"
+	"$basetexture" "hud/leaderboard_class_vex_soldier_whip_electric"
 	"$vertexcolor" 1
 	"$no_fullbright" 1
 	"$ignorez" 1

@@ -1,6 +1,6 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "Users/Mixailo/Downloads/leaderboard_class_demo_ironbomber_lite_infernal"
+	"$basetexture" "hud/leaderboard_class_demo_ironbomber_lite_infernal"
 	"$vertexcolor" 1
 	"$no_fullbright" 1
 	"$ignorez" 1

@@ -1,6 +1,6 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "Users/Mixailo/Downloads/leaderboard_class_engineer_ballista"
+	"$basetexture" "hud/leaderboard_class_engineer_ballista"
 	"$vertexcolor" 1
 	"$no_fullbright" 1
 	"$ignorez" 1
